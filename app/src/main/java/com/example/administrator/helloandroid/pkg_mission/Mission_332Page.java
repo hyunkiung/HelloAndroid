@@ -67,7 +67,6 @@ public class Mission_332Page extends ActionBarActivity {
 
         EditText birText = (EditText) findViewById(R.id.text_Birth);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년MM월dd일");
-
         Time chosenDate = new Time(); // 20150416T000000Asia/Seoul(0,0,0,-1,1429110000
         chosenDate.set(mDay, mMonth, year);
         long dtDob = chosenDate.toMillis(true); // 밀리세컨드로 변환 / DB 저장하기 좋음
