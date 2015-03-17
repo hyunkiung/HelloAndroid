@@ -34,8 +34,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2b3b305-28e6-47e1-b26f-0b452fb176ed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/helloandroid/pkg_mission/Mission_332Page.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrator/helloandroid/pkg_mission/Mission_332Page.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="HelloAndroid.iws" />
     <ignored path=".idea/workspace.xml" />
