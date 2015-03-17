@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.helloandroid.EditText">
+
+    <EditText
+        android:id="@+id/output"
+        android:hint="출력되는곳"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:editable="false"
+        />
+
+    <EditText
+        android:id="@+id/input"
+        android:hint="입력되는곳"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="http://m.naver.com"
+        android:autoLink="all"
+        android:singleLine="true"
+        android:ellipsize="end"/>
+
+
+
+
+
+</LinearLayout>

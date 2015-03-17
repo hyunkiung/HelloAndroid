@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.helloandroid.pkg_activity.FrameLayoutExamActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*" >
+        <TableRow>
+
+            <Button
+                android:text="@string/test8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/btnSwap" />
+
+            <Button
+                android:text="@string/test7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/btnCopy"/>
+
+        </TableRow>
+    </TableLayout>
+
+    <!--상단 이미지 뷰-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#DDDDDDDD"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/gtr33"
+            android:id="@+id/image1"
+            android:visibility="visible"
+            android:baselineAlignBottom="false"
+            android:scaleType="centerCrop"
+            android:scrollbars="vertical"
+            />
+
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gtr44"
+        android:id="@+id/image2"
+        android:visibility="invisible"
+        android:baselineAlignBottom="false"
+        />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+    </View>
+
+
+
+    <!--하단 이미지 뷰-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#eeeeeeee"
+        android:layout_margin="5dp">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/image_Bottom"
+                    android:visibility="visible"
+                    android:baselineAlignBottom="false"
+                    />
+
+            </ScrollView>
+
+        </HorizontalScrollView>
+
+    </FrameLayout>
+
+
+
+
+
+
+
+
+
+</LinearLayout>

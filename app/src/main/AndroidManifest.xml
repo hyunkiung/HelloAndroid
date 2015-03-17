@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.administrator.helloandroid" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- 첫번째 액티비티 정보 -->
+        <activity
+            android:name=".pkg_activity.FirstActivity"
+            android:label="@string/title_activity_first" >
+        </activity>
+
+        <!-- 두번째 액티비티 정보 -->
+        <activity
+            android:name=".pkg_activity.SecondActivity"
+            android:label="@string/title_activity_second" >
+        </activity>
+
+        <!-- 세번째 액티비티 정보 -->
+        <activity
+            android:name=".pkg_activity.RelativeLayoutExamActivity"
+            android:label="@string/title_activity_relative_layout_exam" >
+        </activity>
+        <activity
+            android:name=".pkg_activity.TableLayoutExamActivity"
+            android:label="@string/title_activity_table_layout_exam" >
+        </activity>
+        <activity
+            android:name=".pkg_activity.FrameLayoutExamActivity"
+            android:label="@string/title_activity_frame_layout_exam" >
+        </activity>
+        <activity
+            android:name=".pkg_activity.EditTextActivity"
+            android:label="@string/title_activity_edit_text" >
+        </activity>
+        <activity
+            android:name=".pkg_mission.Mission_193Page"
+            android:label="@string/title_activity_mission_193_page" >
+        </activity>
+        <activity
+            android:name=".pkg_activity.ActivityExamActivity"
+            android:label="@string/title_activity_activity_exam" >
+        </activity>
+        <activity
+            android:name=".pkg_activity.TargetExamActivity"
+            android:label="@string/title_activity_target_exam" >
+        </activity>
+        <activity
+            android:name=".pkg_mission.Mission_271Page"
+            android:label="@string/title_activity_mission_271_page" >
+        </activity>
+        <activity
+            android:name=".pkg_mission.Mission_271Page_sub1"
+            android:label="@string/title_activity_mission_271_page_sub1" >
+        </activity>
+        <activity
+            android:name=".pkg_event.TouchEventActivity"
+            android:label="@string/title_activity_touch_event" >
+        </activity>
+        <activity
+            android:name=".pkg_mission.Mission_332Page"
+            android:label="@string/title_activity_mission_332_page" >
+        </activity>
+        <activity
+            android:name=".pkg_activity.MainMenuActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.helloandroid.pkg_activity.TargetExamActivity">
+
+    <TextView
+        android:id="@+id/receiveText"
+        android:text="데이터 주고 받기 연습 : TARGET ACTIVITY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CCCCCCCC"
+        />
+
+    <Button
+        android:id="@+id/rollbckBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PARENT Activity 열기 (FLAG_ACTIVITY_SINGLE_TOP)"
+        android:background="#fffffa7e" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#AAAAAAAA"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"></View>
+
+    <Button
+        android:id="@+id/returnJumsuBtn"
+        android:text="철수와 순이의 점수 돌려주기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffff8db8" />
+
+
+</LinearLayout>

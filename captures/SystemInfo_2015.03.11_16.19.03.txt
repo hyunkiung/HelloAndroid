@@ -1,0 +1,33 @@
+Applications Memory Usage (kB):
+Uptime: 65452122 Realtime: 111615620
+
+** MEMINFO in pid 6598 [com.example.administrator.helloandroid] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap     2034     2028        0        0    49052     5199      168
+  Dalvik Heap   120177   119820        0        0   153248   145243     8005
+ Dalvik Other     1587     1524        0        0                           
+        Stack      100      100        0        0                           
+    Other dev    24816     4156        4        0                           
+     .so mmap     1252      888       44        0                           
+    .jar mmap        0        0        0        0                           
+    .apk mmap       79        0       16        0                           
+    .ttf mmap       38        0        0        0                           
+    .dex mmap     1173       28      988        0                           
+   Other mmap        5        4        0        0                           
+      Unknown        0        0        0        0                           
+        TOTAL   151261   128548     1052        0   202300   150442     8173
+ 
+ Objects
+               Views:       53         ViewRootImpl:        2
+         AppContexts:        4           Activities:        2
+              Assets:        3        AssetManagers:        3
+       Local Binders:        8        Proxy Binders:       20
+    Death Recipients:        0
+     OpenSSL Sockets:        0
+ 
+ SQL
+         MEMORY_USED:        0
+  PAGECACHE_OVERFLOW:        0          MALLOC_SIZE:        0
+ 

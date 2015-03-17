@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="#00000000"
+    tools:context="com.example.administrator.helloandroid.pkg_mission.Mission_271Page">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0, 1"
+        android:background="#bbbbbb">
+
+        <TableRow>
+
+            <TableLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*" >
+
+                <TableRow>
+                    <EditText
+                        android:id="@+id/mainText_ID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="smartapp"
+                        android:ems="8"
+                        />
+                </TableRow>
+
+                <TableRow>
+                    <EditText
+                        android:id="@+id/mainText_PW"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="app1password"
+                        android:ems="8"
+                        />
+                </TableRow>
+
+            </TableLayout>
+
+            <Button
+                android:id="@+id/mainBtn_Login"
+                android:text="로그인"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                />
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

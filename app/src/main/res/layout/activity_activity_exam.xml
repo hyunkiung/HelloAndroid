@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.helloandroid.pkg_activity.ActivityExamActivity">
+
+
+    <TextView
+        android:text="데이터 주고 받기 연습 : PARENT ACTIVITY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CCCCCCCC"
+        />
+
+    <Button
+        android:id="@+id/moveBtn"
+        android:text="Target Activity 열기 (FLAG_ACTIVITY_SINGLE_TOP)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fffffa7e"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#AAAAAAAA" ></View>
+
+    <EditText
+        android:id="@+id/dataEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/moveDataBtn"
+        android:text="위에 입력한 데이터를 TARGET에 전송"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#AAAAAAAA" ></View>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:layout_marginTop="10dp"
+        >
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/resultBtn_Chulsu"
+                android:text="TARGET 철수 점수"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#ff7299d1"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/resultView_Jumsu"
+                android:text="결과"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:background="#CCCCCCCC"
+                android:gravity="center|center_vertical"
+                />
+
+            <Button
+                android:id="@+id/resultBtn_Soone"
+                android:text="TARGET 순이 점수"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#aaaa7c79"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#AAAAAAAA"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"></View>
+
+
+    <Button
+        android:id="@+id/diallogBtn"
+        android:text="DIALOG 띄우기 연습 버튼"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#aa6040aa"
+        />
+
+
+</LinearLayout>

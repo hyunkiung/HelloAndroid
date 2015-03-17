@@ -1,0 +1,238 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:stretchColumns="0, 1"
+
+    tools:context="com.example.administrator.helloandroid.pkg_activity.TableLayoutExamActivity">
+
+    <TableRow android:layout_weight = "1">
+
+        <TextView
+            android:text="11111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#eeeeee"
+            android:padding="10dp" />
+
+        <TextView
+            android:text="22222"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#cccccc"
+            android:padding="10dp" />
+    </TableRow>
+
+    <TableRow android:layout_weight = "1">
+        <TextView
+            android:text="33333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#aaaaaa"
+            android:padding="10dp"
+            android:layout_span="2"/>
+
+
+    </TableRow>
+
+    <TableRow android:layout_weight = "1">
+        <TextView
+            android:text="55555"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffaa6b6d"
+            android:padding="10dp" />
+
+        <TextView
+            android:text="66666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ff799998"
+            android:padding="10dp" />
+    </TableRow>
+
+    <TableRow android:layout_weight = "1">
+
+        <TableLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="0, 1" >
+
+            <TableRow>
+                <TextView
+                    android:text="23232323"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ff246f4f"
+                    android:padding="10dp" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="34343434"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ff75c7ae"
+                    android:padding="10dp" />
+
+            </TableRow>
+
+        </TableLayout>
+
+
+
+        <TextView
+            android:text="88888"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ff714a99"
+            android:padding="10dp"
+            android:layout_column="1"
+            android:gravity="center"
+            />
+    </TableRow>
+
+    <View android:layout_height="5dp"></View>
+
+    <TableRow android:layout_weight = "1">
+        <TextView
+            android:text="99999"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffa874"
+            android:padding="10dp" />
+
+        <TextView
+            android:text="101010"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ff7299d1"
+            android:padding="10dp" />
+    </TableRow>
+
+    <View android:layout_height="5dp"></View>
+
+    <TableRow android:layout_weight = "3">
+
+        <!--테이블 레이아웃 추가-->
+        <TableLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:background="#999999"
+            android:layout_span="2">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp">
+            </View>
+
+            <TableRow>
+
+                <TextView
+                    android:text="/"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#666666"
+                    android:padding="5dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center" />
+                <TextView
+                    android:text="국어"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#666666"
+                    android:padding="10dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center" />
+                <TextView
+                    android:text="영어"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#666666"
+                    android:padding="10dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center" />
+                <TextView
+                    android:text="수학"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#666666"
+                    android:padding="10dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center"  />
+
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp">
+            </View>
+
+            <TableRow>
+
+                <TextView
+                    android:text="현기웅"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffdddddd"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"/>
+                <TextView
+                    android:text="90"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffdddddd"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"/>
+                <TextView
+                    android:text="80"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffdddddd"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"/>
+                <TextView
+                    android:text="70"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffdddddd"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"/>
+
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp">
+            </View>
+
+        </TableLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_weight = "3"
+        android:gravity="bottom">
+
+
+
+    </TableRow>
+
+
+
+
+</TableLayout>
+
+
