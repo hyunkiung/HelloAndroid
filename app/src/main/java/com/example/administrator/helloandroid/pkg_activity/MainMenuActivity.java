@@ -10,6 +10,7 @@ import com.example.administrator.helloandroid.pkg_event.TouchEventActivity;
 import com.example.administrator.helloandroid.pkg_mission.Mission_193Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_332Page;
+import com.example.administrator.helloandroid.pkg_mission.Mission_333Page;
 
 public class MainMenuActivity extends ActionBarActivity {
 
@@ -77,6 +78,12 @@ public class MainMenuActivity extends ActionBarActivity {
     //////////// 메뉴버튼10
     public void onButtonClick_Open10(View v) {
         Intent openIntent = new Intent(getApplicationContext(), Mission_332Page.class);
+        startActivity(openIntent);
+    }
+
+    //////////// 메뉴버튼11
+    public void onButtonClick_Open11(View v) {
+        Intent openIntent = new Intent(getApplicationContext(), Mission_333Page.class);
         startActivity(openIntent);
     }
 

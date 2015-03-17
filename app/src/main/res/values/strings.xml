@@ -28,7 +28,7 @@
     <string name="m_nm8">8.Mission271</string>
     <string name="m_nm9">9.TouchEvent</string>
     <string name="m_nm10">10.Mission332</string>
-    <string name="m_nm11">11.null</string>
+    <string name="m_nm11">11.Mission333</string>
     <string name="m_nm12">12.null</string>
 
 
@@ -44,5 +44,6 @@
     <string name="title_activity_touch_event">TouchEventActivity</string>
     <string name="title_activity_mission_332_page">Mission_332Page</string>
     <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="title_activity_mission_333_page">Mission_333Page</string>
 
 </resources>
