@@ -10,6 +10,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.helloandroid.R;
 
@@ -21,14 +22,13 @@ public class Mission_333Page extends ActionBarActivity {
     Button mBtn_Pussy;
     Button mBtn_Move;
     WebView mUrl_View;
-    TextView mUrl_Text;
+    TextView mUrl_inText;
     TextView mUrl_Left;
     TextView mUrl_Right;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_mission_333_page);
 
         //================================================================
@@ -38,7 +38,7 @@ public class Mission_333Page extends ActionBarActivity {
         mBtn_Pussy = (Button)findViewById(R.id.btn_Pussy);
         mBtn_Move = (Button)findViewById(R.id.btn_Move);
         mUrl_View = (WebView)findViewById(R.id.url_View);
-        mUrl_Text = (TextView)findViewById(R.id.url_Text);
+        mUrl_inText = (TextView)findViewById(R.id.url_inputText);
         mUrl_Left = (TextView) findViewById(R.id.url_Left);
         mUrl_Right = (TextView) findViewById(R.id.url_Right);
 
@@ -71,29 +71,56 @@ public class Mission_333Page extends ActionBarActivity {
         });
 
         //================================================================
-        ////// URL 읽어서 웹뷰에 전달 버튼 셋팅, 웹뷰 셋팅
+        ////// 실행 버튼 클릭시 WebOpen() 호출
         //================================================================
         mBtn_Move.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                mUrl_View.getSettings().setJavaScriptEnabled(true); // 자바스크립트 허용
-
-                String strURL = mUrl_Text.getText().toString();
-                // URL이 비어있을때 조건 추가할것.
-
-                mUrl_View.getSettings().setBuiltInZoomControls(true);
-                mUrl_View.getSettings().setSupportZoom(true);
-                mUrl_View.loadUrl(strURL);
-
-                // 별도의 클래스를 사용하는데 아래 메소드 사용하면 없어도 될듯.
-                //mUrl_View.setWebViewClient(new WebViewClientClass());
-
-                // 별도의 클래스 없이 바로 사용 가능
-                 mUrl_View.setWebViewClient(new WebViewClient());
+                WebOpen();
             }
         });
 
+        //================================================================
+        ////// 텍스트박스 엔터키 입력시 WebOpen() 호출
+        //================================================================
+        mUrl_inText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                    WebOpen();
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
+    }
+
+
+    //================================================================
+    ////// 웹페이지 오픈 메소드 : URL 읽어서 웹뷰에 전달 버튼 셋팅, 웹뷰 셋팅
+    //================================================================
+    public void WebOpen() {
+
+        String strURL = mUrl_inText.getText().toString();
+        // URL이 비어있을때 조건 추가
+        if(!strURL.equals("")) {
+            mUrl_View.getSettings().setJavaScriptEnabled(true); // 자바스크립트 허용
+            mUrl_View.getSettings().setBuiltInZoomControls(true); // 줌 컨트롤 허용
+            mUrl_View.getSettings().setSupportZoom(true); // 슈퍼줌 허용
+            mUrl_View.loadUrl(strURL); // url 로딩
+
+            // 별도의 클래스를 사용하는데 아래 WebViewClient 메소드 사용하면 없어도 될듯.
+            //mUrl_View.setWebViewClient(new WebViewClientClass());
+
+            // 별도의 클래스 없이 바로 사용 가능
+            mUrl_View.setWebViewClient(new WebViewClient());
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "주소를 입력해주세요.!!", Toast.LENGTH_SHORT).show();
+        }
+
+        //http://가 없을때 처리
     }
 
 
@@ -111,7 +138,7 @@ public class Mission_333Page extends ActionBarActivity {
 
 
     //================================================================
-    ////// 이건 잘 모르겠다.
+    ////// 이건 없어도 된다. WebViewClient가 기본제공. 이건 확장형 클래스
     //================================================================
     private class WebViewClientClass extends WebViewClient {
         @Override

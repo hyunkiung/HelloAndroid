@@ -17,7 +17,6 @@
         android:layout_height="40dp"
         android:orientation="horizontal"
         android:gravity="center"
-
         >
 
         <TextView
@@ -28,7 +27,6 @@
             android:gravity="center"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
-
 
             android:focusable="false"
             android:singleLine="true"
@@ -86,19 +84,17 @@
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:textSize="20dp"
-                />
+                android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/url_Text"
+                android:id="@+id/url_inputText"
                 android:text="http://www.naver.com"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:singleLine="true"
                 android:gravity="left|bottom"
-                android:textColor="#000000"
-                />
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/btn_Move"
@@ -111,15 +107,12 @@
 
     </TableLayout>
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="#a0000000"
-        android:padding="3dp"
-        >
+        android:padding="3dp" >
 
         <WebView
             android:id="@+id/url_View"
@@ -129,11 +122,5 @@
         </WebView>
 
     </LinearLayout>
-
-
-
-
-
-
 
 </LinearLayout>
