@@ -9,30 +9,84 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context="com.example.administrator.helloandroid.pkg_mission.Mission_333Page"
-    android:background="#AAAAAAAA">
+    android:background="#ffffffff">
 
     <!--▲  ▼-->
-    <Button
-        android:id="@+id/btn_Pussy"
-        android:text="▼"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+
+        >
+
+        <TextView
+            android:text="URL을 입력하려면 우측의 화살표 버튼을 클릭하세요."
+            android:id="@+id/url_Left"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+
+
+            android:focusable="false"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:focusableInTouchMode="true"
+            />
+
+        <Button
+            android:id="@+id/btn_Pussy"
+            android:text="▼"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#ff1e1f9c"
+            android:textSize="30dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="0dp"
+            android:background="#ff7d7f9c"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            />
+
+        <TextView
+            android:text="2015년 수원스마트앱개발학원에서 만들었어요."
+            android:id="@+id/url_Right"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+
+            android:focusable="false"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:focusableInTouchMode="true"
+            />
+
+    </LinearLayout>
 
     <TableLayout
         android:id="@+id/url_Table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#CCCCCCCC"
-        android:visibility="gone">
+        android:visibility="gone"
+        >
 
-        <TableRow >
+        <TableRow android:background="@drawable/border_set">
 
             <TextView
-                android:text="URL 입력"
-                android:layout_width="wrap_content"
+                android:text="URL : "
+                android:layout_width="60dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:singleLine="true"
+                android:gravity="center"
+                android:textSize="20dp"
                 />
 
             <EditText
@@ -41,11 +95,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:singleLine="true"
+                android:gravity="left|bottom"
+                android:textColor="#000000"
                 />
 
             <Button
                 android:id="@+id/btn_Move"
-                android:text="이동"
+                android:text="실행"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"/>
@@ -54,15 +111,27 @@
 
     </TableLayout>
 
-    <WebView
-        android:id="@+id/url_View"
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="#FFFFFFFF">
+        android:background="#a0000000"
+        android:padding="3dp"
+        >
+
+        <WebView
+            android:id="@+id/url_View"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </WebView>
+
+    </LinearLayout>
 
 
-    </WebView>
+
 
 
 

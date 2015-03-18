@@ -1,6 +1,7 @@
 package com.example.administrator.helloandroid.pkg_mission;
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -12,13 +13,17 @@ import android.widget.TextView;
 
 import com.example.administrator.helloandroid.R;
 
+
 public class Mission_333Page extends ActionBarActivity {
 
+    ActionBar action_Bar;
     TableLayout mUrl_Table;
     Button mBtn_Pussy;
     Button mBtn_Move;
     WebView mUrl_View;
     TextView mUrl_Text;
+    TextView mUrl_Left;
+    TextView mUrl_Right;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +39,16 @@ public class Mission_333Page extends ActionBarActivity {
         mBtn_Move = (Button)findViewById(R.id.btn_Move);
         mUrl_View = (WebView)findViewById(R.id.url_View);
         mUrl_Text = (TextView)findViewById(R.id.url_Text);
+        mUrl_Left = (TextView) findViewById(R.id.url_Left);
+        mUrl_Right = (TextView) findViewById(R.id.url_Right);
 
-        // ActionBar actionBar = getActionBar();
-        // actionBar.hide();
-        // 전체 화면으로 보기 설정 추가할 것.
+        //액션바 선언 및 타이틀 설정
+        action_Bar = this.getSupportActionBar();
+        action_Bar.setTitle("웅쓰 브라우저");
 
+        //텍스트 박스 글씨 흐르게 해주기
+        mUrl_Left.setSelected(true);
+        mUrl_Right.setSelected(true);
 
         //================================================================
         ////// URL박스 컨트롤 버튼 셋팅 (보이기, 감추기)
@@ -46,14 +56,16 @@ public class Mission_333Page extends ActionBarActivity {
         mBtn_Pussy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (mUrl_Table.getVisibility() == View.VISIBLE) {
                     mUrl_Table.setVisibility(View.GONE);
                     mBtn_Pussy.setText("▼");
+                    action_Bar.show();
 
                 } else {
                     mUrl_Table.setVisibility(View.VISIBLE);
                     mBtn_Pussy.setText("▲");
-                    //actionBar.show(); // 에러남
+                    action_Bar.hide();
                 }
             }
         });
