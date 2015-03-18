@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -25,6 +27,9 @@ public class Mission_333Page extends ActionBarActivity {
     TextView mUrl_inText;
     TextView mUrl_Left;
     TextView mUrl_Right;
+    Animation mTranslate_top_to_down;
+    Animation mTranslate_down_to_top;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,19 +55,24 @@ public class Mission_333Page extends ActionBarActivity {
         mUrl_Left.setSelected(true);
         mUrl_Right.setSelected(true);
 
-        //================================================================
-        ////// URL박스 컨트롤 버튼 셋팅 (보이기, 감추기)
-        //================================================================
+        // 애니메이션 객체 생성
+        mTranslate_top_to_down = AnimationUtils.loadAnimation(this, R.anim.translate_top_to_down);
+        mTranslate_down_to_top = AnimationUtils.loadAnimation(this, R.anim.translate_down_to_top);
+
+        //======================================================================================
+        ////// URL박스 컨트롤 버튼 셋팅 (보이기, 감추기), 생성된 애니메이션객체를 감추는 오브젝트에 실행
+        //======================================================================================
         mBtn_Pussy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (mUrl_Table.getVisibility() == View.VISIBLE) {
+                    mUrl_Table.startAnimation(mTranslate_down_to_top);
                     mUrl_Table.setVisibility(View.GONE);
                     mBtn_Pussy.setText("▼");
                     action_Bar.show();
 
                 } else {
+                    mUrl_Table.startAnimation(mTranslate_top_to_down);
                     mUrl_Table.setVisibility(View.VISIBLE);
                     mBtn_Pussy.setText("▲");
                     action_Bar.hide();
