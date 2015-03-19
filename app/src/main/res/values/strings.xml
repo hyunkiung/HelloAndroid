@@ -29,7 +29,11 @@
     <string name="m_nm9">9.TouchEvent</string>
     <string name="m_nm10">10.Mission332</string>
     <string name="m_nm11">11.Mission333</string>
-    <string name="m_nm12">12.null</string>
+    <string name="m_nm12">12.ListView</string>
+
+    <string name="m_nm13">13.BaseAdapter</string>
+    <string name="m_nm14">14.ArrayAdapter</string>
+    <string name="m_nm15">15.null</string>
 
 
     <string name="title_activity_relative_layout_exam">RelativeLayoutExamActivity</string>
@@ -45,5 +49,19 @@
     <string name="title_activity_mission_332_page">Mission_332Page</string>
     <string name="title_activity_main_menu">MainMenuActivity</string>
     <string name="title_activity_mission_333_page">Mission_333Page</string>
+    <string name="title_activity_list_view_exam">ListViewExam</string>
+    <string name="title_activity_list_view_01__default">listView_01_Default</string>
+    <string name="title_activity_list_view_02__custom">listView_02_Custom</string>
+    <string name="title_activity_custom_basc_adapter">customBascAdapter</string>
+    <string name="title_activity_custom_base_adapter">customBaseAdapter</string>
+    <string name="title_activity_item_use_base_adapter">item_useBaseAdapter</string>
+    <string name="title_activity_adapter_list_exam1__main">adapterListExam1_Main</string>
+    <string name="title_activity_adapter_list_exam1_pkg_activity">adapterListExam1_pkg_activity
+    </string>
+    <string name="title_activity_adapter_list_exam1_pkg_event">adapterListExam1_pkg_event</string>
+    <string name="title_activity_adapter_list_exam1_pkg__list_view">adapterListExam1_pkg_ListView
+    </string>
+    <string name="title_activity_adapter_list_exam1_pkg_mission">adapterListExam1_pkg_mission
+    </string>
 
 </resources>

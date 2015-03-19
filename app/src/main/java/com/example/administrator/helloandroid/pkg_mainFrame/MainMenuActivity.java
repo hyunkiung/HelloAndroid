@@ -1,4 +1,4 @@
-package com.example.administrator.helloandroid.pkg_activity;
+package com.example.administrator.helloandroid.pkg_mainFrame;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,14 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 
 import com.example.administrator.helloandroid.R;
+import com.example.administrator.helloandroid.pkg_ListView.item_useBaseAdapter;
+import com.example.administrator.helloandroid.pkg_ListView.listView_01_Default;
+import com.example.administrator.helloandroid.pkg_activity.ActivityExamActivity;
+import com.example.administrator.helloandroid.pkg_activity.EditTextActivity;
+import com.example.administrator.helloandroid.pkg_activity.FirstActivity;
+import com.example.administrator.helloandroid.pkg_activity.FrameLayoutExamActivity;
+import com.example.administrator.helloandroid.pkg_activity.SecondActivity;
+import com.example.administrator.helloandroid.pkg_activity.TableLayoutExamActivity;
 import com.example.administrator.helloandroid.pkg_event.TouchEventActivity;
 import com.example.administrator.helloandroid.pkg_mission.Mission_193Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
@@ -85,6 +93,26 @@ public class MainMenuActivity extends ActionBarActivity {
     public void onButtonClick_Open11(View v) {
         Intent openIntent = new Intent(getApplicationContext(), Mission_333Page.class);
         startActivity(openIntent);
+    }
+
+    //////////// 메뉴버튼12
+    public void onButtonClick_Open12(View v) {
+        Intent openIntent = new Intent(getApplicationContext(), listView_01_Default.class);
+        startActivity(openIntent);
+    }
+
+    //////////// 메뉴버튼13
+    public void onButtonClick_Open13(View v) {
+        Intent openIntent = new Intent(getApplicationContext(), item_useBaseAdapter.class);
+        startActivity(openIntent);
+    }
+
+    //////////// 메뉴버튼14
+    public void onButtonClick_Open14(View v) {
+    }
+
+    //////////// 메뉴버튼15
+    public void onButtonClick_Open15(View v) {
     }
 
 
