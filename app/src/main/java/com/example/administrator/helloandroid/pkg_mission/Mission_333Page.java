@@ -19,16 +19,16 @@ import com.example.administrator.helloandroid.R;
 
 public class Mission_333Page extends ActionBarActivity {
 
-    ActionBar action_Bar;
-    TableLayout mUrl_Table;
-    Button mBtn_Pussy;
-    Button mBtn_Move;
-    WebView mUrl_View;
-    TextView mUrl_inText;
-    TextView mUrl_Left;
-    TextView mUrl_Right;
-    Animation mTranslate_top_to_down;
-    Animation mTranslate_down_to_top;
+    private ActionBar action_Bar;
+    private TableLayout mUrl_Table;
+    private Button mBtn_Pussy;
+    private Button mBtn_Move;
+    private WebView mUrl_View;
+    private TextView mUrl_inText;
+    private TextView mUrl_Left;
+    private TextView mUrl_Right;
+    private Animation mTranslate_top_to_down;
+    private Animation mTranslate_down_to_top;
 
 
     @Override
@@ -70,7 +70,6 @@ public class Mission_333Page extends ActionBarActivity {
                     mUrl_Table.setVisibility(View.GONE);
                     mBtn_Pussy.setText("▼");
                     action_Bar.show();
-
                 } else {
                     mUrl_Table.startAnimation(mTranslate_top_to_down);
                     mUrl_Table.setVisibility(View.VISIBLE);
