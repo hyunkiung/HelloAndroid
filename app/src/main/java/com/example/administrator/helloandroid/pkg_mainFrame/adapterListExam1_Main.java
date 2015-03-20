@@ -25,8 +25,6 @@ public class adapterListExam1_Main extends ActionBarActivity {
     private ActionBar action_Bar;
     private Intent mIntent;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +42,8 @@ public class adapterListExam1_Main extends ActionBarActivity {
         mPkg_ArrayList.add("pkg_mission");
 
         //패키지 정보 가져오기 packageName
-
-
+        //String pnm = getPackageName();
+        //mPkg_ArrayList.add(pnm);
 
         // 2. 어뎁터 생성
         mPkg_ArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, mPkg_ArrayList);
