@@ -16,9 +16,9 @@ import java.util.ArrayList;
 
 public class adapterListExam1_Main extends ActionBarActivity {
 
-    //================================================================
+    //===============================================================
     ////// 선언 : 위젯_리스트뷰, 배열_데이터리스트, 어뎁터_어뎁터리스트
-    //================================================================
+    //===============================================================
     private ListView mPkg_ListView;
     private ArrayList<String> mPkg_ArrayList;
     private ArrayAdapter<String> mPkg_ArrayAdapter;
