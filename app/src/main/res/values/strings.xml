@@ -35,6 +35,10 @@
     <string name="m_nm14">14.ArrayAdapter</string>
     <string name="m_nm15">15.null</string>
 
+    <string name="spinner_exam_prompt1">Choose a Color</string>
+
+
+
 
     <string name="title_activity_relative_layout_exam">RelativeLayoutExamActivity</string>
     <string name="title_activity_table_layout_exam">TableLayoutExamActivity</string>
@@ -63,5 +67,9 @@
     </string>
     <string name="title_activity_adapter_list_exam1_pkg_mission">adapterListExam1_pkg_mission
     </string>
+    <string name="title_activity_adapter_list_exam2__main">실습메인</string>
+    <string name="title_activity_adapter_list_exam2__sub">AdapterListExam2_Sub</string>
+    <string name="title_activity_spinner_exam">SpinnerExam</string>
+    <string name="title_activity_grid_view__calendar">GridView_Calendar</string>
 
 </resources>

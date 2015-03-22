@@ -70,25 +70,18 @@
         <activity
             android:name=".pkg_mainFrame.MainMenuActivity"
             android:label="@string/app_name" >
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".pkg_mission.Mission_333Page"
             android:label="@string/title_activity_mission_333_page" >
         </activity>
         <activity
-            android:name=".pkg_ListView.listView_01_Default"
+            android:name=".pkg_adapter.listView_01_Default"
             android:label="@string/title_activity_list_view_01__default"
             android:theme="@style/Base.Theme.AppCompat" >
         </activity>
         <activity
-            android:name=".pkg_ListView.item_useBaseAdapter"
+            android:name=".pkg_adapter.item_useBaseAdapter"
             android:label="@string/title_activity_item_use_base_adapter"
             android:theme="@style/Base.Theme.AppCompat" >
         </activity>
@@ -96,31 +89,57 @@
             android:name=".pkg_mainFrame.adapterListExam1_Main"
             android:label="@string/title_activity_adapter_list_exam1__main"
             android:theme="@style/Base.Theme.AppCompat" >
+        </activity>
+        <activity
+            android:name=".pkg_mainFrame.adapterListExam1_pkg_activity"
+            android:label="@string/title_activity_adapter_list_exam1_pkg_activity"
+            android:theme="@style/Base.Theme.AppCompat" >
+        </activity>
+        <activity
+            android:name=".pkg_mainFrame.adapterListExam1_pkg_event"
+            android:label="@string/title_activity_adapter_list_exam1_pkg_event"
+            android:theme="@style/Base.Theme.AppCompat" >
+        </activity>
+        <activity
+            android:name=".pkg_mainFrame.adapterListExam1_pkg_ListView"
+            android:label="@string/title_activity_adapter_list_exam1_pkg__list_view"
+            android:theme="@style/Base.Theme.AppCompat" >
+        </activity>
+        <activity
+            android:name=".pkg_mainFrame.adapterListExam1_pkg_mission"
+            android:label="@string/title_activity_adapter_list_exam1_pkg_mission"
+            android:theme="@style/Base.Theme.AppCompat" >
+        </activity>
+
+
+        <!--실습 메뉴 메인 엑티비티-->
+        <activity
+            android:name=".pkg_mainFrame.AdapterListExam2_Main"
+            android:label="@string/title_activity_adapter_list_exam2__main"
+            android:theme="@style/Base.Theme.AppCompat" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity
-            android:name=".pkg_mainFrame.adapterListExam1_pkg_activity"
-            android:label="@string/title_activity_adapter_list_exam1_pkg_activity"
-            android:theme="@style/Base.Theme.AppCompat">
+            android:name=".pkg_mainFrame.AdapterListExam2_Sub"
+            android:label="@string/title_activity_adapter_list_exam2__sub"
+            android:theme="@style/Base.Theme.AppCompat" >
         </activity>
         <activity
-            android:name=".pkg_mainFrame.adapterListExam1_pkg_event"
-            android:label="@string/title_activity_adapter_list_exam1_pkg_event"
-            android:theme="@style/Base.Theme.AppCompat">
+            android:name=".pkg_adapter.SpinnerExam"
+            android:label="@string/title_activity_spinner_exam"
+            android:theme="@style/Base.Theme.AppCompat" >
         </activity>
         <activity
-            android:name=".pkg_mainFrame.adapterListExam1_pkg_ListView"
-            android:label="@string/title_activity_adapter_list_exam1_pkg__list_view"
+            android:name=".pkg_adapter.GridView_Calendar"
+            android:label="@string/title_activity_grid_view__calendar"
             android:theme="@style/Base.Theme.AppCompat">
-        </activity>
-        <activity
-            android:name=".pkg_mainFrame.adapterListExam1_pkg_mission"
-            android:label="@string/title_activity_adapter_list_exam1_pkg_mission"
-            android:theme="@style/TextAppearance.AppCompat.Small">
+
         </activity>
     </application>
 

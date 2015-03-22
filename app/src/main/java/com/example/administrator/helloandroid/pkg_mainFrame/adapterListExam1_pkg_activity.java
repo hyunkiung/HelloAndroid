@@ -9,16 +9,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.example.administrator.helloandroid.BuildConfig;
 import com.example.administrator.helloandroid.R;
-import com.example.administrator.helloandroid.pkg_activity.ActivityExamActivity;
-import com.example.administrator.helloandroid.pkg_activity.EditTextActivity;
-import com.example.administrator.helloandroid.pkg_activity.FirstActivity;
-import com.example.administrator.helloandroid.pkg_activity.FrameLayoutExamActivity;
-import com.example.administrator.helloandroid.pkg_activity.RelativeLayoutExamActivity;
-import com.example.administrator.helloandroid.pkg_activity.SecondActivity;
-import com.example.administrator.helloandroid.pkg_activity.TableLayoutExamActivity;
-import com.example.administrator.helloandroid.pkg_activity.TargetExamActivity;
 
 import java.util.ArrayList;
 
@@ -66,46 +60,57 @@ public class adapterListExam1_pkg_activity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                switch (position) {
-                    case 0:
-                        mIntent = new Intent(getApplicationContext(), ActivityExamActivity.class);
-                        break;
-
-                    case 1:
-                        mIntent = new Intent(getApplicationContext(), EditTextActivity.class);
-                        break;
-
-                    case 2:
-                        mIntent = new Intent(getApplicationContext(), FirstActivity.class);
-                        break;
-
-                    case 3:
-                        mIntent = new Intent(getApplicationContext(), FrameLayoutExamActivity.class);
-                        break;
-
-                    case 4:
-                        mIntent = new Intent(getApplicationContext(), RelativeLayoutExamActivity.class);
-                        break;
-
-                    case 5:
-                        mIntent = new Intent(getApplicationContext(), SecondActivity.class);
-                        break;
-
-                    case 6:
-                        mIntent = new Intent(getApplicationContext(), TableLayoutExamActivity.class);
-                        break;
-
-                    case 7:
-                        mIntent = new Intent(getApplicationContext(), TargetExamActivity.class);
-                        break;
-
-                    default:
-                        break;
-                }
-
-                if(position >= 0) {
+                Class c = null;
+                try {
+                    //c = Class.forName("com.suwonsmartapp.hello.activity." + m1_Pkg_ArrayList.get(position));
+                    c = Class.forName(BuildConfig.APPLICATION_ID + ".pkg_activity." + m1_Pkg_ArrayList.get(position));
+                    mIntent = new Intent(getApplicationContext(), c);
                     startActivity(mIntent);
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "에러에요", Toast.LENGTH_SHORT).show();
                 }
+
+//                switch (position) {
+//                    case 0:
+//                        mIntent = new Intent(getApplicationContext(), ActivityExamActivity.class);
+//                        break;
+//
+//                    case 1:
+//                        mIntent = new Intent(getApplicationContext(), EditTextActivity.class);
+//                        break;
+//
+//                    case 2:
+//                        mIntent = new Intent(getApplicationContext(), FirstActivity.class);
+//                        break;
+//
+//                    case 3:
+//                        mIntent = new Intent(getApplicationContext(), FrameLayoutExamActivity.class);
+//                        break;
+//
+//                    case 4:
+//                        mIntent = new Intent(getApplicationContext(), RelativeLayoutExamActivity.class);
+//                        break;
+//
+//                    case 5:
+//                        mIntent = new Intent(getApplicationContext(), SecondActivity.class);
+//                        break;
+//
+//                    case 6:
+//                        mIntent = new Intent(getApplicationContext(), TableLayoutExamActivity.class);
+//                        break;
+//
+//                    case 7:
+//                        mIntent = new Intent(getApplicationContext(), TargetExamActivity.class);
+//                        break;
+//
+//                    default:
+//                        break;
+//                }
+//
+//                if(position >= 0) {
+//                    startActivity(mIntent);
+//                }
             }
         });
     }

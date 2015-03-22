@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.helloandroid.pkg_ListView.item_useBaseAdapter">
+    tools:context="com.example.administrator.helloandroid.pkg_adapter.item_useBaseAdapter">
 
     <ListView
         android:id="@+id/listview"

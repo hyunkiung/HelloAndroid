@@ -49,7 +49,8 @@ public class adapterListExam1_pkg_mission extends ActionBarActivity {
 
 
         // 2. 어뎁터 생성
-        m4_Pkg_ArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, m4_Pkg_ArrayList);
+        m4_Pkg_ArrayAdapter = new ArrayAdapter<>(getApplicationContext(),
+                android.R.layout.simple_list_item_1, m4_Pkg_ArrayList);
 
         // 3.리스트뷰 생성후 어댑터 연결
         m4_Pkg_ListView = (ListView)findViewById(R.id.pkg_ListView);
