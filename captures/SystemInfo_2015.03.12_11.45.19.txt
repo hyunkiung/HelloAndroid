@@ -1,0 +1,25 @@
+TASK com.example.administrator.helloandroid id=87
+  ACTIVITY com.example.administrator.helloandroid/.EditTextActivity 443e9088 pid=23303
+    Local FragmentActivity 434a9758 State:
+      mCreated=truemResumed=true mStopped=false mReallyStopped=false
+      mLoadersStarted=true
+    FragmentManager misc state:
+      mActivity=com.example.administrator.helloandroid.EditTextActivity@434a9758
+      mContainer=android.support.v4.app.FragmentActivity$2@434ab2a8
+      mCurState=5 mStateSaved=false mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{434b0d28 V.E..... ... 0,0-1440,2392}
+        android.widget.LinearLayout{434b7eb8 V.E..... ... 0,0-1440,2392}
+          android.view.ViewStub{434bb738 G.E..... ... 0,0-0,0 #1020311}
+          android.widget.FrameLayout{434bbb70 V.E..... ... 0,100-1440,2392}
+            android.support.v7.internal.widget.ActionBarOverlayLayout{434c4948 V.ED.... ... 0,0-1440,2292 #7f09002f app:id/decor_content_parent}
+              android.support.v7.internal.widget.NativeActionModeAwareLayout{434c6550 V.ED.... ... 0,224-1440,2292 #1020002 android:id/content}
+                android.widget.LinearLayout{434fd9f0 V.E..... ... 0,0-1440,2068}
+                  android.support.v7.internal.widget.TintEditText{434fe0a0 VFED..CL F.. 0,0-1200,165 #7f09003f app:id/output}
+                  android.support.v7.internal.widget.TintEditText{43506e00 VFED..CL ... 0,165-1200,330 #7f090040 app:id/input}
+                  android.widget.TextView{43509680 VFED..CL ... 0,330-1200,406}
+              android.support.v7.internal.widget.ActionBarContainer{434c6ac0 V.ED.... ... 0,0-1440,224 #7f090030 app:id/action_bar_container}
+                android.support.v7.widget.Toolbar{434c75a0 V.E..... ... 0,0-1440,224 #7f090031 app:id/action_bar}
+                  android.widget.TextView{435208f8 V.ED.... ... 64,58-352,165}
+                  android.support.v7.widget.ActionMenuView{435355e0 V.E..... ... 1440,0-1440,224}
+                android.support.v7.internal.widget.ActionBarContextView{434e3210 G.E..... ... 0,0-0,0 #7f090032 app:id/action_context_bar}

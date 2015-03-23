@@ -23,7 +23,7 @@ public class GridView_DayInfo {
         this.week_Header = week;
     }
 
-    //  지난달 추가 셀 반환
+    // 지난달 추가 셀 반환
     public String getLastDay() {
         return add_LastDay;
     }
@@ -34,7 +34,7 @@ public class GridView_DayInfo {
         this.add_LastDay = lastDay;
     }
 
-    //  다음달 추가 셀 반환
+    // 다음달 추가 셀 반환
     public String getNextDay() {
         return add_NextDay;
     }
