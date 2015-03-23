@@ -21,6 +21,10 @@ import java.util.ArrayList;
  */
 public class GridView_Adapter extends ArrayAdapter<GridView_DayInfo> {
 
+    private int mSelectedPosition = -1;
+    private long mSelectedID = -1;
+
+
     // ViewHolder 패턴
     static class ViewHolder {
         TextView mHolderView;
@@ -31,6 +35,19 @@ public class GridView_Adapter extends ArrayAdapter<GridView_DayInfo> {
 
     public GridView_Adapter(Context context, int resource, ArrayList<GridView_DayInfo> dayList) {
         super(context, resource, dayList);
+    }
+
+    // getSelectedPosition, setSelectedPosition 두 메소드는 info 파일을 거치지 않고 직접 본다.
+    public int getSelectedPosition() {
+        return mSelectedPosition;
+    }
+
+    public void setSelectedPosition(int seld_P, long seld_ID) {
+        this.mSelectedPosition = seld_P;
+        this.mSelectedID = seld_ID;
+        //String testMSG = "Position : " + String.valueOf(seld_P) + " // ID : " + String.valueOf(seld_ID);
+        //Toast.makeText(getContext(), testMSG, Toast.LENGTH_SHORT).show();
+        notifyDataSetChanged();
     }
 
 
@@ -71,6 +88,14 @@ public class GridView_Adapter extends ArrayAdapter<GridView_DayInfo> {
             holder.mHolderView.setTextColor(Color.parseColor(TextColor));
         }
 
+        // 클릭 셀의 배경색 변경
+        if (getSelectedPosition() == position) {
+            holder.mHolderView.setBackgroundColor(Color.parseColor("#FF86840A"));
+        }
+        else {
+            holder.mHolderView.setBackgroundColor(Color.parseColor("#333333"));
+        }
+
         // 지난달 추가 셀 셋팅
         if (!TextUtils.isEmpty(strLastDay)) {
             holder.mHolderView.setText(strLastDay);
@@ -93,8 +118,9 @@ public class GridView_Adapter extends ArrayAdapter<GridView_DayInfo> {
         }
 
         // 애니메이션 적용
-        Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.translate_left_to_right);
-        view.findViewById(R.id.calendar_cell).startAnimation(animation);
+        if (getSelectedPosition() == position) {
+            Animation_Create(holder.mHolderView);
+        }
 
         // 홀더 뷰 리턴
         return view;
@@ -115,6 +141,14 @@ public class GridView_Adapter extends ArrayAdapter<GridView_DayInfo> {
             result_Color = "#FFFFFF";
         }
         return result_Color;
+    }
+
+    //===============================================================
+    ////// 애니메이션 생성 메소드
+    //===============================================================
+    public void Animation_Create(View v) {
+        Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.translate_left_to_right);
+        v.findViewById(R.id.calendar_cell).startAnimation(animation);
     }
 
 }

@@ -6,11 +6,11 @@ package com.example.administrator.helloandroid.pkg_adapter;
  */
 public class GridView_DayInfo {
 
-    private String day;
-    private String week_Header;
-    private String add_LastDay;
-    private String add_NextDay;
-    private boolean inMonth;
+    private String day; // 달력일자
+    private String week_Header; // 달력헤더 (일,월,화...)
+    private String add_LastDay; // 지난달 일자
+    private String add_NextDay; // 다음달 일자
+    private String full_Day;
 
     // 요일 헤더 반환
     public String getWeek() {
@@ -56,16 +56,14 @@ public class GridView_DayInfo {
         this.day = day;
     }
 
-    // 이번달의 날짜인지 정보 반환 inMonth(true/false)
-    public boolean isInMonth()
-    {
-        return inMonth;
+    // 전체 날짜 저장
+    public void setFullDay(String fDay) {
+        this.full_Day = fDay;
     }
 
-    // 이번달의 날짜인지 정보 저장 inMonth(true/false)
-    public void setInMonth(boolean inMonth)
-    {
-        this.inMonth = inMonth;
+    // 전체 날짜 반환
+    public String getFullDay() {
+        return full_Day;
     }
 
 }
