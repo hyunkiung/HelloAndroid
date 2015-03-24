@@ -111,16 +111,12 @@
             android:theme="@style/Base.Theme.AppCompat" >
         </activity>
 
-
-        <!--실습 메뉴 메인 엑티비티-->
+        <!-- 실습 메뉴 메인 엑티비티 -->
         <activity
             android:name=".pkg_mainFrame.AdapterListExam2_Main"
             android:label="@string/title_activity_adapter_list_exam2__main"
             android:theme="@style/Base.Theme.AppCompat" >
-
         </activity>
-
-
         <activity
             android:name=".pkg_mainFrame.AdapterListExam2_Sub"
             android:label="@string/title_activity_adapter_list_exam2__sub"
@@ -134,13 +130,19 @@
         <activity
             android:name=".pkg_adapter.GridView_Calendar"
             android:label="@string/title_activity_grid_view__calendar"
-            android:theme="@style/Base.Theme.AppCompat">
+            android:theme="@style/Base.Theme.AppCompat" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".pkg_mission.Mission_392Page"
+            android:label="@string/title_activity_mission_392_page" >
+
 
         </activity>
     </application>

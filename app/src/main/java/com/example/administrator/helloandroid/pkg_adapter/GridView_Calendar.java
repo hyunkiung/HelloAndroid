@@ -1,14 +1,22 @@
 
 package com.example.administrator.helloandroid.pkg_adapter;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,11 +38,15 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
     ////// 기본 선언
     //===============================================================
     private ActionBar action_Bar;   // 액션바
-    private GridView mGrid_View;    // 달력 그리드뷰
     private TextView mText_YM;      // 현재 년월 표기 텍스트뷰
 
-    private ArrayList<GridView_DayInfo> mGrid_DataList; // 달력 데이터 배열
-    private GridView_Adapter mGrid_ArrayAdapter;        // 그리드뷰 어뎁터
+    private GridView mGrid_Header;                      // 헤더 뷰
+    private ArrayList<GridView_DayInfo> mArray_Header;  // 헤더 배열
+    private GridView_Adapter mAdapter_Header;           // 헤더 어뎁터
+
+    private GridView mGrid_Calendar;                        // 달력 그리드뷰
+    private ArrayList<GridView_DayInfo> mArray_Calendar;    // 달력 데이터 배열
+    private GridView_Adapter mAdapter_Calendar;             // 달력 그리드뷰 어뎁터
 
     private Calendar Now_Calendar;                      // 현재달 달력
     private Calendar Before_Calendar;                   // 이전달 달력
@@ -44,13 +56,15 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
     private int before_Year, before_Month, before_DayMax;   // 이전 년,월,일
     private int next_Year, next_Month;                      // 다음 년,월,일
 
-    private HashMap<String, String> mmMap;
-    private TextView mSeld_Text_Num;
-    private EditText mDay_Content_et;
+    private HashMap<String, ArrayList<String>> mmMap;  // 해쉬맵
+    private TextView mSeld_Text_Num;        // 선택한 정보 출력뷰
 
-    private Button mBtn_before_M;
-    private Button mBtn_next_M;
-    private Button mDay_Content_Save;
+    private Button mBtn_before_M;           // 이전달 버튼
+    private Button mBtn_next_M;             // 다음달 버튼
+
+    private ListView mSeld_List_View;               // 리스트뷰
+    private ArrayAdapter<String> mSeld_Adapter;     // 리스트뷰 어뎁터
+
     //===============================================================
     ////// 달력 헤더 배열 값 셋팅 (요일)
     //===============================================================
@@ -72,7 +86,7 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
 
         // 1. 액션바 선언 및 타이틀 설정 ================================
         action_Bar = this.getSupportActionBar();
-        action_Bar.setTitle("안드로이드 실습3 그리드뷰로 달력만들기!");
+        action_Bar.setTitle("실습3 일정달력!");
 
         // 2. 달력 (오늘 셋팅) =========================================
         Now_Calendar = Calendar.getInstance();
@@ -84,10 +98,9 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
         // 3. 뷰 설정 ============================================
         mText_YM = (TextView) findViewById(R.id.text_YM);
         mSeld_Text_Num = (TextView)findViewById(R.id.seld_Text_Num);
-        mDay_Content_et = (EditText)findViewById(R.id.day_Content_et);
+        mSeld_List_View = (ListView)findViewById(R.id.seld_List_View);
         mBtn_before_M = (Button) findViewById(R.id.btn_before_M);
         mBtn_next_M = (Button) findViewById(R.id.btn_next_M);
-        mDay_Content_Save = (Button) findViewById(R.id.day_Content_Save);
 
         // 4. 달력 스타트 (첫로딩) =================================
         Before_Calendar = getBefore_Calendar(Now_Calendar);
@@ -99,10 +112,6 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
 
         // 다음달 버튼 클릭 리스너 (3개의 달력을 모두 +1 개월)
         mBtn_next_M.setOnClickListener(this);
-
-        // 일자별 일정 저장 버튼 리스너
-        mDay_Content_Save.setOnClickListener(this);
-
     }
 
     //===============================================================
@@ -125,14 +134,9 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
                 Next_Calendar = getNext_Calendar(Next_Calendar);
                 CalCreate_AdapterSet(Before_Calendar, Now_Calendar, Next_Calendar);
                 break;
-
-            case R.id.day_Content_Save:
-                String textM_Key = mSeld_Text_Num.getText().toString();
-                String textM_Val = mDay_Content_et.getText().toString();
-                mmMap.put(textM_Key, textM_Val);
-                break;
         }
     }
+
 
     //===============================================================
     ////// 아이템 클릭 이벤트 메소드
@@ -140,20 +144,88 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         // 1.어레이어댑터의 셀렉트 포지션 호출
-        mGrid_ArrayAdapter.setSelectedPosition(position, id);
+        mAdapter_Calendar.setSelectedPosition(position, id);
 
         // 2.어뎁터의 풀일자 받아오기
-        GridView_DayInfo FDD = mGrid_ArrayAdapter.getItem(position);
+        GridView_DayInfo FDD = mAdapter_Calendar.getItem(position);
         String ftext = FDD.getFullDay();
 
         // 3. 텍스트뷰에 포지션의 값주기
         mSeld_Text_Num.setText(ftext);
 
-        // 4. 포지션값에 있는 해쉬맵 데이터 가져오기
-        String hashMap_data = mmMap.get(ftext);
+        // 4. 스케줄 입력 다이얼로그 생성 호출
+        //showSchedule_InputDialog(ftext);
 
-        // 5. 에디트박스에 해쉬맵 데이터 출력
-        mDay_Content_et.setText(hashMap_data);
+        // 5. 일정 가져오기
+        ArrayList<String> temp_ArrayList = mmMap.get(ftext);
+        if (temp_ArrayList == null) {
+            mSeld_List_View.setAdapter(null);
+        } else {
+            mSeld_Adapter = new ArrayAdapter<>(GridView_Calendar.this,
+                    android.R.layout.simple_list_item_1, temp_ArrayList);
+            mSeld_List_View.setAdapter(mSeld_Adapter);
+        }
+    }
+
+    //===============================================================
+    ////// 다이얼로그 생성 메소드
+    //===============================================================
+    private void showSchedule_InputDialog(final String day_key) {
+        AlertDialog.Builder ad_Builder = new AlertDialog.Builder(GridView_Calendar.this);
+        LayoutInflater ad_Inflater = getLayoutInflater();
+
+        View view = ad_Inflater.inflate(R.layout.activity_grid_view_inputdialog, null);
+        final EditText dialog_in_text = (EditText)view.findViewById(R.id.dialog_et_text);
+        final EditText dialog_in_hour = (EditText)view.findViewById(R.id.dialog_et_hour);
+        final EditText dialog_in_min = (EditText)view.findViewById(R.id.dialog_et_min);
+
+        ad_Builder.setTitle(day_key);
+        ad_Builder.setView(view)
+                .setPositiveButton("저장", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        // <<< 저장처리 >>>
+
+                        // 1. 다이얼로그의 값 변수에 저장
+                        String val_text = dialog_in_text.getText().toString();
+                        String val_hour = dialog_in_hour.getText().toString();
+                        String val_min = dialog_in_min.getText().toString();
+
+                        String val_Content = String.valueOf(val_hour) + ":"
+                                + String.valueOf(val_min) + " "
+                                + String.valueOf(val_text);
+
+                        // 2. 각 뷰의 값이 있는지 확인
+                        // 2.1 값이 다 존재하면 선택한 키가 배열키라고 선언
+                        // 2.2 만일 해당키의 배열에 값이 없다면 새로운 배열을 선언
+                        // 2.3 배열에 데이터를 add
+                        // 2.4 선택한셀의 데이터어뎁터를 생성하고 키 배열을 담아준다.
+                        // 2.5 생성한 어뎁터를 리스트뷰에 셋팅하고
+                        // 2.6 해쉬맵에 키와 배열을 담아준다.
+
+                        if (!TextUtils.isEmpty(val_text)
+                                && !TextUtils.isEmpty(val_hour)
+                                && !TextUtils.isEmpty(val_min)) {
+
+                            ArrayList<String> array_value = mmMap.get(day_key);
+                            if (array_value == null) {
+                                array_value = new ArrayList<>();
+                            }
+
+                            array_value.add(val_Content);
+
+                            mSeld_Adapter = new ArrayAdapter<>(GridView_Calendar.this,
+                                    android.R.layout.simple_list_item_1, array_value);
+
+                            mSeld_List_View.setAdapter(mSeld_Adapter);
+
+                            mmMap.put(day_key, array_value);
+                        }
+                    }
+                })
+                .setNegativeButton("닫기", null);
+        ad_Builder.show();
     }
 
 
@@ -185,14 +257,16 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
         mBtn_next_M.setText(strNext_YM);
 
         // 4. 데이터 배열 생성 ======================================
-        mGrid_DataList = new ArrayList<>();
+        mArray_Header = new ArrayList<>();
+        mArray_Calendar = new ArrayList<>();
 
-        // 5. 일요일~토요일까지 헤더 배열 추가 ===============================
+        // 5. 일요일~토요일까지 헤더 배열 추가 =============================== 아답터에서 생성
         for(int w = 0; w < 7; w++){
             GridView_DayInfo week_Header = new GridView_DayInfo();
             week_Header.setWeek(array_WEEK[w]);
-            mGrid_DataList.add(week_Header);
+            mArray_Header.add(week_Header);
         }
+
 
         // 6. 달력 앞 빈칸을 지난달 마지막 날짜부터 앞으로 채우기 ========
         if (last_DayWeek < 7) {
@@ -202,7 +276,7 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
             for (int dd = last_Month_sday; dd <= before_DayMax; dd++) {
                 GridView_DayInfo add_LastDay = new GridView_DayInfo();
                 add_LastDay.setLastDay(Integer.toString(dd));
-                mGrid_DataList.add(add_LastDay);
+                mArray_Calendar.add(add_LastDay);
             }
         }
 
@@ -214,7 +288,7 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
             // ★★★ 날짜 풀타입 형태 저장시키기 ★★★
             String FD = String.valueOf(now_Year) + "년" + String.valueOf(now_Month) + "월" + String.valueOf(ii) + "일";
             dayInfo.setFullDay(FD);
-            mGrid_DataList.add(dayInfo);
+            mArray_Calendar.add(dayInfo);
         }
 
         // 8. 달력 끝 빈칸을 다음달 시작일부터 남은셀 끝까지 채우기 =======
@@ -224,19 +298,26 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
                 GridView_DayInfo add_NextDay;
                 add_NextDay = new GridView_DayInfo();
                 add_NextDay.setNextDay(Integer.toString(nn));
-                mGrid_DataList.add(add_NextDay);
+                mArray_Calendar.add(add_NextDay);
             }
         }
 
         // 7. 어뎁터에 배열 데이터를 셋팅 ==============================
-        mGrid_ArrayAdapter = new GridView_Adapter(getApplicationContext(), R.layout.activity_grid_view_calendar_cell, mGrid_DataList );
+        mAdapter_Header = new GridView_Adapter(getApplicationContext(),
+                R.layout.activity_grid_view_calendar_cell, mArray_Header );
+
+        mAdapter_Calendar = new GridView_Adapter(getApplicationContext(),
+                R.layout.activity_grid_view_calendar_cell, mArray_Calendar );
 
         // 8. 그리드뷰에 어뎁터를 셋팅하여 출력 =========================
-        mGrid_View = (GridView) findViewById(R.id.grid_View);
-        mGrid_View.setAdapter(mGrid_ArrayAdapter);
+        mGrid_Header = (GridView) findViewById(R.id.grid_Header);
+        mGrid_Header.setAdapter(mAdapter_Header);
+
+        mGrid_Calendar = (GridView) findViewById(R.id.grid_View);
+        mGrid_Calendar.setAdapter(mAdapter_Calendar);
 
         // 그리드뷰의 아이템 클릭 리스너 호출
-        mGrid_View.setOnItemClickListener(this);
+        mGrid_Calendar.setOnItemClickListener(this);
 
     }
 
@@ -264,6 +345,34 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
         LDW_CAL.set(yy, mm-1, dd);
         int result_w = LDW_CAL.get(Calendar.DAY_OF_WEEK);
         return result_w;
+    }
+
+
+    //===============================================================
+    ////// 메뉴 생성 옵션
+    //===============================================================
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_gridcalendar, menu);
+        return true;
+    }
+
+    //===============================================================
+    ////// 메뉴 선택
+    //===============================================================
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.menu_SelDay_input) {
+
+            GridView_DayInfo FDD = new GridView_DayInfo();
+            String ftext = FDD.getFullDay();
+            showSchedule_InputDialog(ftext);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 

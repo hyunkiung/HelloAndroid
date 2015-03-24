@@ -71,5 +71,6 @@
     <string name="title_activity_adapter_list_exam2__sub">AdapterListExam2_Sub</string>
     <string name="title_activity_spinner_exam">SpinnerExam</string>
     <string name="title_activity_grid_view__calendar">GridView_Calendar</string>
+    <string name="title_activity_mission_392_page">Mission_392Page</string>
 
 </resources>

@@ -23,19 +23,34 @@ public class GridView_Adapter extends ArrayAdapter<GridView_DayInfo> {
 
     private int mSelectedPosition = -1;
     private long mSelectedID = -1;
+    private ArrayList<GridView_DayInfo> mArrayList;
 
 
     // ViewHolder 패턴
     static class ViewHolder {
-        TextView mHolderView;
+        TextView mVH_Holder;
+        //TextView mVH_Header;
     }
 
+
+
     // Layout을 가져오기 위한 객체
-    private LayoutInflater inflater;
+    //private LayoutInflater inflater;
 
     public GridView_Adapter(Context context, int resource, ArrayList<GridView_DayInfo> dayList) {
         super(context, resource, dayList);
+        this.mArrayList = dayList;
     }
+
+    @Override
+    public int getCount() {
+        return mArrayList.size();
+    }
+
+//    @Override
+//    public GridView_DayInfo getItem(int position) {
+//        return mArrayList.get(position);
+//    }
 
     // getSelectedPosition, setSelectedPosition 두 메소드는 info 파일을 거치지 않고 직접 본다.
     public int getSelectedPosition() {
@@ -60,14 +75,21 @@ public class GridView_Adapter extends ArrayAdapter<GridView_DayInfo> {
         View view = convertView;
 
         if (view == null) {
-            // View 를 처음 로딩할 때, Data 를 처음 셋팅할 때
-            inflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.activity_grid_view_calendar_cell, null);
-            TextView mCalendar_cell = (TextView)view.findViewById(R.id.calendar_cell);
-
             holder = new ViewHolder();
-            holder.mHolderView = mCalendar_cell;
+
+            LayoutInflater inflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            if( getCount() > 8 ) {
+                view = inflater.inflate(R.layout.activity_grid_view_calendar_cell, null);
+            } else {
+                view = inflater.inflate(R.layout.activity_grid_view_header_cell, null);
+            }
+
+            // View 를 처음 로딩할 때, Data 를 처음 셋팅할 때
+            TextView cell_View = (TextView)view.findViewById(R.id.calendar_cell);
+            holder.mVH_Holder = cell_View;
             view.setTag(holder);
+
         } else {
             // View, Data 재사용
             holder = (ViewHolder) view.getTag();
@@ -82,44 +104,45 @@ public class GridView_Adapter extends ArrayAdapter<GridView_DayInfo> {
 
         // 요일 헤더 셋팅
         if (!TextUtils.isEmpty(strWeek)) {
-            holder.mHolderView.setText(strWeek);
-            holder.mHolderView.setBackgroundColor(Color.parseColor("#333333"));
+            holder.mVH_Holder.setText(strWeek);
             TextColor = WeekColor_Change(position);
-            holder.mHolderView.setTextColor(Color.parseColor(TextColor));
+            holder.mVH_Holder.setTextColor(Color.parseColor(TextColor));
+            // ★ 헤더 색상 변경이 안됨.
+            holder.mVH_Holder.setBackgroundColor(Color.parseColor("#FF0000"));
         }
 
         // 클릭 셀의 배경색 변경
         if (getSelectedPosition() == position) {
-            holder.mHolderView.setBackgroundColor(Color.parseColor("#FF86840A"));
+            holder.mVH_Holder.setBackgroundColor(Color.parseColor("#FF86840A"));
         }
         else {
-            holder.mHolderView.setBackgroundColor(Color.parseColor("#333333"));
+            holder.mVH_Holder.setBackgroundColor(Color.parseColor("#333333"));
         }
 
         // 지난달 추가 셀 셋팅
         if (!TextUtils.isEmpty(strLastDay)) {
-            holder.mHolderView.setText(strLastDay);
-            holder.mHolderView.setBackgroundColor(Color.parseColor("#777777"));
-            holder.mHolderView.setTextColor(Color.parseColor("#AAAAAA"));
+            holder.mVH_Holder.setText(strLastDay);
+            holder.mVH_Holder.setBackgroundColor(Color.parseColor("#777777"));
+            holder.mVH_Holder.setTextColor(Color.parseColor("#AAAAAA"));
         }
 
         // 요일 셋팅
         if (!TextUtils.isEmpty(strDay)) {
-            holder.mHolderView.setText(strDay);
+            holder.mVH_Holder.setText(strDay);
             TextColor = WeekColor_Change(position);
-            holder.mHolderView.setTextColor(Color.parseColor(TextColor));
+            holder.mVH_Holder.setTextColor(Color.parseColor(TextColor));
         }
 
         // 다음달 추가 셀 셋팅
         if (!TextUtils.isEmpty(strNextDay)) {
-            holder.mHolderView.setText(strNextDay);
-            holder.mHolderView.setBackgroundColor(Color.parseColor("#777777"));
-            holder.mHolderView.setTextColor(Color.parseColor("#AAAAAA"));
+            holder.mVH_Holder.setText(strNextDay);
+            holder.mVH_Holder.setBackgroundColor(Color.parseColor("#777777"));
+            holder.mVH_Holder.setTextColor(Color.parseColor("#AAAAAA"));
         }
 
         // 애니메이션 적용
         if (getSelectedPosition() == position) {
-            Animation_Create(holder.mHolderView);
+            Animation_Create(holder.mVH_Holder);
         }
 
         // 홀더 뷰 리턴
