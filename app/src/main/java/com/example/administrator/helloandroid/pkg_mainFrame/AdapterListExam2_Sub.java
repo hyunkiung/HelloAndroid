@@ -29,6 +29,7 @@ import com.example.administrator.helloandroid.pkg_mission.Mission_193Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_332Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_333Page;
+import com.example.administrator.helloandroid.pkg_mission.Mission_392Page;
 
 import java.util.ArrayList;
 
@@ -75,10 +76,10 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
     };
 
     private static final String[] array_ITEMS_pkg3_NAME = {
-            "listView_01_Default 예제",
-            "item_useBaseAdapter 디버깅중",
+            "listView 기본 예제",
+            "Custom BaseAdapter 연습",
             "Spinner 실습",
-            "GridView로 달력만들기"
+            "GridView, ListView 메모 달력"
     };
     private static final Class[] array_ITEMS_pkg3_CLASS = {
             listView_01_Default.class,
@@ -88,16 +89,18 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
     };
 
     private static final String[] array_ITEMS_pkg4_NAME = {
-            "Mission_193Page 실습",
-            "Mission_271Page 실습",
-            "Mission_332Page 실습",
-            "Mission_333Page 실습"
+            "미션 193p 입력받은 문자 토스트",
+            "미션 271p 인텐트, 다이얼로그",
+            "미션 332p 데이트 피커",
+            "미션 333p 브라우져, 애니메이션",
+            "미션 392p 달력,해쉬맵"
     };
     private static final Class[] array_ITEMS_pkg4_CLASS = {
             Mission_193Page.class,
             Mission_271Page.class,
             Mission_332Page.class,
-            Mission_333Page.class
+            Mission_333Page.class,
+            Mission_392Page.class
     };
 
 

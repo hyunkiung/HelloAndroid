@@ -34,13 +34,6 @@ public class item_useBaseAdapter extends ActionBarActivity {
         m_Adapter.add("리니지");
         m_Adapter.add("안드로이드");
         m_Adapter.add("아이폰");
-        m_Adapter.add("하스스톤11");
-        m_Adapter.add("몬스터 헌터2");
-        m_Adapter.add("디아블로3");
-        m_Adapter.add("와우34");
-        m_Adapter.add("리니지44");
-        m_Adapter.add("안드로이드55");
-        m_Adapter.add("아이폰567");
 
     }
 

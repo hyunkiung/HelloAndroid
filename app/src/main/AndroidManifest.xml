@@ -116,6 +116,11 @@
             android:name=".pkg_mainFrame.AdapterListExam2_Main"
             android:label="@string/title_activity_adapter_list_exam2__main"
             android:theme="@style/Base.Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".pkg_mainFrame.AdapterListExam2_Sub"
@@ -131,13 +136,6 @@
             android:name=".pkg_adapter.GridView_Calendar"
             android:label="@string/title_activity_grid_view__calendar"
             android:theme="@style/Base.Theme.AppCompat" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
         <activity
             android:name=".pkg_mission.Mission_392Page"

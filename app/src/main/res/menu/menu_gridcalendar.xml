@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.suwonsmartapp.hello.challenge.challenge07_08.CalendarActivity">
+    <item
+        android:id="@+id/menu_SelDay_input"
+        android:orderInCategory="100"
+        android:title="일정 추가"
+        app:showAsAction="never" />
+</menu>
