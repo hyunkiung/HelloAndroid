@@ -76,26 +76,9 @@ public class ListView_Adapter extends BaseAdapter {
         vi_Holder.mHolder_TV.setText(getItem(position).toString());
         vi_Holder.mHolder_TV.setTextColor(Color.BLACK);
         vi_Holder.mHolder_TV.setLines(Color.BLUE);
+        vi_Holder.mHolder_TV.setTextSize(15);
 
         return v;
-    }
-
-}
-
-class TimeClass {
-
-    private String timeData;
-
-    public TimeClass(String data){
-        this.timeData = data;
-    }
-
-    public String getTimeData() {
-        return timeData;
-    }
-
-    public String setTimeData() {
-        return timeData;
     }
 
 }

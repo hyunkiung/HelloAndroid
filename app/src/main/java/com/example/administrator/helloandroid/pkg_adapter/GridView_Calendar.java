@@ -51,20 +51,18 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
     private Calendar Before_Calendar;                   // 이전달 달력
     private Calendar Next_Calendar;                     // 다음달 달력
 
-    private int now_Year, now_Month, now_Day, now_DayMax;   // 현재 년,월,일
+    private int now_Year, now_Month, now_DayMax;   // 현재 년,월,일
     private int before_Year, before_Month, before_DayMax;   // 이전 년,월,일
     private int next_Year, next_Month;                      // 다음 년,월,일
 
-    //private HashMap<String, ArrayList<String>> mmMap;  // 해쉬맵
     private HashMap<String, ArrayList<String>> mmMap;  // 해쉬맵
     private TextView mSeld_Text_Num;        // 선택한 정보 출력뷰
 
     private Button mBtn_before_M;           // 이전달 버튼
     private Button mBtn_next_M;             // 다음달 버튼
 
-    private ListView mSeld_List_View;               // 리스트뷰
-    //private ArrayAdapter<String> mSeld_Adapter;     // 리스트뷰 어뎁터
-    private ListView_Adapter mSeld_Adapter;
+    private ListView mSeld_List_View;           // 리스트뷰
+    private ListView_Adapter mSeld_Adapter;     // 리스트뷰 어뎁터
 
     //===============================================================
     ////// 달력 헤더 배열 값 셋팅 (요일)
@@ -320,9 +318,6 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
                             }
 
                             array_value.add(val_Content);
-
-//                            mSeld_Adapter = new ArrayAdapter<>(GridView_Calendar.this,
-//                                    android.R.layout.simple_list_item_1, array_value);
                             mSeld_Adapter = new ListView_Adapter(getApplicationContext(), array_value);
 
                             mSeld_List_View.setAdapter(mSeld_Adapter);
@@ -352,14 +347,15 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.menu_SelDay_input) {
-            GridView_DayInfo FDD = new GridView_DayInfo();
-            String ftext = FDD.getFullDay();
-            showSchedule_InputDialog(ftext);
-            return true;
+            String ftext = mSeld_Text_Num.getText().toString();
+            if (!TextUtils.isEmpty(ftext)) {
+                showSchedule_InputDialog(ftext);
+                return true;
+            } else {
+                showToast("일자를 클릭하세요.");
+            }
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }
 
