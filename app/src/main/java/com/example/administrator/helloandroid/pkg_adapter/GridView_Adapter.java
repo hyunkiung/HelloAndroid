@@ -90,6 +90,7 @@ public class GridView_Adapter extends ArrayAdapter<GridView_DayInfo> {
             holder.mVH_Holder = cell_View;
             view.setTag(holder);
 
+
         } else {
             // View, Data 재사용
             holder = (ViewHolder) view.getTag();
