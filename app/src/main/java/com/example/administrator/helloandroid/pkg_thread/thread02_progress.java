@@ -12,17 +12,27 @@ import android.widget.TextView;
 import com.example.administrator.helloandroid.R;
 
 /*
-sendMessage() : 메소드 넘겨받은 메시지를 즉시 메시지큐의 맨뒤에 쌓는다
-sendEmptyMessage() : 메소드 sendMessage와 비슷하나 아무 메시지도 보내지않는다.
-sendMessageAtFrontOfQueue() : 메소드 넘겨받은 메소드를 메시지큐를 맨 앞에 쌓는다
-sendMessageAtTime() : 메소드 넘겨받은 메소드를 특정 시각이 되면 메시지 큐에 쌓는다.
-sendMessageDelayed() : 메소드 넘겨받은 메소드를 특정 시간이 지난 이후에 메시지큐에 쌓는다.
+sendMessage() : 넘겨받은 메시지를 즉시 메시지큐의 맨뒤에 쌓는다
+sendEmptyMessage() : sendMessage와 비슷하나 아무 메시지도 보내지않는다.
+sendMessageAtFrontOfQueue() : 넘겨받은 메소드를 메시지큐를 맨 앞에 쌓는다
+sendMessageAtTime() : 넘겨받은 메소드를 특정 시각이 되면 메시지 큐에 쌓는다.
+sendMessageDelayed() : 넘겨받은 메소드를 특정 시간이 지난 이후에 메시지큐에 쌓는다.
 
 개념을 파악하기 전까지 멀티쓰레드와 싱글쓰레드를 바꿔서 생각했다.
 멀티쓰레드는 하나의 액티비티에서 두개 이상의 쓰레드와 핸들러가 돌아가는것을 의미한다.
 싱글쓰레드는 하나의 쓰레드와 핸들러로 두개 이상의 작업을 수행시키는것이다. 젠장!!
 가만 생각해보니 한번 사용한 쓰레드는 다시 못쓰는데 그 쓰레드를 호출해서 다시 일을 시키니 안되는게 당연하지!
  */
+
+//======================================================
+// Thread에게는 Runnable객체가 필요하다
+// Thread가 Thread로서 삶을 시작할 때 시작하는 일이 Runnable의 public void run() 메소드 를 수행하는 것이기 때문
+// Thread가 수행해야할 일을 Runnable의 public void run()에 써주는것
+// Thread가 해야할 일을 지정해주는 것은 Runnable 객체
+// Thread를 이용하는 프로그래밍은 크게 두가지 방법이 있는데 그 첫째는 Thread가 수행해야할 일을
+// Runnable 객체를 별도로 만들어 public void run() 메소드를 원하는 대로 만드는 것이고,
+// 둘째는 Thread 자체가 Runnable 객체이므로 Thread를 상속한후  public void run() 메소드를 원하는 대로 고치는 것.
+//======================================================
 
 public class thread02_progress extends ActionBarActivity implements View.OnClickListener {
 
@@ -87,7 +97,7 @@ public class thread02_progress extends ActionBarActivity implements View.OnClick
     }
 
     //======================================================
-    // Thread-3 멀티스레드 클래스
+    // Thread 싱글 스레드 클래스
     //======================================================
     private class Single_thread extends Thread {
         public void run () {
@@ -97,6 +107,9 @@ public class thread02_progress extends ActionBarActivity implements View.OnClick
         }
     }
 
+    //======================================================
+    // Handler 싱글 핸들러 클래스
+    //======================================================
     private class Response_handler extends Handler {
         @Override
         public void handleMessage(Message msg) {
@@ -126,13 +139,6 @@ public class thread02_progress extends ActionBarActivity implements View.OnClick
     }
 
     //======================================================
-    // Thread에게는 Runnable객체가 필요하다
-    // Thread가 Thread로서 삶을 시작할 때 시작하는 일이 Runnable의 public void run() 메소드 를 수행하는 것이기 때문
-    // Thread가 수행해야할 일을 Runnable의 public void run()에 써주는것
-    // Thread가 해야할 일을 지정해주는 것은 Runnable 객체
-    // Thread를 이용하는 프로그래밍은 크게 두가지 방법이 있는데 그 첫째는 Thread가 수행해야할 일을
-    // Runnable 객체를 별도로 만들어 public void run() 메소드를 원하는 대로 만드는 것이고,
-    // 둘째는 Thread 자체가 Runnable 객체이므로 Thread를 상속한후  public void run() 메소드를 원하는 대로 고치는 것.
     // Thread-1 스레드 임플리먼트 런에이블 클래스
     //======================================================
     private class Request_Runnable implements Runnable {
