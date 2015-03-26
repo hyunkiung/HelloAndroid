@@ -72,5 +72,7 @@
     <string name="title_activity_spinner_exam">SpinnerExam</string>
     <string name="title_activity_grid_view__calendar">GridView_Calendar</string>
     <string name="title_activity_mission_392_page">Mission_392Page</string>
+    <string name="title_activity_thread01_run">thread01_run</string>
+    <string name="title_activity_thread02_progress">thread02_progress</string>
 
 </resources>

@@ -30,6 +30,8 @@ import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_332Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_333Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_392Page;
+import com.example.administrator.helloandroid.pkg_thread.thread01_run;
+import com.example.administrator.helloandroid.pkg_thread.thread02_progress;
 
 import java.util.ArrayList;
 
@@ -89,13 +91,22 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
     };
 
     private static final String[] array_ITEMS_pkg4_NAME = {
+            "스레드와 핸들러 클래스의 기본 구조",
+            "프로그래스바를 이용한 싱글, 멀티 스레드"
+    };
+    private static final Class[] array_ITEMS_pkg4_CLASS = {
+            thread01_run.class,
+            thread02_progress.class
+    };
+
+    private static final String[] array_ITEMS_pkg5_NAME = {
             "미션 193p 입력받은 문자 토스트",
             "미션 271p 인텐트, 다이얼로그",
             "미션 332p 데이트 피커",
             "미션 333p 브라우져, 애니메이션",
             "미션 392p 달력,해쉬맵"
     };
-    private static final Class[] array_ITEMS_pkg4_CLASS = {
+    private static final Class[] array_ITEMS_pkg5_CLASS = {
             Mission_193Page.class,
             Mission_271Page.class,
             Mission_332Page.class,
@@ -146,8 +157,11 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             case "pkg_adapter":
                 result = new Pair(array_ITEMS_pkg3_NAME, array_ITEMS_pkg3_CLASS);
                 break;
-            case "pkg_mission":
+            case "pkg_thread":
                 result = new Pair(array_ITEMS_pkg4_NAME, array_ITEMS_pkg4_CLASS);
+                break;
+            case "pkg_mission":
+                result = new Pair(array_ITEMS_pkg5_NAME, array_ITEMS_pkg5_CLASS);
                 break;
             default:
                 break;

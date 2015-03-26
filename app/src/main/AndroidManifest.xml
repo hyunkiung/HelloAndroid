@@ -140,9 +140,18 @@
         <activity
             android:name=".pkg_mission.Mission_392Page"
             android:label="@string/title_activity_mission_392_page" >
+        </activity>
+        <activity
+            android:name=".pkg_thread.thread01_run"
+            android:label="@string/title_activity_thread01_run" >
+        </activity>
 
+        <activity
+            android:name=".pkg_thread.thread02_progress"
+            android:label="@string/title_activity_thread02_progress" >
 
         </activity>
+
     </application>
 
 </manifest>
