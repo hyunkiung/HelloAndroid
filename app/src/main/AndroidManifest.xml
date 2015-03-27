@@ -121,6 +121,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".pkg_mainFrame.AdapterListExam2_Sub"
@@ -145,13 +146,28 @@
             android:name=".pkg_thread.thread01_run"
             android:label="@string/title_activity_thread01_run" >
         </activity>
-
         <activity
             android:name=".pkg_thread.thread02_progress"
             android:label="@string/title_activity_thread02_progress" >
+        </activity>
+        <activity
+            android:name=".pkg_thread.thread03_Runnable"
+            android:label="@string/title_activity_thread03__runnable" >
+        </activity>
+        <activity
+            android:name=".pkg_thread.thread04_AsyncTask"
+            android:label="@string/title_activity_thread03__async_task" >
+        </activity>
+        <activity
+            android:name=".project_team.xml_Parser_test"
+            android:label="@string/title_activity_xml__parser_test" >
+        </activity>
+        <activity
+            android:name=".project_team.xml_json_test"
+            android:label="@string/title_activity_xml_json_test" >
+
 
         </activity>
-
     </application>
 
 </manifest>

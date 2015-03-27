@@ -33,7 +33,8 @@ public class AdapterListExam2_Main extends ActionBarActivity implements AdapterV
             "pkg_event",
             "pkg_adapter",
             "pkg_thread",
-            "pkg_mission"
+            "pkg_mission",
+            "project_team"
     };
 
 
@@ -44,7 +45,7 @@ public class AdapterListExam2_Main extends ActionBarActivity implements AdapterV
 
         //액션바 선언 및 타이틀 설정
         action_Bar = this.getSupportActionBar();
-        action_Bar.setTitle("안드로이드 실습2 패키지 리스트!");
+        action_Bar.setTitle("안드로이드 실습 패키지 리스트!");
 
         // 리스트뷰 설정
         mPkg_ListView = (ListView) findViewById(R.id.pkg_ListView);

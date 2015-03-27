@@ -139,19 +139,10 @@ public class thread02_progress extends ActionBarActivity implements View.OnClick
     }
 
     //======================================================
-    // Thread-1 스레드 임플리먼트 런에이블 클래스
-    //======================================================
-    private class Request_Runnable implements Runnable {
-        public void run() {
-            mProgress2.setProgress(0);
-            mHandler2.sendEmptyMessage(0);
-        }
-    }
-
-    //======================================================
     // Handler-1 핸들러 확장형 핸들러
     //======================================================
     private class Response_handler1 extends Handler {
+
         @Override
         public void handleMessage(Message msg) {
             if (mProgress1.getProgress() < mProgress1.getMax()) {
@@ -159,6 +150,17 @@ public class thread02_progress extends ActionBarActivity implements View.OnClick
                 mTv_stats1.setText("진행상태 : " + mProgress1.getProgress());
                 mHandler1.sendEmptyMessageDelayed(0, 500);
             }
+        }
+    }
+
+
+    //======================================================
+    // Thread-2 스레드 임플리먼트 런에이블 클래스
+    //======================================================
+    private class Request_Runnable implements Runnable {
+        public void run() {
+            mProgress2.setProgress(0);
+            mHandler2.sendEmptyMessage(0);
         }
     }
 

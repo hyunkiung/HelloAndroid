@@ -32,6 +32,10 @@ import com.example.administrator.helloandroid.pkg_mission.Mission_333Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_392Page;
 import com.example.administrator.helloandroid.pkg_thread.thread01_run;
 import com.example.administrator.helloandroid.pkg_thread.thread02_progress;
+import com.example.administrator.helloandroid.pkg_thread.thread03_Runnable;
+import com.example.administrator.helloandroid.pkg_thread.thread04_AsyncTask;
+import com.example.administrator.helloandroid.project_team.xml_Parser_test;
+import com.example.administrator.helloandroid.project_team.xml_json_test;
 
 import java.util.ArrayList;
 
@@ -92,11 +96,15 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
 
     private static final String[] array_ITEMS_pkg4_NAME = {
             "스레드와 핸들러 클래스의 기본 구조",
-            "프로그래스바를 이용한 싱글, 멀티 스레드"
+            "프로그래스바를 이용한 싱글, 멀티 Thread",
+            "Runnable을 이용한 핸들러 처리",
+            "AsyncTask를 사용한 프로그래스바"
     };
     private static final Class[] array_ITEMS_pkg4_CLASS = {
             thread01_run.class,
-            thread02_progress.class
+            thread02_progress.class,
+            thread03_Runnable.class,
+            thread04_AsyncTask.class
     };
 
     private static final String[] array_ITEMS_pkg5_NAME = {
@@ -114,6 +122,15 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             Mission_392Page.class
     };
 
+    private static final String[] array_ITEMS_pkg6_NAME = {
+            "XmlPullParser 테스트",
+            "Json Parser + ListView 테스트"
+    };
+    private static final Class[] array_ITEMS_pkg6_CLASS = {
+            xml_Parser_test.class,
+            xml_json_test.class
+    };
+
 
 
     @Override
@@ -123,7 +140,7 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
 
         //액션바 선언 및 타이틀 설정
         action_Bar = this.getSupportActionBar();
-        action_Bar.setTitle("안드로이드 실습2  리스트!");
+        action_Bar.setTitle("안드로이드 실습  리스트!");
 
         // 리스트뷰 설정
         mPkg_ListView = (ListView) findViewById(R.id.pkg_ListView);
@@ -162,6 +179,9 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
                 break;
             case "pkg_mission":
                 result = new Pair(array_ITEMS_pkg5_NAME, array_ITEMS_pkg5_CLASS);
+                break;
+            case "project_team":
+                result = new Pair(array_ITEMS_pkg6_NAME, array_ITEMS_pkg6_CLASS);
                 break;
             default:
                 break;
