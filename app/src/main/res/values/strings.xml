@@ -78,5 +78,6 @@
     <string name="title_activity_thread03__runnable">thread03_Runnable</string>
     <string name="title_activity_xml__parser_test">xml_Parser_test</string>
     <string name="title_activity_xml_json_test">xml_json_test</string>
+    <string name="title_activity_thread05__login">thread05_Login</string>
 
 </resources>
