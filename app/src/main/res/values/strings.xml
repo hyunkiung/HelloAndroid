@@ -79,5 +79,7 @@
     <string name="title_activity_xml__parser_test">xml_Parser_test</string>
     <string name="title_activity_xml_json_test">xml_json_test</string>
     <string name="title_activity_thread05__login">thread05_Login</string>
+    <string name="title_activity_thread06__stop_watch">thread06_StopWatch</string>
+    <string name="title_activity_thread07__stop_watch">thread07_StopWatch</string>
 
 </resources>

@@ -35,6 +35,8 @@ import com.example.administrator.helloandroid.pkg_thread.thread02_progress;
 import com.example.administrator.helloandroid.pkg_thread.thread03_Runnable;
 import com.example.administrator.helloandroid.pkg_thread.thread04_AsyncTask;
 import com.example.administrator.helloandroid.pkg_thread.thread05_Login;
+import com.example.administrator.helloandroid.pkg_thread.thread06_StopWatch;
+import com.example.administrator.helloandroid.pkg_thread.thread07_StopWatch;
 import com.example.administrator.helloandroid.project_team.xml_Parser_test;
 import com.example.administrator.helloandroid.project_team.xml_json_test;
 
@@ -100,14 +102,18 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             "프로그래스바를 이용한 싱글, 멀티 Thread",
             "Runnable을 이용한 핸들러 처리",
             "AsyncTask를 사용한 프로그래스바",
-            "AsyncTask를 사용한 Login 접속 로딩"
+            "AsyncTask를 사용한 Login 접속 로딩",
+            "AsyncTask를 사용한 스탑워치(계산 느림)",
+            "AsyncTask를 사용한 스탑워치(정상)"
     };
     private static final Class[] array_ITEMS_pkg4_CLASS = {
             thread01_run.class,
             thread02_progress.class,
             thread03_Runnable.class,
             thread04_AsyncTask.class,
-            thread05_Login.class
+            thread05_Login.class,
+            thread06_StopWatch.class,
+            thread07_StopWatch.class
     };
 
     private static final String[] array_ITEMS_pkg5_NAME = {
