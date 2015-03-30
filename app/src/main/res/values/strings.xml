@@ -81,5 +81,7 @@
     <string name="title_activity_thread05__login">thread05_Login</string>
     <string name="title_activity_thread06__stop_watch">thread06_StopWatch</string>
     <string name="title_activity_thread07__stop_watch">thread07_StopWatch</string>
+    <string name="title_activity_parsing01__main">Parsing01_Main</string>
+    <string name="title_activity_parsing04__web_view">Parsing04_WebView</string>
 
 </resources>

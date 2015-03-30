@@ -177,6 +177,14 @@
             android:name=".pkg_thread.thread07_StopWatch"
             android:label="@string/title_activity_thread07__stop_watch" >
         </activity>
+        <activity
+            android:name=".project_team.Parsing01_Main"
+            android:label="@string/title_activity_parsing01__main" >
+        </activity>
+        <activity
+            android:name=".project_team.Parsing04_WebView"
+            android:label="@string/title_activity_parsing04__web_view" >
+        </activity>
     </application>
 
 </manifest>

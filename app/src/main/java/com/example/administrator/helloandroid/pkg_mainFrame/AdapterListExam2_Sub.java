@@ -37,6 +37,7 @@ import com.example.administrator.helloandroid.pkg_thread.thread04_AsyncTask;
 import com.example.administrator.helloandroid.pkg_thread.thread05_Login;
 import com.example.administrator.helloandroid.pkg_thread.thread06_StopWatch;
 import com.example.administrator.helloandroid.pkg_thread.thread07_StopWatch;
+import com.example.administrator.helloandroid.project_team.Parsing01_Main;
 import com.example.administrator.helloandroid.project_team.xml_Parser_test;
 import com.example.administrator.helloandroid.project_team.xml_json_test;
 
@@ -133,11 +134,14 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
 
     private static final String[] array_ITEMS_pkg6_NAME = {
             "XmlPullParser 테스트",
-            "Json Parser + ListView 테스트"
+            "Json Parser + ListView 테스트",
+            "Json Parser + Adapter + ImageLoader \n(YouTube 리스트 구현)"
     };
     private static final Class[] array_ITEMS_pkg6_CLASS = {
             xml_Parser_test.class,
-            xml_json_test.class
+            xml_json_test.class,
+            Parsing01_Main.class
+
     };
 
 

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class customBaseAdapter extends BaseAdapter {
 
     // 문자열을 보관 할 ArrayList
-    private ArrayList<String>   m_List;
+    private ArrayList<String> m_List;
 
     // 생성자
     public customBaseAdapter() {
@@ -51,29 +51,30 @@ public class customBaseAdapter extends BaseAdapter {
         final int pos = position;
         final Context context = parent.getContext();
 
-        TextView        text    = null;
-        Button          btn     = null;
-        CustomHolder    holder  = null;
+        TextView text = null;
+        Button btn = null;
+        CustomHolder holder = null;
 
         // 리스트가 길어지면서 현재 화면에 보이지 않는 아이템은 converView가 null인 상태로 들어 옴
-        if ( convertView == null ) {
+        if (convertView == null) {
             // view가 null일 경우 커스텀 레이아웃을 얻어 옴
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.activity_custom_base_adapter, parent, false);
 
-            text    = (TextView) convertView.findViewById(R.id.lv02_TxtV);
-            btn     = (Button) convertView.findViewById(R.id.lv02_Btn);
+            text = (TextView) convertView.findViewById(R.id.lv02_TxtV);
+            btn = (Button) convertView.findViewById(R.id.lv02_Btn);
 
             // 홀더 생성 및 Tag로 등록
             holder = new CustomHolder();
-            holder.m_TextView   = text;
-            holder.m_Btn        = btn;
+            holder.m_TextView = text;
+            holder.m_Btn = btn;
             convertView.setTag(holder);
         }
         else {
-            holder  = (CustomHolder) convertView.getTag();
-            text    = holder.m_TextView;
-            btn     = holder.m_Btn;
+            holder = (CustomHolder) convertView.getTag();
+            text = holder.m_TextView;
+            btn = holder.m_Btn;
         }
 
         // Text 등록
@@ -95,7 +96,7 @@ public class customBaseAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 // 터치 시 해당 아이템 이름 출력
-                Toast.makeText(context, "리스트 클릭 : "+m_List.get(pos), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "리스트 클릭 : " + m_List.get(pos), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -105,7 +106,7 @@ public class customBaseAdapter extends BaseAdapter {
             @Override
             public boolean onLongClick(View v) {
                 // 터치 시 해당 아이템 이름 출력
-                Toast.makeText(context, "리스트 롱 클릭 : "+m_List.get(pos), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "리스트 롱 클릭 : " + m_List.get(pos), Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
@@ -114,8 +115,8 @@ public class customBaseAdapter extends BaseAdapter {
     }
 
     private class CustomHolder {
-        TextView    m_TextView;
-        Button      m_Btn;
+        TextView m_TextView;
+        Button m_Btn;
     }
 
     // 외부에서 아이템 추가 요청 시 사용
