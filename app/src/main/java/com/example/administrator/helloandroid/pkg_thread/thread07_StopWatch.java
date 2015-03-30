@@ -20,18 +20,13 @@ public class thread07_StopWatch extends ActionBarActivity implements View.OnClic
     private TextView mTv_time;
     private TextView mTv_status;
 
-    private boolean running = false;
-
-    private long time_Start = 0L;
-    private long time_swap = 0L;
-    private long time_update = 0L;
-    private long time_milli = 0L;
-
+    private String task_status;
+    private boolean running = false; //스레드 실행 플래그 (task_status를 사용해도 된다)
     private int hours, secs, mins, milli;
+    private long time_Start = 0; //시작시간
+    private long time_Stop = 0; //정지시간
+    private int btn_status = 0; //시작 0, 정지 1
 
-
-
-    private String status;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,40 +35,43 @@ public class thread07_StopWatch extends ActionBarActivity implements View.OnClic
         mTv_time = (TextView) findViewById(R.id.tv_time);
         mTv_status = (TextView) findViewById(R.id.tv_status);
 
-        // 시작시간 초기화 uptimeMillis = 시스템이 부팅될때부터 카운팅 된 밀리세컨드 단위의 시간
-        time_Start = SystemClock.uptimeMillis();
-
         mTv_time.setText(timeFormatSet(0, 0, 0, 0));
 
         findViewById(R.id.btn_start).setOnClickListener(this);
         findViewById(R.id.btn_stop).setOnClickListener(this);
         findViewById(R.id.btn_reset).setOnClickListener(this);
 
-        //timeStartSet();
         StopWatch_Task time_Task = new StopWatch_Task();
-        status = String.valueOf(time_Task.getStatus());
-        mTv_status.setText("AsyncTask 상태 : " + time_Start);
+        task_status = String.valueOf(time_Task.getStatus());
+        mTv_status.setText("AsyncTask 상태 : " + task_status);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            //시작
             case R.id.btn_start :
+                if (btn_status == 0) {
+                    time_Start = SystemClock.elapsedRealtime();
+                } else {
+                    long nowTime = SystemClock.elapsedRealtime(); //재시작 버튼을 누른 시점
+                    time_Start += (nowTime - time_Stop);
+                }
+                btn_status = 0;
                 new StopWatch_Task().execute();
                 break;
+            //일시정지
             case R.id.btn_stop :
-                //mTimeSwapBuff += mTimeInMilliseconds;
-                //time_Start = time_update;
-                time_swap += time_milli;
+                time_Stop = SystemClock.elapsedRealtime();
+                btn_status = 1;
                 new StopWatch_Task().cancel(true);
                 break;
+            //초기화
             case R.id.btn_reset :
-                //timeStartSet();
-                //mTv_time.setText(timeFormatSet(hours, mins, secs, milli));
-                time_Start = 0L;
-                time_swap = 0L;
-                time_update = 0L;
-                time_milli = 0L;
+                time_Start = SystemClock.elapsedRealtime();
+                time_Stop = 0L;
+                btn_status = 0;
+                mTv_time.setText(timeFormatSet(0, 0, 0, 0));
                 new StopWatch_Task().cancel(true);
                 break;
             default :
@@ -87,14 +85,6 @@ public class thread07_StopWatch extends ActionBarActivity implements View.OnClic
         return txt;
     }
 
-    // 타임 변수 초기화
-//    public void timeStartSet() {
-//        milli = 0;
-//        secs = 0;
-//        mins = 0;
-//        hours = 0;
-//    }
-
 
     // AsyncTask 인자 <백그라운드, 프로그래스업데이트, 포스트익스큐트>
     private class StopWatch_Task extends AsyncTask<String, String, String> {
@@ -102,18 +92,18 @@ public class thread07_StopWatch extends ActionBarActivity implements View.OnClic
         // Background 작업 시작전에 UI 작업을 진행 한다 (쓰레드 수행 전 초기화)
         @Override
         protected void onPreExecute() {
-            Log.d(TAG, "onPreExecute");
             running = true;
-            status = String.valueOf(this.getStatus());
-            mTv_status.setText("AsyncTask 상태 : " + status);
+            Log.d(TAG, "onPreExecute");
+            task_status = String.valueOf(this.getStatus());
+            mTv_status.setText("AsyncTask 상태 : " + task_status);
         }
 
         // Background 작업이 끝난 후 UI 작업을 진행 한다
         @Override
         protected void onPostExecute(String s) {
             Log.d(TAG, "onPostExecute");
-            status = String.valueOf(this.getStatus());
-            mTv_status.setText("AsyncTask 상태 : " + status);
+            task_status = String.valueOf(this.getStatus());
+            mTv_status.setText("AsyncTask 상태 : " + task_status);
         }
 
         // UI 업데이트 (Handler 에서 수행할 내용)
@@ -121,36 +111,34 @@ public class thread07_StopWatch extends ActionBarActivity implements View.OnClic
         protected void onProgressUpdate(String... values) {
             //Log.d(TAG, "onProgressUpdate");
             mTv_time.setText(values[0]);
-            status = String.valueOf(this.getStatus());
-            mTv_status.setText("AsyncTask 상태 : " + status);
+            task_status = String.valueOf(this.getStatus());
+            mTv_status.setText("AsyncTask 상태 : " + task_status);
         }
 
         // 쓰레드 종료
         @Override
         protected void onCancelled() {
-            Log.d(TAG, "onCancelled 종료되었다");
             running = false;
-            status = String.valueOf(this.getStatus());
-            mTv_status.setText("AsyncTask 상태 : " + status);
+            Log.d(TAG, "onCancelled 종료되었다");
+            task_status = String.valueOf(this.getStatus());
+            mTv_status.setText("AsyncTask 상태 : " + task_status);
         }
 
         // background 작업 진행 (Thread 실행 내용)
         @Override
         protected String doInBackground(String... params) {
-            //Log.d(TAG, "doInBackground");
+            Log.d(TAG, "doInBackground");
             while(!isCancelled() && running == true) {
 
-                time_milli = SystemClock.uptimeMillis() - time_Start;
-                time_update = time_swap + time_milli;
-
-                milli = (int) (time_update % 1000);
-                secs = (int) (time_update / 1000);
-                secs = secs % 60;
+                long tempNow = SystemClock.elapsedRealtime();
+                long printTime = tempNow - time_Start;
+                milli = (int) (printTime % 1000);
+                secs = (int) (printTime / 1000) % 60;
                 mins = secs / 60;
                 hours = mins / 60;
 
                 try {
-                    Thread.sleep(1);
+                    Thread.sleep(10);
                     publishProgress(timeFormatSet(hours, mins, secs, milli));
                 } catch (InterruptedException e) {
                     e.printStackTrace();

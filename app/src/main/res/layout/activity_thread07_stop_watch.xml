@@ -29,22 +29,40 @@
             android:text="시작"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="20dp"
-            android:background="#ff3c2445"/>
+            android:padding="10dp"
+            android:textSize="15dp"
+            android:background="#ff6a5f5b"
+            android:gravity="center"
+            />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"></View>
 
         <Button
             android:id="@+id/btn_stop"
             android:text="정지"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#ff3c2445"/>
+            android:padding="10dp"
+            android:textSize="15dp"
+            android:background="#ff6a5f5b"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"></View>
 
         <Button
             android:id="@+id/btn_reset"
             android:text="초기화"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#ff3c2445"/>
+            android:padding="10dp"
+            android:textSize="15dp"
+            android:background="#ff6a5f5b"
+            android:gravity="center"
+            />
 
     </LinearLayout>
 
