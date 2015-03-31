@@ -2,7 +2,6 @@
 package com.example.administrator.helloandroid.project_team;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -75,6 +74,8 @@ public class Parsing01_Main extends ActionBarActivity implements AdapterView.OnI
                 String str_ListCount = "&max-results=50";
                 String str_ListPage = "&start-index=1";
                 String str_Etc = "&orderby=relevance&v=2&alt=json&format=1,6&safeSearch=none";
+
+                // 조회쿼리 값을 변경한뒤에 어뎁터에 대해서 DataSetChanged를 호출하여 리스트뷰를 갱신.
 
                 urlString = str_Url + str_Search + str_ListCount + str_ListPage + str_Etc;
 
@@ -157,8 +158,9 @@ public class Parsing01_Main extends ActionBarActivity implements AdapterView.OnI
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         // 유튜브 동영상 플레이어 연결
         String videoId = mParsing03_Info.get(position).getId();
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + videoId));
-        intent.putExtra("VIDEO_ID", videoId);
+        Intent intent = new Intent(Parsing01_Main.this, Parsing06_YouTube.class);
+        //intent.putExtra("VIDEO_ID", videoId); // 유튜브 앱으로 연결할때 키
+        intent.putExtra("id", videoId); // 유튜브 API 연결할때 키
         startActivity(intent);
     }
 }
@@ -166,7 +168,7 @@ public class Parsing01_Main extends ActionBarActivity implements AdapterView.OnI
 // 추가로 해볼것들
 // 검색어 입력해서 URL 쿼리 만들어 조회하기
 // 드래그해서 다음 페이지 받아오기
-// youtube 재생 api 연동하기
+// youtube 재생 api 연동하기 // 완료
 
 
 

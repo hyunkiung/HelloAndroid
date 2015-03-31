@@ -83,5 +83,9 @@
     <string name="title_activity_thread07__stop_watch">thread07_StopWatch</string>
     <string name="title_activity_parsing01__main">Parsing01_Main</string>
     <string name="title_activity_parsing04__web_view">Parsing04_WebView</string>
+    <string name="title_activity_api__test__google_map">API_Test_GoogleMap</string>
+    <string name="title_activity_google_map">GoogleMap</string>
+    <string name="title_activity_google__api__map">Google_API_Map</string>
+    <string name="title_activity_parsing06__you_tube">Parsing06_YouTube</string>
 
 </resources>

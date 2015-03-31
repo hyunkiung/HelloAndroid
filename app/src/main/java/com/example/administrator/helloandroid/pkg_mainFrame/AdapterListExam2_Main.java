@@ -34,7 +34,8 @@ public class AdapterListExam2_Main extends ActionBarActivity implements AdapterV
             "pkg_adapter",
             "pkg_thread",
             "pkg_mission",
-            "project_team"
+            "project_team",
+            "project_apiTest"
     };
 
 

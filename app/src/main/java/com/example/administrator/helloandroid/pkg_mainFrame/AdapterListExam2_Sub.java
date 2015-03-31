@@ -37,6 +37,7 @@ import com.example.administrator.helloandroid.pkg_thread.thread04_AsyncTask;
 import com.example.administrator.helloandroid.pkg_thread.thread05_Login;
 import com.example.administrator.helloandroid.pkg_thread.thread06_StopWatch;
 import com.example.administrator.helloandroid.pkg_thread.thread07_StopWatch;
+import com.example.administrator.helloandroid.project_apiTest.Google_API_Map;
 import com.example.administrator.helloandroid.project_team.Parsing01_Main;
 import com.example.administrator.helloandroid.project_team.xml_Parser_test;
 import com.example.administrator.helloandroid.project_team.xml_json_test;
@@ -144,6 +145,15 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
 
     };
 
+    private static final String[] array_ITEMS_pkg7_NAME = {
+            "GoogleMap 테스트"
+
+    };
+    private static final Class[] array_ITEMS_pkg7_CLASS = {
+            Google_API_Map.class
+
+    };
+
 
 
     @Override
@@ -195,6 +205,9 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
                 break;
             case "project_team":
                 result = new Pair(array_ITEMS_pkg6_NAME, array_ITEMS_pkg6_CLASS);
+                break;
+            case "project_apiTest":
+                result = new Pair(array_ITEMS_pkg7_NAME, array_ITEMS_pkg7_CLASS);
                 break;
             default:
                 break;
