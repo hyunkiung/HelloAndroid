@@ -88,7 +88,7 @@ public class thread05_Login extends ActionBarActivity implements View.OnClickLis
         protected Void doInBackground(Void... params) {
             Log.d(TAG, "doInBackground");
             try {
-                Thread.sleep(2000);
+                Thread.sleep(5000);
                 ///////////////////
                 publishProgress();
             } catch (InterruptedException e) {

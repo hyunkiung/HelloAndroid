@@ -222,6 +222,18 @@
             android:name=".project_team.Parsing06_YouTube"
             android:label="@string/title_activity_parsing06__you_tube" >
         </activity>
+        <activity
+            android:name=".pkg_thread.thread08_DelayRunnable"
+            android:label="@string/title_activity_thread08__delay_runnable" >
+        </activity>
+        <activity
+            android:name=".pkg_thread.thread09_Looper"
+            android:label="@string/title_activity_thread09__looper" >
+        </activity>
+        <activity
+            android:name=".project_team.DB01_Create"
+            android:label="@string/title_activity_db01__create" >
+        </activity>
     </application>
 
 </manifest>

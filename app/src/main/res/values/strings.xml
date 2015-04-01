@@ -87,5 +87,8 @@
     <string name="title_activity_google_map">GoogleMap</string>
     <string name="title_activity_google__api__map">Google_API_Map</string>
     <string name="title_activity_parsing06__you_tube">Parsing06_YouTube</string>
+    <string name="title_activity_thread08__delay_runnable">thread08_DelayRunnable</string>
+    <string name="title_activity_thread09__looper">thread09_Looper</string>
+    <string name="title_activity_db01__create">DB01_Create</string>
 
 </resources>

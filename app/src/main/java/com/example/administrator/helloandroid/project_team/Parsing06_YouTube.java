@@ -30,10 +30,8 @@ public class Parsing06_YouTube extends YouTubeBaseActivity implements  YouTubePl
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
 
         ytp = youTubePlayer;
-
         Intent gt =getIntent();
         ytp.loadVideo(gt.getStringExtra("id"));
-
     }
 
     @Override

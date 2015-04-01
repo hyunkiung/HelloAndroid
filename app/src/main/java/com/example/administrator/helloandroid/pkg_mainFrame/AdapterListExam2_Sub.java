@@ -37,7 +37,10 @@ import com.example.administrator.helloandroid.pkg_thread.thread04_AsyncTask;
 import com.example.administrator.helloandroid.pkg_thread.thread05_Login;
 import com.example.administrator.helloandroid.pkg_thread.thread06_StopWatch;
 import com.example.administrator.helloandroid.pkg_thread.thread07_StopWatch;
+import com.example.administrator.helloandroid.pkg_thread.thread08_DelayRunnable;
+import com.example.administrator.helloandroid.pkg_thread.thread09_Looper;
 import com.example.administrator.helloandroid.project_apiTest.Google_API_Map;
+import com.example.administrator.helloandroid.project_team.DB01_Create;
 import com.example.administrator.helloandroid.project_team.Parsing01_Main;
 import com.example.administrator.helloandroid.project_team.xml_Parser_test;
 import com.example.administrator.helloandroid.project_team.xml_json_test;
@@ -106,7 +109,9 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             "AsyncTask를 사용한 프로그래스바",
             "AsyncTask를 사용한 Login 접속 로딩",
             "AsyncTask를 사용한 스탑워치(계산 느림)",
-            "AsyncTask를 사용한 스탑워치(정상)"
+            "AsyncTask를 사용한 스탑워치(정상)",
+            "Runnable을 이용한 실행 지연하기",
+            "Looper 사용해보기"
     };
     private static final Class[] array_ITEMS_pkg4_CLASS = {
             thread01_run.class,
@@ -115,7 +120,9 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             thread04_AsyncTask.class,
             thread05_Login.class,
             thread06_StopWatch.class,
-            thread07_StopWatch.class
+            thread07_StopWatch.class,
+            thread08_DelayRunnable.class,
+            thread09_Looper.class
     };
 
     private static final String[] array_ITEMS_pkg5_NAME = {
@@ -136,12 +143,14 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
     private static final String[] array_ITEMS_pkg6_NAME = {
             "XmlPullParser 테스트",
             "Json Parser + ListView 테스트",
-            "Json Parser + Adapter + ImageLoader \n(YouTube 리스트 구현)"
+            "Json Parser + Adapter + ImageLoader \n(YouTube 리스트 구현)",
+            "DataBase 테스트"
     };
     private static final Class[] array_ITEMS_pkg6_CLASS = {
             xml_Parser_test.class,
             xml_json_test.class,
-            Parsing01_Main.class
+            Parsing01_Main.class,
+            DB01_Create.class
 
     };
 
@@ -175,6 +184,7 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
 
         // 리스트뷰에 에러이어뎁터를 셋팅
         mPkg_ListView.setAdapter(mPkg_ArrayAdapter);
+
 
         // 리스트뷰의 원클릭 리스너 호출 (메인클래스에서 임플리먼트해서 this로 호출)
         mPkg_ListView.setOnItemClickListener(this);
