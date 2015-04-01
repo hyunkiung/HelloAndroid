@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.example.administrator.helloandroid.R;
 
-// 생성한 db 파일 확인은
+// 생성한 db 파일 확인은..
 // DDMS 실행, 좌측에서 실행한 디바이스를 선택한후 우측의 파일탐색기에서
 // data폴더 확장, 다시 data 폴더를 확장하면 패키지 목록이 나오고
 // 그곳에서 프로젝트 패키지명을 찾아라. com.example.administrator.helloandroid
