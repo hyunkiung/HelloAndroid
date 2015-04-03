@@ -37,6 +37,8 @@
 
     <string name="spinner_exam_prompt1">Choose a Color</string>
 
+    <string name="spinner_table_prompt">타입 선택</string>
+
 
 
 
@@ -90,5 +92,6 @@
     <string name="title_activity_thread08__delay_runnable">thread08_DelayRunnable</string>
     <string name="title_activity_thread09__looper">thread09_Looper</string>
     <string name="title_activity_db01__create">DB01_Create</string>
+    <string name="title_activity_db02__db__search_use_helper">DB02_DB_SearchUseHelper</string>
 
 </resources>

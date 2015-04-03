@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.example.administrator.helloandroid.R;
 
-// 생성한 db 파일 확인은..
+// 생성한 db 파일 확인은
 // DDMS 실행, 좌측에서 실행한 디바이스를 선택한후 우측의 파일탐색기에서
 // data폴더 확장, 다시 data 폴더를 확장하면 패키지 목록이 나오고
 // 그곳에서 프로젝트 패키지명을 찾아라. com.example.administrator.helloandroid
@@ -21,6 +21,17 @@ import com.example.administrator.helloandroid.R;
 // db 파일을 선택한후 우측 상단의 pull.. 버튼을 클릭해서 저장
 // SQL Lite로 오픈해서 db 확인.
 // DB02 생성해서 컨트롤하는 코딩을 업글해보자.
+
+// SQL Lite 데이터 타입
+// 문자열 : text, varchar
+// 정수 : integer, smallint
+// 부동소수 : real, float, double
+// true, false : boolean
+// 시간 : date, time, timestamp
+// 바이너리 : blob, binary
+// integer, text, varchar, float, date <== 이것만 있으면 될듯.
+
+// 참고사이트 : http://cuteelfluv.cafe24.com/xe/etc/118319
 
 
 public class DB01_Create extends ActionBarActivity implements View.OnClickListener {
@@ -96,6 +107,7 @@ public class DB01_Create extends ActionBarActivity implements View.OnClickListen
 
         // 테이블이 존재하는지 확인하는 조건 필요.
         // 테이블 생성 쿼리 실행
+        // “if not exists” 조건을 걸어주면 테이블이 없을 경우에만 새로운 테이블을 생성
         db.execSQL("create table if not exists " + tbl_nm + "("
                 + " _id integer PRIMARY KEY autoincrement, "
                 + " name text, "
