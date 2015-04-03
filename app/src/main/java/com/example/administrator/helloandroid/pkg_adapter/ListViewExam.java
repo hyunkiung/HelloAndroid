@@ -1,4 +1,3 @@
-
 package com.example.administrator.helloandroid.pkg_adapter;
 
 import android.os.Bundle;
@@ -13,9 +12,10 @@ import com.example.administrator.helloandroid.R;
 
 import java.util.ArrayList;
 
-// 기본 ArrayAdapter를 사용한 연습
-
-public class listView_01_Default extends ActionBarActivity {
+/**
+ * Created by Administrator on 2015-04-03.
+ */
+public class ListViewExam extends ActionBarActivity {
 
     //================================================================
     ////// 선언 : 위젯_리스트뷰, 배열_데이터리스트, 어뎁터_어뎁터리스트
@@ -27,7 +27,7 @@ public class listView_01_Default extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_view_01__default);
+        setContentView(R.layout.activity_listviewexam);
 
         // 1.데이터 준비
         m_DataList = new ArrayList<>();
@@ -51,7 +51,7 @@ public class listView_01_Default extends ActionBarActivity {
                 //Toast.makeText(getApplicationContext(), m_Adapter.getItem(position), Toast.LENGTH_SHORT).show();
 
                 Toast.makeText(
-                        listView_01_Default.this,
+                        ListViewExam.this,
                         "position : " + position + ", id : " + id + ", data->text : "
                                 + m_DataList.get(position) + ", adapter->text : "
                                 + m_Adapter.getItem(position), Toast.LENGTH_SHORT).show();

@@ -21,9 +21,9 @@ import com.example.administrator.helloandroid.pkg_activity.SecondActivity;
 import com.example.administrator.helloandroid.pkg_activity.TableLayoutExamActivity;
 import com.example.administrator.helloandroid.pkg_activity.TargetExamActivity;
 import com.example.administrator.helloandroid.pkg_adapter.GridView_Calendar;
+import com.example.administrator.helloandroid.pkg_adapter.ListViewCustom;
+import com.example.administrator.helloandroid.pkg_adapter.ListViewExam;
 import com.example.administrator.helloandroid.pkg_adapter.SpinnerExam;
-import com.example.administrator.helloandroid.pkg_adapter.item_useBaseAdapter;
-import com.example.administrator.helloandroid.pkg_adapter.listView_01_Default;
 import com.example.administrator.helloandroid.pkg_event.TouchEventActivity;
 import com.example.administrator.helloandroid.pkg_mission.Mission_193Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
@@ -41,7 +41,7 @@ import com.example.administrator.helloandroid.pkg_thread.thread08_DelayRunnable;
 import com.example.administrator.helloandroid.pkg_thread.thread09_Looper;
 import com.example.administrator.helloandroid.project_apiTest.Google_API_Map;
 import com.example.administrator.helloandroid.project_team.DB01_Create;
-import com.example.administrator.helloandroid.project_team.DB02_DB_SearchUseHelper;
+import com.example.administrator.helloandroid.project_team.DB02_HelperActivity;
 import com.example.administrator.helloandroid.project_team.Parsing01_Main;
 import com.example.administrator.helloandroid.project_team.xml_Parser_test;
 import com.example.administrator.helloandroid.project_team.xml_json_test;
@@ -91,15 +91,15 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
     };
 
     private static final String[] array_ITEMS_pkg3_NAME = {
-            "listView 기본 예제",
-            "Custom BaseAdapter 연습",
-            "Spinner 실습",
+            "ListView 기본 예제",
+            "Spinner 기본 예제",
+            "ListView Custom Adapter 연습",
             "GridView, ListView 메모 달력"
     };
     private static final Class[] array_ITEMS_pkg3_CLASS = {
-            listView_01_Default.class,
-            item_useBaseAdapter.class,
+            ListViewExam.class,
             SpinnerExam.class,
+            ListViewCustom.class,
             GridView_Calendar.class
     };
 
@@ -141,28 +141,27 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             Mission_392Page.class
     };
 
+
     private static final String[] array_ITEMS_pkg6_NAME = {
+            "GoogleMap API 테스트"
+    };
+    private static final Class[] array_ITEMS_pkg6_CLASS = {
+            Google_API_Map.class
+    };
+
+    private static final String[] array_ITEMS_pkg7_NAME = {
             "XmlPullParser 테스트",
             "Json Parser + ListView 테스트",
             "Json Parser + Adapter + ImageLoader \n(YouTube 리스트 구현)",
             "DataBase 테스트",
             "DataBase Helper Class 사용해보기"
     };
-    private static final Class[] array_ITEMS_pkg6_CLASS = {
+    private static final Class[] array_ITEMS_pkg7_CLASS = {
             xml_Parser_test.class,
             xml_json_test.class,
             Parsing01_Main.class,
             DB01_Create.class,
-            DB02_DB_SearchUseHelper.class
-
-    };
-
-    private static final String[] array_ITEMS_pkg7_NAME = {
-            "GoogleMap 테스트"
-
-    };
-    private static final Class[] array_ITEMS_pkg7_CLASS = {
-            Google_API_Map.class
+            DB02_HelperActivity.class
 
     };
 
@@ -171,14 +170,14 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adapter_list_exam1__main);
+        setContentView(R.layout.activity_listviewexam);
 
         //액션바 선언 및 타이틀 설정
         action_Bar = this.getSupportActionBar();
         action_Bar.setTitle("안드로이드 실습  리스트!");
 
         // 리스트뷰 설정
-        mPkg_ListView = (ListView) findViewById(R.id.pkg_ListView);
+        mPkg_ListView = (ListView) findViewById(R.id.myListView);
 
         // 어레이어뎁터 설정, 미리 선언한 array_ITEMS 를 던졌다.
         mPkg_ArrayAdapter = new ArrayAdapter<>(getApplicationContext(),
@@ -216,10 +215,10 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             case "pkg_mission":
                 result = new Pair(array_ITEMS_pkg5_NAME, array_ITEMS_pkg5_CLASS);
                 break;
-            case "project_team":
+            case "project_apiTest":
                 result = new Pair(array_ITEMS_pkg6_NAME, array_ITEMS_pkg6_CLASS);
                 break;
-            case "project_apiTest":
+            case "project_team":
                 result = new Pair(array_ITEMS_pkg7_NAME, array_ITEMS_pkg7_CLASS);
                 break;
             default:

@@ -25,7 +25,7 @@ import java.util.ArrayList;
  mCalendarAdapter = new CalendarAdapter(getApplicationContext(), mItems);
  */
 
-public class ListView_Adapter extends BaseAdapter {
+public class GridView_ListView_Adapter extends BaseAdapter {
 
     private Context time_Context;
     private ArrayList<String> time_list;
@@ -37,7 +37,7 @@ public class ListView_Adapter extends BaseAdapter {
     }
 
     // 생성자.
-    public ListView_Adapter(Context context, ArrayList<String> arrayList) {
+    public GridView_ListView_Adapter(Context context, ArrayList<String> arrayList) {
         time_Context = context;
         time_list = arrayList;
     }

@@ -7,21 +7,21 @@ import android.widget.ListView;
 
 import com.example.administrator.helloandroid.R;
 
-public class item_useBaseAdapter extends ActionBarActivity {
+public class ListViewCustom extends ActionBarActivity {
 
     private ListView m_ListView;
-    private customBaseAdapter m_Adapter;
+    private ListViewCustom_Adapter m_Adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_use_base_adapter);
+        setContentView(R.layout.activity_listviewexam);
 
         // 커스텀 어댑터 생성
-        m_Adapter = new customBaseAdapter();
+        m_Adapter = new ListViewCustom_Adapter();
 
         // Xml에서 추가한 ListView 연결
-        m_ListView = (ListView) findViewById(R.id.listview);
+        m_ListView = (ListView) findViewById(R.id.myListView);
 
         // ListView에 어댑터 연결
         m_ListView.setAdapter(m_Adapter);

@@ -2,15 +2,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.helloandroid.pkg_adapter.item_useBaseAdapter"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     android:orientation="horizontal"
-    android:background="#47C83E">
+    tools:context="com.example.administrator.helloandroid.pkg_adapter.listView_01_Default">
+
 
     <ListView
-        android:id="@+id/listview"
+        android:id="@+id/myListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent"></ListView>
 
 
 </LinearLayout>

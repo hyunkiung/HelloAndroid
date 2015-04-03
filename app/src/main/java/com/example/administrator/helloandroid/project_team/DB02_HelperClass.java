@@ -13,7 +13,7 @@ import java.util.Arrays;
  * Created by Administrator on 2015-04-02.
  */
 
-public class DB02_DB_HelperClass {
+public class DB02_HelperClass {
 
     // DB 정보 선언
     public static String DATABASE_NAME = "customer.db";
@@ -30,7 +30,7 @@ public class DB02_DB_HelperClass {
     private String sqlQuery;
 
     // DB02_DB_HelperClass 생성자
-    public DB02_DB_HelperClass(Context context) {
+    public DB02_HelperClass(Context context) {
         this.activity_Context = context;
         this.opener = new Open_Helper(context, DATABASE_NAME, null, DATABASE_VERSION);
         //db = opener.getWritableDatabase();
@@ -47,13 +47,18 @@ public class DB02_DB_HelperClass {
         opener.close();
     }
 
+
+
+    //==================================================
+    // DataBase Control Method Start ===================
+    //==================================================
     // ★★ 커스텀 메소드 ★★ DB Helper 오픈 메소드
     // DB 생성 확인용 메소드이고, 실제 클래스 사용시는 상위클래스의 생성자에서 db 객체에 오픈해서 시작함.
+    // getWritableDatabase() 읽기, 쓰기 모드로 데이터베이스를 오픈.
+    // 만약 처음으로 호출되는 경우에는 onCreate() -> onOpen() 순서로 호출.
+    // 만약 DB 버전이 달라지는 경우에는 onUpgrade() -> onOpen() 순서로 호출.
     public String DB_Open() {
         Result_Log("상위클래스 메소드 DB_Open : " + DATABASE_NAME);
-        // getWritableDatabase() 읽기, 쓰기 모드로 데이터베이스를 오픈.
-        // 만약 처음으로 호출되는 경우에는 onCreate() -> onOpen() 순서로 호출.
-        // 만약 DB 버전이 달라지는 경우에는 onUpgrade() -> onOpen() 순서로 호출.
         opener.getWritableDatabase();
         return "DB_Open 실행 결과 " + DATABASE_NAME + " DB 생성 / 존재 여부 : " + DB_ExistentCheck();
     }
@@ -76,13 +81,24 @@ public class DB02_DB_HelperClass {
         }
         return "DB_Drop 실행 결과 " + DATABASE_NAME + "DB 삭제 / 존재 여부 : " + DB_ExistentCheck();
     }
+    //==================================================
+    // DataBase Control Method End =====================
+    //==================================================
 
+
+
+    //==================================================
+    // Table Control Method Start ======================
+    //==================================================
     // ★★ 커스텀 메소드 ★★ TABLE 존재 확인 메소드
     public int TABLE_ExistentCheck(String tbl_nm) {
         Result_Log("상위클래스 메소드 TABLE_ExistentCheck : " + tbl_nm);
-        sqlQuery = "select name from sqlite_master Where name = '"+ tbl_nm +"'";
-        Cursor cursor = db.rawQuery(sqlQuery, null);
-        return cursor.getCount();
+        sqlQuery = "select name from sqlite_master where name = ?";
+        String[] args = {tbl_nm};
+        Cursor cursor = db.rawQuery(sqlQuery, args);
+        int cc = cursor.getCount();
+        cursor.close();
+        return cc;
     }
 
     // ★★ 커스텀 메소드 ★★ TABLE 생성 메소드
@@ -112,20 +128,21 @@ public class DB02_DB_HelperClass {
             }
             t6 = "); ";
             tt = t1 + t2 + t3 + t4 + t5 + t6;
-            result = "Create_OK";
+            db.execSQL(tt);
+            result = "테이블이 생성되었습니다.";
         }
-
         return result;
     }
 
     // ★★ 커스텀 메소드 ★★ TABLE 내역 메소드
     public ArrayList<String> TABLE_TableAll_inDB() {
         Result_Log("상위클래스 메소드 TABLE_TableAll_inDB : " + DATABASE_NAME);
-
         // 1. 배열선언
         sql_DataList = new ArrayList<>();
         // 2. 쿼리 생성
-        String strSQL = "select name from sqlite_master Where type = 'table'";
+        String strSQL = "select name from sqlite_master where type = 'table' "
+                            + "and name not in ('android_metadata', 'sqlite_sequence') "
+                            + "order by name asc";
         // 3. 커서에 쿼리 실행 수행
         Cursor cursor = db.rawQuery(strSQL, null);
         // 4. cursor가 비어 있으면 빈데이터 넣어주고 값 존재시 조회 데이터 add
@@ -142,8 +159,12 @@ public class DB02_DB_HelperClass {
         // 6. 커서 닫고, 배열리턴
         cursor.close();
         return sql_DataList;
-    }
 
+        //cursor 를 리턴해서 받는 어댑터가 있다. CursorAdapter
+    }
+    //==================================================
+    // Table Control Method End ========================
+    //==================================================
 
 
 

@@ -17,13 +17,13 @@ import java.util.ArrayList;
 // BaseAdapter를 확장으로 사용하면 경고표시 뜬다.
 // alt+enter로 임플리먼트 매소드를 생성하면 아래 메소드들이 오버라이드 된다.
 // getCount, getItem, getItemId, getView
-public class customBaseAdapter extends BaseAdapter {
+public class ListViewCustom_Adapter extends BaseAdapter {
 
     // 문자열을 보관 할 ArrayList
     private ArrayList<String> m_List;
 
     // 생성자
-    public customBaseAdapter() {
+    public ListViewCustom_Adapter() {
         m_List = new ArrayList<String>();
     }
 

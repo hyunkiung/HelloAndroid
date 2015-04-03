@@ -7,17 +7,11 @@
     <!-- 구글 맵을 위해 추가 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--
-         The following two permissions are not required to use
-         Google Maps Android API v2, but are recommended.
-    -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <!-- Open GL 버전2 지원여부 (Google Map) -->
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" />
+    <uses-feature android:glEsVersion="0x00020000"  android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -31,19 +25,35 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBRiCUg_e0RACNHRFF-M4NQ7Zz4KM7lCWs" />
 
-        <!-- 첫번째 액티비티 정보 -->
+
+        <!-- pkg_mainFrame 실습 메뉴 메인 엑티비티 -->
+        <activity
+            android:name=".pkg_mainFrame.AdapterListExam2_Main"
+            android:label="@string/title_activity_adapter_list_exam2__main"
+            android:theme="@style/Base.Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".pkg_mainFrame.AdapterListExam2_Sub"
+            android:label="@string/title_activity_adapter_list_exam2__sub"
+            android:theme="@style/Base.Theme.AppCompat" >
+        </activity>
+
+
+
+
+        <!-- pkg_activity 액티비티 목록 -->
         <activity
             android:name=".pkg_activity.FirstActivity"
             android:label="@string/title_activity_first" >
         </activity>
-
-        <!-- 두번째 액티비티 정보 -->
         <activity
             android:name=".pkg_activity.SecondActivity"
             android:label="@string/title_activity_second" >
         </activity>
-
-        <!-- 세번째 액티비티 정보 -->
         <activity
             android:name=".pkg_activity.RelativeLayoutExamActivity"
             android:label="@string/title_activity_relative_layout_exam" >
@@ -61,10 +71,6 @@
             android:label="@string/title_activity_edit_text" >
         </activity>
         <activity
-            android:name=".pkg_mission.Mission_193Page"
-            android:label="@string/title_activity_mission_193_page" >
-        </activity>
-        <activity
             android:name=".pkg_activity.ActivityExamActivity"
             android:label="@string/title_activity_activity_exam" >
         </activity>
@@ -72,80 +78,18 @@
             android:name=".pkg_activity.TargetExamActivity"
             android:label="@string/title_activity_target_exam" >
         </activity>
+
+
+
+        <!-- pkg_adapter 액티비티 목록 -->
         <activity
-            android:name=".pkg_mission.Mission_271Page"
-            android:label="@string/title_activity_mission_271_page" >
-        </activity>
-        <activity
-            android:name=".pkg_mission.Mission_271Page_sub1"
-            android:label="@string/title_activity_mission_271_page_sub1" >
-        </activity>
-        <activity
-            android:name=".pkg_event.TouchEventActivity"
-            android:label="@string/title_activity_touch_event" >
-        </activity>
-        <activity
-            android:name=".pkg_mission.Mission_332Page"
-            android:label="@string/title_activity_mission_332_page" >
-        </activity>
-        <activity
-            android:name=".pkg_mainFrame.MainMenuActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".pkg_mission.Mission_333Page"
-            android:label="@string/title_activity_mission_333_page" >
-        </activity>
-        <activity
-            android:name=".pkg_adapter.listView_01_Default"
+            android:name=".pkg_adapter.ListViewExam"
             android:label="@string/title_activity_list_view_01__default"
             android:theme="@style/Base.Theme.AppCompat" >
         </activity>
         <activity
-            android:name=".pkg_adapter.item_useBaseAdapter"
+            android:name=".pkg_adapter.ListViewCustom"
             android:label="@string/title_activity_item_use_base_adapter"
-            android:theme="@style/Base.Theme.AppCompat" >
-        </activity>
-        <activity
-            android:name=".pkg_mainFrame.adapterListExam1_Main"
-            android:label="@string/title_activity_adapter_list_exam1__main"
-            android:theme="@style/Base.Theme.AppCompat" >
-        </activity>
-        <activity
-            android:name=".pkg_mainFrame.adapterListExam1_pkg_activity"
-            android:label="@string/title_activity_adapter_list_exam1_pkg_activity"
-            android:theme="@style/Base.Theme.AppCompat" >
-        </activity>
-        <activity
-            android:name=".pkg_mainFrame.adapterListExam1_pkg_event"
-            android:label="@string/title_activity_adapter_list_exam1_pkg_event"
-            android:theme="@style/Base.Theme.AppCompat" >
-        </activity>
-        <activity
-            android:name=".pkg_mainFrame.adapterListExam1_pkg_ListView"
-            android:label="@string/title_activity_adapter_list_exam1_pkg__list_view"
-            android:theme="@style/Base.Theme.AppCompat" >
-        </activity>
-        <activity
-            android:name=".pkg_mainFrame.adapterListExam1_pkg_mission"
-            android:label="@string/title_activity_adapter_list_exam1_pkg_mission"
-            android:theme="@style/Base.Theme.AppCompat" >
-        </activity>
-
-        <!-- 실습 메뉴 메인 엑티비티 -->
-        <activity
-            android:name=".pkg_mainFrame.AdapterListExam2_Main"
-            android:label="@string/title_activity_adapter_list_exam2__main"
-            android:theme="@style/Base.Theme.AppCompat" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".pkg_mainFrame.AdapterListExam2_Sub"
-            android:label="@string/title_activity_adapter_list_exam2__sub"
             android:theme="@style/Base.Theme.AppCompat" >
         </activity>
         <activity
@@ -158,10 +102,48 @@
             android:label="@string/title_activity_grid_view__calendar"
             android:theme="@style/Base.Theme.AppCompat" >
         </activity>
+
+
+
+        <!-- pkg_event 액티비티 목록 -->
+        <activity
+            android:name=".pkg_event.TouchEventActivity"
+            android:label="@string/title_activity_touch_event" >
+        </activity>
+
+
+
+        <!-- pkg_mission 액티비티 목록 -->
+        <activity
+            android:name=".pkg_mission.Mission_193Page"
+            android:label="@string/title_activity_mission_193_page" >
+        </activity>
+
+        <activity
+            android:name=".pkg_mission.Mission_271Page"
+            android:label="@string/title_activity_mission_271_page" >
+        </activity>
+        <activity
+            android:name=".pkg_mission.Mission_271Page_sub1"
+            android:label="@string/title_activity_mission_271_page_sub1" >
+        </activity>
+
+        <activity
+            android:name=".pkg_mission.Mission_332Page"
+            android:label="@string/title_activity_mission_332_page" >
+        </activity>
+        <activity
+            android:name=".pkg_mission.Mission_333Page"
+            android:label="@string/title_activity_mission_333_page" >
+        </activity>
         <activity
             android:name=".pkg_mission.Mission_392Page"
             android:label="@string/title_activity_mission_392_page" >
         </activity>
+
+
+
+        <!-- pkg_thread 액티비티 목록 -->
         <activity
             android:name=".pkg_thread.thread01_run"
             android:label="@string/title_activity_thread01_run" >
@@ -179,14 +161,6 @@
             android:label="@string/title_activity_thread03__async_task" >
         </activity>
         <activity
-            android:name=".project_team.xml_Parser_test"
-            android:label="@string/title_activity_xml__parser_test" >
-        </activity>
-        <activity
-            android:name=".project_team.xml_json_test"
-            android:label="@string/title_activity_xml_json_test" >
-        </activity>
-        <activity
             android:name=".pkg_thread.thread05_Login"
             android:label="@string/title_activity_thread05__login" >
         </activity>
@@ -199,6 +173,35 @@
             android:label="@string/title_activity_thread07__stop_watch" >
         </activity>
         <activity
+            android:name=".pkg_thread.thread08_DelayRunnable"
+            android:label="@string/title_activity_thread08__delay_runnable" >
+        </activity>
+        <activity
+            android:name=".pkg_thread.thread09_Looper"
+            android:label="@string/title_activity_thread09__looper" >
+        </activity>
+
+
+
+        <!-- project_apiTest 액티비티 목록 -->
+        <activity
+            android:name=".project_apiTest.Google_API_Map"
+            android:label="@string/title_activity_google__api__map" >
+        </activity>
+
+
+
+        <!-- project_team 액티비티 목록 -->
+        <activity
+            android:name=".project_team.xml_Parser_test"
+            android:label="@string/title_activity_xml__parser_test" >
+        </activity>
+        <activity
+            android:name=".project_team.xml_json_test"
+            android:label="@string/title_activity_xml_json_test" >
+        </activity>
+
+        <activity
             android:name=".project_team.Parsing01_Main"
             android:label="@string/title_activity_parsing01__main" >
         </activity>
@@ -207,35 +210,15 @@
             android:label="@string/title_activity_parsing04__web_view" >
         </activity>
         <activity
-            android:name=".project_team.API_Test_GoogleMap"
-            android:label="@string/title_activity_api__test__google_map" >
-        </activity>
-        <activity
-            android:name=".project_apiTest.GoogleMap"
-            android:label="@string/title_activity_google_map" >
-        </activity>
-        <activity
-            android:name=".project_apiTest.Google_API_Map"
-            android:label="@string/title_activity_google__api__map" >
-        </activity>
-        <activity
             android:name=".project_team.Parsing06_YouTube"
             android:label="@string/title_activity_parsing06__you_tube" >
-        </activity>
-        <activity
-            android:name=".pkg_thread.thread08_DelayRunnable"
-            android:label="@string/title_activity_thread08__delay_runnable" >
-        </activity>
-        <activity
-            android:name=".pkg_thread.thread09_Looper"
-            android:label="@string/title_activity_thread09__looper" >
         </activity>
         <activity
             android:name=".project_team.DB01_Create"
             android:label="@string/title_activity_db01__create" >
         </activity>
         <activity
-            android:name=".project_team.DB02_DB_SearchUseHelper"
+            android:name=".project_team.DB02_HelperActivity"
             android:label="@string/title_activity_db02__db__search_use_helper" >
         </activity>
     </application>

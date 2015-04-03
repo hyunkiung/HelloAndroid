@@ -34,22 +34,22 @@ public class AdapterListExam2_Main extends ActionBarActivity implements AdapterV
             "pkg_adapter",
             "pkg_thread",
             "pkg_mission",
-            "project_team",
-            "project_apiTest"
+            "project_apiTest",
+            "project_team"
     };
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adapter_list_exam1__main);
+        setContentView(R.layout.activity_listviewexam);
 
         //액션바 선언 및 타이틀 설정
         action_Bar = this.getSupportActionBar();
         action_Bar.setTitle("안드로이드 실습 패키지 리스트!");
 
         // 리스트뷰 설정
-        mPkg_ListView = (ListView) findViewById(R.id.pkg_ListView);
+        mPkg_ListView = (ListView) findViewById(R.id.myListView);
 
         // 어레이어뎁터 설정, 미리 선언한 array_ITEMS 를 던졌다.
         mPkg_ArrayAdapter = new ArrayAdapter<>(getApplicationContext(),

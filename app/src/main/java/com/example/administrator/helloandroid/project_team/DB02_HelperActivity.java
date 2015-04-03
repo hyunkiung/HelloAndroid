@@ -15,33 +15,28 @@ import com.example.administrator.helloandroid.R;
 
 import java.util.ArrayList;
 
-public class DB02_DB_SearchUseHelper extends ActionBarActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class DB02_HelperActivity extends ActionBarActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    private DB02_DB_HelperClass dbHelper;
-    private DB02_DB_HelperClass dbHelper_btn, dbHelper_Table;
-    private String tbl_Name = "test_table";
+    private DB02_HelperClass dbHelper;
+    private DB02_HelperClass dbHelper_btn, dbHelper_Table;
 
     private TextView mTV_status;
-    private String result = "DB02_DB_HelperClass 리턴값 확인용 TextView";
+    private EditText mET_table_name, mET_field_name1, mET_field_name2, mET_field_name3;
 
+    private String result = "DB02_DB_HelperClass 리턴값 확인용 TextView";
     private ArrayList<String> m_ArrayList;
     private ArrayAdapter<String> mDB_Adapter;
-    private ListView mLV_DataList;
-
-    private EditText mET_table_name, mET_field_name1, mET_field_name2, mET_field_name3;
-    private Spinner mSP_data_type1, mSP_data_type2, mSP_data_type3;
     private ArrayAdapter<String> mSpinner_ArrayAdapter;
+    private ListView mLV_DataList;
+    private Spinner mSP_data_type1, mSP_data_type2, mSP_data_type3;
+
+    private String tbl_Name = "test_table";
     private String strTable;
     private String strFiled1, strFiled2, strFiled3;
     private String strDataType1, strDataType2, strDataType3;
 
     public static final String[] array_ITEMS = {
-            "integer",
-            "float",
-            "text",
-            "varchar",
-            "date"
-    };
+            "integer", "float", "text", "varchar", "date" };
 
     //===============================================================
     ////// 메세지 토스트 메소드 (공용)
@@ -53,28 +48,15 @@ public class DB02_DB_SearchUseHelper extends ActionBarActivity implements View.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_db02_db_search_use_helper);
+        setContentView(R.layout.activity_db02_helper_activity);
 
         // 위젯 선언
         mTV_status = (TextView) findViewById(R.id.tv_status);
         mLV_DataList = (ListView) findViewById(R.id.lv_DataList);
-
-        // DB02_DB_HelperClass 객체 사용 선언
-        dbHelper = new DB02_DB_HelperClass(this);
-        dbHelper.open();
-
-        // 1.Data 요청 결과 배열 선언
-        m_ArrayList = new ArrayList<>();
-        // 2.dbHelper의 조회결과값 배열 저장
-        m_ArrayList = dbHelper.TABLE_TableAll_inDB();
-        // 2.어댑터 생성
-        mDB_Adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, m_ArrayList);
-        // 3.리스트뷰에 어댑터 연결
-        mLV_DataList.setAdapter(mDB_Adapter);
-        // DB 사용 종료
-        dbHelper.close();
-
         mTV_status.setText(result);
+
+        // 리스트뷰 어뎁터 셋팅 호출
+        Adapter_ReSetting();
 
         //================================================================
         // ★ HelperClass DB 테스트 메소드 사용법
@@ -87,7 +69,7 @@ public class DB02_DB_SearchUseHelper extends ActionBarActivity implements View.O
         findViewById(R.id.tv_db_drop).setOnClickListener(this);
         findViewById(R.id.tv_db_check).setOnClickListener(this);
         //================================================================
-
+        findViewById(R.id.btn_table_Create).setOnClickListener(this);
 
         //================================================================
         //=== 테이블 생성 위젯과 액션
@@ -97,11 +79,6 @@ public class DB02_DB_SearchUseHelper extends ActionBarActivity implements View.O
         mET_field_name2 = (EditText) findViewById(R.id.et_field_name2);
         mET_field_name3 = (EditText) findViewById(R.id.et_field_name3);
 
-        strTable = mET_table_name.getText().toString();
-        strFiled1 = mET_field_name1.getText().toString();
-        strFiled2 = mET_field_name2.getText().toString();
-        strFiled3 = mET_field_name3.getText().toString();
-
         mSP_data_type1 = (Spinner) findViewById(R.id.sp_data_type1);
         mSP_data_type2 = (Spinner) findViewById(R.id.sp_data_type2);
         mSP_data_type3 = (Spinner) findViewById(R.id.sp_data_type3);
@@ -110,19 +87,16 @@ public class DB02_DB_SearchUseHelper extends ActionBarActivity implements View.O
         mSP_data_type2.setOnItemSelectedListener(this);
         mSP_data_type3.setOnItemSelectedListener(this);
 
-        // 어레이어뎁터 설정, 미리 선언한 array_ITEMS 를 던졌다.
+        // 스피너 어레이어뎁터 설정 - 미리 선언한 array_ITEMS 를 던졌다.
         mSpinner_ArrayAdapter = new ArrayAdapter<>(getApplicationContext(),
                 android.R.layout.simple_spinner_item, array_ITEMS);
-
-        // 어레이어뎁터 설정, 드롭다운 형태 설정
+        // 스피너 어레이어뎁터 설정 - 드롭다운 형태 설정
         mSpinner_ArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // 스피너에 어뎁터 설정
+        // 스피너 어레이어뎁터 설정
         mSP_data_type1.setAdapter(mSpinner_ArrayAdapter);
         mSP_data_type2.setAdapter(mSpinner_ArrayAdapter);
         mSP_data_type3.setAdapter(mSpinner_ArrayAdapter);
-
-        findViewById(R.id.btn_table_Create).setOnClickListener(this);
 
     }
 
@@ -131,33 +105,34 @@ public class DB02_DB_SearchUseHelper extends ActionBarActivity implements View.O
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_db_open :
-                dbHelper_btn = new DB02_DB_HelperClass(this);
+                dbHelper_btn = new DB02_HelperClass(this);
                 dbHelper_btn.DATABASE_NAME = "test.db";
                 result = dbHelper_btn.DB_Open();
                 mTV_status.setText(result);
                 dbHelper_btn.close();
                 break;
             case R.id.tv_db_drop :
-                dbHelper_btn = new DB02_DB_HelperClass(this);
+                dbHelper_btn = new DB02_HelperClass(this);
                 dbHelper_btn.DATABASE_NAME = "test.db";
                 result = dbHelper_btn.DB_Drop();
                 mTV_status.setText(result);
                 dbHelper_btn.close();
                 break;
             case R.id.tv_db_check :
-                dbHelper_btn = new DB02_DB_HelperClass(this);
+                dbHelper_btn = new DB02_HelperClass(this);
                 dbHelper_btn.DATABASE_NAME = "test.db";
                 result = dbHelper_btn.DB_ExistentCheck();
                 mTV_status.setText(result);
                 dbHelper_btn.close();
                 break;
             case R.id.btn_table_Create :
-                //dbHelper_Table = new DB02_DB_HelperClass(this);
-                //String c = dbHelper_Table.Table_Create(strTable, strFiled1, strDataType1, strFiled2, strDataType2, strFiled3, strDataType3);
-                showToast("1// " + mET_table_name.getText().toString());
-                showToast("2// " + strTable);
-                //mSpinner_ArrayAdapter.notifyDataSetChanged();
-                //dbHelper_Table.close();
+                EditText_getText();
+                dbHelper_Table = new DB02_HelperClass(this);
+                dbHelper_Table.open();
+                String c = dbHelper_Table.Table_Create(strTable, strFiled1, strDataType1, strFiled2, strDataType2, strFiled3, strDataType3);
+                dbHelper_Table.close();
+                showToast(c);
+                Adapter_ReSetting();
                 break;
             default:
                 break;
@@ -165,10 +140,36 @@ public class DB02_DB_SearchUseHelper extends ActionBarActivity implements View.O
     }
 
 
+    // 데이터 조회해서 어뎁터 생성
+    public void Adapter_ReSetting () {
+        // 1. DB02_DB_HelperClass 객체 사용 선언
+        dbHelper= new DB02_HelperClass(this);
+        dbHelper.open();
+        // 2. Data 요청 결과 배열 선언
+        //m_ArrayList = new ArrayList<>();
+        // 3. dbHelper의 조회결과값 배열 저장
+        m_ArrayList = dbHelper.TABLE_TableAll_inDB();
+        // 4. 어댑터 생성후 배열 셋팅
+        mDB_Adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, m_ArrayList);
+        // 5. 리스트뷰에 어댑터 연결
+        mLV_DataList.setAdapter(mDB_Adapter);
+        // 6. DB 사용 종료
+        dbHelper.close();
+    }
+
+    // EditText 데이터 변수 담기
+    public void EditText_getText() {
+        strTable = mET_table_name.getText().toString();
+        strFiled1 = mET_field_name1.getText().toString();
+        strFiled2 = mET_field_name2.getText().toString();
+        strFiled3 = mET_field_name3.getText().toString();
+    }
+
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        switch (view.getId()) {
+        switch (parent.getId()) {
             case R.id.sp_data_type1 :
                 strDataType1 = (String) mSP_data_type1.getSelectedItem();
                 break;

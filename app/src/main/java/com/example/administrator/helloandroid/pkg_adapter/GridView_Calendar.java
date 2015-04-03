@@ -62,7 +62,7 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
     private Button mBtn_next_M;             // 다음달 버튼
 
     private ListView mSeld_List_View;           // 리스트뷰
-    private ListView_Adapter mSeld_Adapter;     // 리스트뷰 어뎁터
+    private GridView_ListView_Adapter mSeld_Adapter;     // 리스트뷰 어뎁터
 
     //===============================================================
     ////// 달력 헤더 배열 값 셋팅 (요일)
@@ -152,7 +152,7 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
         if (temp_ArrayList == null) {
             mSeld_List_View.setAdapter(null);
         } else {
-            mSeld_Adapter = new ListView_Adapter(getApplicationContext(), temp_ArrayList);
+            mSeld_Adapter = new GridView_ListView_Adapter(getApplicationContext(), temp_ArrayList);
             mSeld_List_View.setAdapter(mSeld_Adapter);
         }
     }
@@ -318,7 +318,7 @@ public class GridView_Calendar extends ActionBarActivity implements View.OnClick
                             }
 
                             array_value.add(val_Content);
-                            mSeld_Adapter = new ListView_Adapter(getApplicationContext(), array_value);
+                            mSeld_Adapter = new GridView_ListView_Adapter(getApplicationContext(), array_value);
 
                             mSeld_List_View.setAdapter(mSeld_Adapter);
 
