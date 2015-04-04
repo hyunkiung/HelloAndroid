@@ -25,7 +25,7 @@ public class DB02_HelperActivity extends ActionBarActivity implements View.OnCli
 
     private String result = "DB02_DB_HelperClass 리턴값 확인용 TextView";
     private ArrayList<String> m_ArrayList;
-    private ArrayAdapter<String> mDB_Adapter;
+    private DB02_HelperAdapter mDB_Adapter;
     private ArrayAdapter<String> mSpinner_ArrayAdapter;
     private ListView mLV_DataList;
     private Spinner mSP_data_type1, mSP_data_type2, mSP_data_type3;
@@ -133,6 +133,7 @@ public class DB02_HelperActivity extends ActionBarActivity implements View.OnCli
                 dbHelper_Table.close();
                 showToast(c);
                 Adapter_ReSetting();
+                EditText_reSet();
                 break;
             default:
                 break;
@@ -150,7 +151,7 @@ public class DB02_HelperActivity extends ActionBarActivity implements View.OnCli
         // 3. dbHelper의 조회결과값 배열 저장
         m_ArrayList = dbHelper.TABLE_TableAll_inDB();
         // 4. 어댑터 생성후 배열 셋팅
-        mDB_Adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, m_ArrayList);
+        mDB_Adapter = new DB02_HelperAdapter(getApplicationContext(), m_ArrayList);
         // 5. 리스트뷰에 어댑터 연결
         mLV_DataList.setAdapter(mDB_Adapter);
         // 6. DB 사용 종료
@@ -163,6 +164,14 @@ public class DB02_HelperActivity extends ActionBarActivity implements View.OnCli
         strFiled1 = mET_field_name1.getText().toString();
         strFiled2 = mET_field_name2.getText().toString();
         strFiled3 = mET_field_name3.getText().toString();
+    }
+
+    // EditText 초기화
+    public void EditText_reSet() {
+        mET_table_name.setText("");
+        mET_field_name1.setText("");
+        mET_field_name2.setText("");
+        mET_field_name3.setText("");
     }
 
 
