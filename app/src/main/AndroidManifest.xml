@@ -11,7 +11,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <!-- Open GL 버전2 지원여부 (Google Map) -->
-    <uses-feature android:glEsVersion="0x00020000"  android:required="true" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -25,7 +27,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBRiCUg_e0RACNHRFF-M4NQ7Zz4KM7lCWs" />
 
-
         <!-- pkg_mainFrame 실습 메뉴 메인 엑티비티 -->
         <activity
             android:name=".pkg_mainFrame.AdapterListExam2_Main"
@@ -33,6 +34,7 @@
             android:theme="@style/Base.Theme.AppCompat" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -41,9 +43,6 @@
             android:label="@string/title_activity_adapter_list_exam2__sub"
             android:theme="@style/Base.Theme.AppCompat" >
         </activity>
-
-
-
 
         <!-- pkg_activity 액티비티 목록 -->
         <activity
@@ -79,8 +78,6 @@
             android:label="@string/title_activity_target_exam" >
         </activity>
 
-
-
         <!-- pkg_adapter 액티비티 목록 -->
         <activity
             android:name=".pkg_adapter.ListViewExam"
@@ -103,22 +100,17 @@
             android:theme="@style/Base.Theme.AppCompat" >
         </activity>
 
-
-
         <!-- pkg_event 액티비티 목록 -->
         <activity
             android:name=".pkg_event.TouchEventActivity"
             android:label="@string/title_activity_touch_event" >
         </activity>
 
-
-
         <!-- pkg_mission 액티비티 목록 -->
         <activity
             android:name=".pkg_mission.Mission_193Page"
             android:label="@string/title_activity_mission_193_page" >
         </activity>
-
         <activity
             android:name=".pkg_mission.Mission_271Page"
             android:label="@string/title_activity_mission_271_page" >
@@ -127,7 +119,6 @@
             android:name=".pkg_mission.Mission_271Page_sub1"
             android:label="@string/title_activity_mission_271_page_sub1" >
         </activity>
-
         <activity
             android:name=".pkg_mission.Mission_332Page"
             android:label="@string/title_activity_mission_332_page" >
@@ -140,8 +131,6 @@
             android:name=".pkg_mission.Mission_392Page"
             android:label="@string/title_activity_mission_392_page" >
         </activity>
-
-
 
         <!-- pkg_thread 액티비티 목록 -->
         <activity
@@ -181,15 +170,11 @@
             android:label="@string/title_activity_thread09__looper" >
         </activity>
 
-
-
         <!-- project_apiTest 액티비티 목록 -->
         <activity
             android:name=".project_apiTest.Google_API_Map"
             android:label="@string/title_activity_google__api__map" >
         </activity>
-
-
 
         <!-- project_team 액티비티 목록 -->
         <activity
@@ -200,7 +185,6 @@
             android:name=".project_team.xml_json_test"
             android:label="@string/title_activity_xml_json_test" >
         </activity>
-
         <activity
             android:name=".project_team.Parsing01_Main"
             android:label="@string/title_activity_parsing01__main" >
@@ -220,6 +204,10 @@
         <activity
             android:name=".project_team.DB02_HelperActivity"
             android:label="@string/title_activity_db02__db__search_use_helper" >
+        </activity>
+        <activity
+            android:name=".project_team.DB03_TableActivity"
+            android:label="@string/title_activity_db03__table" >
         </activity>
     </application>
 

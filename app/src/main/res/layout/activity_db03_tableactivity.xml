@@ -1,0 +1,257 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="2dp"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.administrator.helloandroid.project_team.DB03_TableActivity">
+
+        <!-- 데이터베이스 목록 헤더부분 시작 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:text="DataBase를 선택하세요 ▷"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <Spinner
+                android:id="@+id/sp_db_list"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:textSize="12dp"
+                android:drawSelectorOnTop="true"
+                android:prompt="@string/spinner_table_prompt"
+                android:layoutMode="clipBounds"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <!-- 데이터베이스 목록 헤더부분 끝 -->
+
+
+        <!-- 데이터베이스별 테이블 목록과 생성폼부분 시작 -->
+        <TextView
+            android:id="@+id/tv_sel_db"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#dddddd"
+            android:textColor="#ff711c20"
+            android:textSize="15dp"
+            android:gravity="center"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow>
+                <ListView
+                    android:id="@+id/lv_DataList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    ></ListView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#666666"></View>
+
+                <TableLayout
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:stretchColumns="*">
+
+                    <TableRow>
+                        <TextView
+                            android:text="테이블 생성"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_span="2"
+                            android:textSize="12dp"
+                            android:background="#555555"
+                            android:gravity="center" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            android:text="테이블명 :"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="12dp"
+                            android:gravity="center"/>
+                        <EditText
+                            android:text=""
+                            android:id="@+id/et_table_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#666666"></View>
+
+                    <TableRow>
+                        <TextView
+                            android:text="::필드명::"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:background="#dddddd"
+                            android:textColor="#111111"
+                            android:textSize="12dp"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:text="::데이터타입::"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:background="#dddddd"
+                            android:textColor="#111111"
+                            android:textSize="12dp"
+                            android:gravity="center"/>
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            android:text="기본키 id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:background="#777777"
+                            android:textColor="#111111"
+                            android:textSize="12dp"
+                            android:gravity="center"/>
+                        <TextView
+                            android:text="intger 자동 생성"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:background="#777777"
+                            android:textColor="#111111"
+                            android:textSize="12dp"
+                            android:gravity="center"/>
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#666666"></View>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#666666"></View>
+
+                    <TableRow android:layout_height="30dp">
+                        <EditText
+                            android:text=""
+                            android:hint="필드명1"
+                            android:id="@+id/et_field_name1"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:textSize="12dp"
+                            android:layout_weight="1"/>
+                        <Spinner
+                            android:id="@+id/sp_data_type1"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:textSize="12dp"
+                            android:drawSelectorOnTop="true"
+                            android:prompt="@string/spinner_table_prompt"
+                            android:layoutMode="clipBounds"/>
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#666666"></View>
+
+                    <TableRow android:layout_height="25dp">
+                        <EditText
+                            android:text=""
+                            android:hint="필드명2"
+                            android:id="@+id/et_field_name2"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:textSize="12dp"
+                            android:layout_weight="1"/>
+                        <Spinner
+                            android:id="@+id/sp_data_type2"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:textSize="12dp"
+                            android:drawSelectorOnTop="true"
+                            android:prompt="@string/spinner_table_prompt"
+                            android:layoutMode="opticalBounds"/>
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#666666"></View>
+
+                    <TableRow android:layout_height="25dp">
+                        <EditText
+                            android:text=""
+                            android:hint="필드명3"
+                            android:id="@+id/et_field_name3"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:textSize="12dp"
+                            android:layout_weight="1"/>
+                        <Spinner
+                            android:id="@+id/sp_data_type3"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:textSize="12dp"
+                            android:drawSelectorOnTop="true"
+                            android:prompt="@string/spinner_table_prompt"
+                            android:layoutMode="opticalBounds"/>
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#666666"></View>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"></View>
+
+                    <TableRow>
+                        <ImageButton
+                            android:id="@+id/btn_table_Create"
+                            android:src="@drawable/save1"
+                            android:padding="3dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_span="2"
+                            android:layout_gravity="center"/>
+                    </TableRow>
+
+                </TableLayout>
+
+            </TableRow>
+        </TableLayout>
+        <!-- 데이터베이스별 테이블 목록과 생성폼부분 끝 -->
+
+    </LinearLayout>
+
+</ScrollView>

@@ -42,6 +42,7 @@ import com.example.administrator.helloandroid.pkg_thread.thread09_Looper;
 import com.example.administrator.helloandroid.project_apiTest.Google_API_Map;
 import com.example.administrator.helloandroid.project_team.DB01_Create;
 import com.example.administrator.helloandroid.project_team.DB02_HelperActivity;
+import com.example.administrator.helloandroid.project_team.DB03_TableActivity;
 import com.example.administrator.helloandroid.project_team.Parsing01_Main;
 import com.example.administrator.helloandroid.project_team.xml_Parser_test;
 import com.example.administrator.helloandroid.project_team.xml_json_test;
@@ -154,14 +155,16 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             "Json Parser + ListView 테스트",
             "Json Parser + Adapter + ImageLoader \n(YouTube 리스트 구현)",
             "DataBase 테스트",
-            "DataBase Helper Class 사용해보기"
+            "DataBase 목록+컨트롤 use HelperClass",
+            "Table 목록+컨트롤 use HelperClass"
     };
     private static final Class[] array_ITEMS_pkg7_CLASS = {
             xml_Parser_test.class,
             xml_json_test.class,
             Parsing01_Main.class,
             DB01_Create.class,
-            DB02_HelperActivity.class
+            DB02_HelperActivity.class,
+            DB03_TableActivity.class
 
     };
 
