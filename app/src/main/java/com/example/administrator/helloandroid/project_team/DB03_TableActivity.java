@@ -57,7 +57,7 @@ public class DB03_TableActivity extends ActionBarActivity implements AdapterView
 
         //액션바 선언 및 타이틀 설정, 위젯 선언
         action_Bar = this.getSupportActionBar();
-        action_Bar.setTitle("DataBase 컨트롤 + 목록");
+        action_Bar.setTitle("Table 컨트롤 + 목록");
 
         mLV_DataList = (ListView) findViewById(R.id.lv_DataList);
         mSP_db_list = (Spinner) findViewById(R.id.sp_db_list);

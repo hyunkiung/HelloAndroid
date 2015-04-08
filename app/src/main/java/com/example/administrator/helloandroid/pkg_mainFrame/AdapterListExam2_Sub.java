@@ -44,6 +44,8 @@ import com.example.administrator.helloandroid.project_team.DB01_Create;
 import com.example.administrator.helloandroid.project_team.DB02_HelperActivity;
 import com.example.administrator.helloandroid.project_team.DB03_TableActivity;
 import com.example.administrator.helloandroid.project_team.Parsing01_Main;
+import com.example.administrator.helloandroid.project_team.TourList_DB_Activity;
+import com.example.administrator.helloandroid.project_team.TourList_Table_CODEMT;
 import com.example.administrator.helloandroid.project_team.xml_Parser_test;
 import com.example.administrator.helloandroid.project_team.xml_json_test;
 
@@ -156,7 +158,9 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             "Json Parser + Adapter + ImageLoader \n(YouTube 리스트 구현)",
             "DataBase 테스트",
             "DataBase 목록+컨트롤 use HelperClass",
-            "Table 목록+컨트롤 use HelperClass"
+            "Table 목록+컨트롤 use HelperClass",
+            "TourList DB",
+            "TourList Table CODEMT"
     };
     private static final Class[] array_ITEMS_pkg7_CLASS = {
             xml_Parser_test.class,
@@ -164,7 +168,9 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             Parsing01_Main.class,
             DB01_Create.class,
             DB02_HelperActivity.class,
-            DB03_TableActivity.class
+            DB03_TableActivity.class,
+            TourList_DB_Activity.class,
+            TourList_Table_CODEMT.class
 
     };
 

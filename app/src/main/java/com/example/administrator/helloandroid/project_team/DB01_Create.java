@@ -92,7 +92,8 @@ public class DB01_Create extends ActionBarActivity implements View.OnClickListen
             db = openOrCreateDatabase(db_nm, Activity.MODE_PRIVATE, null);
 
             database_Created = true;
-            Result_Print("데이터베이스 생성 오키");
+            int ver = db.getVersion();
+            Result_Print("데이터베이스 생성 오키 : " + ver);
         } catch(Exception ex) {
             ex.printStackTrace();
             Result_Print("데이터베이스 생성 에러");

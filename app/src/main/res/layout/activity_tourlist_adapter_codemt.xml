@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.example.administrator.helloandroid.project_team.TourList_Adapter_CODEMT">
+
+    <TextView
+        android:id="@+id/tv_id"
+        android:text="id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="7dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_key"
+        android:text="key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_value"
+        android:text="value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_wdt"
+        android:text="wdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textSize="11dp"
+        android:layout_weight="1"
+        />
+
+    <Button
+        android:id="@+id/btn_record_del"
+        android:layout_width="45dp"
+        android:layout_height="25dp"
+        android:background="@drawable/button_circle"
+        android:text="삭제"
+        android:textSize="11dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginRight="7dp"
+        />
+
+</LinearLayout>

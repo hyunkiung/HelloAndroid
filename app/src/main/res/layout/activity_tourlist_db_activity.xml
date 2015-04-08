@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.helloandroid.project_team.TourList_DB_Activity">
+
+    <TextView
+        android:id="@+id/tv_DB_Name"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textSize="15dp"
+        android:background="#dddddd"
+        android:textColor="#333333"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_DB_Path"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="15dp"
+        android:background="#cccccc"
+        android:textColor="#555555"
+        android:gravity="center"/>
+
+    <TextView
+        android:text="테이블 내역"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textSize="15dp"
+        android:background="#bbbbbb"
+        android:textColor="#777777"
+        android:gravity="center"/>
+
+    <ListView
+        android:id="@+id/lv_DataList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></ListView>
+
+</LinearLayout>

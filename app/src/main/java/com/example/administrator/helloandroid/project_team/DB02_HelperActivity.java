@@ -1,5 +1,6 @@
 package com.example.administrator.helloandroid.project_team;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -27,6 +28,8 @@ public class DB02_HelperActivity extends ActionBarActivity implements View.OnCli
     private ArrayAdapter<String> act_Adapter;
     private ListView mLV_DataList;
     private EditText mET_db_name;
+
+    private SQLiteDatabase db_get;
 
     //===============================================================
     ////// 메세지 토스트 메소드 (공용)
@@ -138,6 +141,7 @@ public class DB02_HelperActivity extends ActionBarActivity implements View.OnCli
     //리스트뷰 아이템 클릭 이벤트
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        mET_db_name.setText(act_Adapter.getItem(position));
+        String dbName = act_Adapter.getItem(position);
+        mET_db_name.setText(dbName);
     }
 }

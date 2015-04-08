@@ -72,13 +72,15 @@
                 <View
                     android:layout_width="2dp"
                     android:layout_height="match_parent"
-                    android:background="#666666"></View>
+                    android:background="#666666"
+                    android:visibility="visible"></View>
 
                 <TableLayout
                     android:layout_width="130dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:stretchColumns="*">
+                    android:stretchColumns="*"
+                    android:visibility="visible">
 
                     <TableRow>
                         <TextView
@@ -104,6 +106,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
+                            android:singleLine="true"
+                            android:maxLength="10"
                             android:layout_weight="1"/>
                     </TableRow>
 
@@ -168,6 +172,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:textSize="12dp"
+                            android:singleLine="true"
+                            android:maxLength="10"
                             android:layout_weight="1"/>
                         <Spinner
                             android:id="@+id/sp_data_type1"
@@ -192,6 +198,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:textSize="12dp"
+                            android:singleLine="true"
+                            android:maxLength="10"
                             android:layout_weight="1"/>
                         <Spinner
                             android:id="@+id/sp_data_type2"
@@ -216,6 +224,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:textSize="12dp"
+                            android:singleLine="true"
+                            android:maxLength="10"
                             android:layout_weight="1"/>
                         <Spinner
                             android:id="@+id/sp_data_type3"

@@ -209,6 +209,18 @@
             android:name=".project_team.DB03_TableActivity"
             android:label="@string/title_activity_db03__table" >
         </activity>
+        <activity
+            android:name=".project_team.TourList_DB_Activity"
+            android:label="@string/title_activity_tour_list__db_" >
+        </activity>
+        <activity
+            android:name=".project_team.TourList_Table_CODEMT"
+            android:label="@string/title_activity_tour_list__table__codemt" >
+        </activity>
+        <activity
+            android:name=".project_team.TourList_Adapter_CODEMT"
+            android:label="@string/title_activity_tour_list__adapter__codemt" >
+        </activity>
     </application>
 
 </manifest>

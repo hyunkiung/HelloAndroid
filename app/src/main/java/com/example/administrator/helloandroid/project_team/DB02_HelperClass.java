@@ -47,6 +47,11 @@ public class DB02_HelperClass {
         opener.close();
     }
 
+    // ★★ 커스텀 메소드 ★★ DB 종료 메소드
+    public void version() {
+        opener.close();
+    }
+
 
     //==================================================
     // DataBase Control Method Start ===================

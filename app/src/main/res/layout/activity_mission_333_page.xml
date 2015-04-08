@@ -77,7 +77,7 @@
         android:visibility="gone"
         >
 
-        <TableRow android:background="@drawable/border_set">
+        <TableRow android:background="@drawable/border_square">
 
             <TextView
                 android:text="URL : "
