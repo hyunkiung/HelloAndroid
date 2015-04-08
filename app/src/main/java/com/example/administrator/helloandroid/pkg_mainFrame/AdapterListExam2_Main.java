@@ -33,6 +33,7 @@ public class AdapterListExam2_Main extends ActionBarActivity implements AdapterV
             "pkg_event",
             "pkg_adapter",
             "pkg_thread",
+            "pkg_parsing",
             "pkg_mission",
             "project_apiTest",
             "project_team"

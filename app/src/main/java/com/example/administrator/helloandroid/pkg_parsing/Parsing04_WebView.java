@@ -1,5 +1,5 @@
 
-package com.example.administrator.helloandroid.project_team;
+package com.example.administrator.helloandroid.pkg_parsing;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -95,7 +95,7 @@
     <string name="title_activity_db02__db__search_use_helper">DB02_DB_SearchUseHelper</string>
     <string name="title_activity_db03__table">DB03_TableActivity</string>
     <string name="title_activity_tour_list__db_">TourList_DB_Activity</string>
-    <string name="title_activity_tour_list__table__codemt">TourList_Table_CODEMT</string>
-    <string name="title_activity_tour_list__adapter__codemt">TourList_Adapter_CODEMT</string>
+    <string name="title_activity_tour_list_codemt_activity">TourList_CODEMT_Activity</string>
+    <string name="title_activity_tour_list_codemt_adapter">TourList_CODEMT_Adapter</string>
 
 </resources>

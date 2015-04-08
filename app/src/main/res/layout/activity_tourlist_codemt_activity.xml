@@ -138,7 +138,7 @@
                 android:layout_height="30dp"
                 android:background="@drawable/border_circle"
                 android:paddingLeft="5dp"
-                android:maxLength="15"
+                android:maxLength="20"
                 android:textCursorDrawable="@null"
                 />
             <View

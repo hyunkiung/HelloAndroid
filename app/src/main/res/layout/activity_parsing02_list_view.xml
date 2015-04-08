@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:orientation="horizontal"
-    tools:context="com.example.administrator.helloandroid.project_team.Parsing04_WebView">
+    tools:context="com.example.administrator.helloandroid.pkg_parsing.Parsing04_WebView">
 
 
     <LinearLayout

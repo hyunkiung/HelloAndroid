@@ -1,4 +1,4 @@
-package com.example.administrator.helloandroid.project_team;
+package com.example.administrator.helloandroid.pkg_parsing;
 
 import android.util.Log;
 

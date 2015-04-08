@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidDomInspection -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.helloandroid" >
 
@@ -176,27 +177,29 @@
             android:label="@string/title_activity_google__api__map" >
         </activity>
 
-        <!-- project_team 액티비티 목록 -->
+        <!-- pkg_parsing 액티비티 목록 -->
         <activity
-            android:name=".project_team.xml_Parser_test"
+            android:name=".pkg_parsing.xml_Parser_test"
             android:label="@string/title_activity_xml__parser_test" >
         </activity>
         <activity
-            android:name=".project_team.xml_json_test"
+            android:name=".pkg_parsing.xml_json_test"
             android:label="@string/title_activity_xml_json_test" >
         </activity>
         <activity
-            android:name=".project_team.Parsing01_Main"
+            android:name=".pkg_parsing.Parsing01_Main"
             android:label="@string/title_activity_parsing01__main" >
         </activity>
         <activity
-            android:name=".project_team.Parsing04_WebView"
+            android:name=".pkg_parsing.Parsing04_WebView"
             android:label="@string/title_activity_parsing04__web_view" >
         </activity>
         <activity
-            android:name=".project_team.Parsing06_YouTube"
+            android:name=".pkg_parsing.Parsing06_YouTube"
             android:label="@string/title_activity_parsing06__you_tube" >
         </activity>
+
+        <!-- project_team 액티비티 목록 -->
         <activity
             android:name=".project_team.DB01_Create"
             android:label="@string/title_activity_db01__create" >
@@ -214,12 +217,12 @@
             android:label="@string/title_activity_tour_list__db_" >
         </activity>
         <activity
-            android:name=".project_team.TourList_Table_CODEMT"
-            android:label="@string/title_activity_tour_list__table__codemt" >
+            android:name=".project_team.TourList_CODEMT_Activity"
+            android:label="@string/title_activity_tour_list_codemt_activity" >
         </activity>
         <activity
             android:name=".project_team.TourList_Adapter_CODEMT"
-            android:label="@string/title_activity_tour_list__adapter__codemt" >
+            android:label="@string/title_activity_tour_list_codemt_adapter" >
         </activity>
     </application>
 

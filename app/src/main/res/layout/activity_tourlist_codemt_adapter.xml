@@ -43,7 +43,7 @@
         android:layout_weight="1"
         />
 
-    <Button
+    <TextView
         android:id="@+id/btn_record_del"
         android:layout_width="45dp"
         android:layout_height="25dp"
@@ -51,7 +51,9 @@
         android:text="삭제"
         android:textSize="11dp"
         android:textColor="#FFFFFF"
-        android:layout_marginRight="7dp"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_marginRight="10dp"
         />
 
 </LinearLayout>

@@ -30,6 +30,9 @@ import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_332Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_333Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_392Page;
+import com.example.administrator.helloandroid.pkg_parsing.Parsing01_Main;
+import com.example.administrator.helloandroid.pkg_parsing.xml_Parser_test;
+import com.example.administrator.helloandroid.pkg_parsing.xml_json_test;
 import com.example.administrator.helloandroid.pkg_thread.thread01_run;
 import com.example.administrator.helloandroid.pkg_thread.thread02_progress;
 import com.example.administrator.helloandroid.pkg_thread.thread03_Runnable;
@@ -43,11 +46,8 @@ import com.example.administrator.helloandroid.project_apiTest.Google_API_Map;
 import com.example.administrator.helloandroid.project_team.DB01_Create;
 import com.example.administrator.helloandroid.project_team.DB02_HelperActivity;
 import com.example.administrator.helloandroid.project_team.DB03_TableActivity;
-import com.example.administrator.helloandroid.project_team.Parsing01_Main;
+import com.example.administrator.helloandroid.project_team.TourList_CODEMT_Activity;
 import com.example.administrator.helloandroid.project_team.TourList_DB_Activity;
-import com.example.administrator.helloandroid.project_team.TourList_Table_CODEMT;
-import com.example.administrator.helloandroid.project_team.xml_Parser_test;
-import com.example.administrator.helloandroid.project_team.xml_json_test;
 
 import java.util.ArrayList;
 
@@ -130,13 +130,24 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
     };
 
     private static final String[] array_ITEMS_pkg5_NAME = {
+            "XmlPullParser 테스트",
+            "Json Parser + ListView 테스트",
+            "Json Parser + Adapter + ImageLoader \n(YouTube 리스트 구현)"
+    };
+    private static final Class[] array_ITEMS_pkg5_CLASS = {
+            xml_Parser_test.class,
+            xml_json_test.class,
+            Parsing01_Main.class
+    };
+
+    private static final String[] array_ITEMS_pkg6_NAME = {
             "미션 193p 입력받은 문자 토스트",
             "미션 271p 인텐트, 다이얼로그",
             "미션 332p 데이트 피커",
             "미션 333p 브라우져, 애니메이션",
             "미션 392p 달력,해쉬맵"
     };
-    private static final Class[] array_ITEMS_pkg5_CLASS = {
+    private static final Class[] array_ITEMS_pkg6_CLASS = {
             Mission_193Page.class,
             Mission_271Page.class,
             Mission_332Page.class,
@@ -145,33 +156,26 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
     };
 
 
-    private static final String[] array_ITEMS_pkg6_NAME = {
+    private static final String[] array_ITEMS_pkg7_NAME = {
             "GoogleMap API 테스트"
     };
-    private static final Class[] array_ITEMS_pkg6_CLASS = {
+    private static final Class[] array_ITEMS_pkg7_CLASS = {
             Google_API_Map.class
     };
 
-    private static final String[] array_ITEMS_pkg7_NAME = {
-            "XmlPullParser 테스트",
-            "Json Parser + ListView 테스트",
-            "Json Parser + Adapter + ImageLoader \n(YouTube 리스트 구현)",
+    private static final String[] array_ITEMS_pkg8_NAME = {
             "DataBase 테스트",
             "DataBase 목록+컨트롤 use HelperClass",
             "Table 목록+컨트롤 use HelperClass",
-            "TourList DB",
+            "TourList DB, Table",
             "TourList Table CODEMT"
     };
-    private static final Class[] array_ITEMS_pkg7_CLASS = {
-            xml_Parser_test.class,
-            xml_json_test.class,
-            Parsing01_Main.class,
+    private static final Class[] array_ITEMS_pkg8_CLASS = {
             DB01_Create.class,
             DB02_HelperActivity.class,
             DB03_TableActivity.class,
             TourList_DB_Activity.class,
-            TourList_Table_CODEMT.class
-
+            TourList_CODEMT_Activity.class
     };
 
 
@@ -221,14 +225,17 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             case "pkg_thread":
                 result = new Pair(array_ITEMS_pkg4_NAME, array_ITEMS_pkg4_CLASS);
                 break;
-            case "pkg_mission":
+            case "pkg_parsing":
                 result = new Pair(array_ITEMS_pkg5_NAME, array_ITEMS_pkg5_CLASS);
                 break;
-            case "project_apiTest":
+            case "pkg_mission":
                 result = new Pair(array_ITEMS_pkg6_NAME, array_ITEMS_pkg6_CLASS);
                 break;
-            case "project_team":
+            case "project_apiTest":
                 result = new Pair(array_ITEMS_pkg7_NAME, array_ITEMS_pkg7_CLASS);
+                break;
+            case "project_team":
+                result = new Pair(array_ITEMS_pkg8_NAME, array_ITEMS_pkg8_CLASS);
                 break;
             default:
                 break;

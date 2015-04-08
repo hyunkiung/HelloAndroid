@@ -1,5 +1,5 @@
 
-package com.example.administrator.helloandroid.project_team;
+package com.example.administrator.helloandroid.pkg_parsing;
 
 /**
  * Created by Administrator on 2015-03-30.

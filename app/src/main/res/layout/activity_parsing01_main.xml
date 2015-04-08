@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.example.administrator.helloandroid.project_team.Parsing01_Main">
+    tools:context="com.example.administrator.helloandroid.pkg_parsing.Parsing01_Main">
 
     <!--
     clip_vertical

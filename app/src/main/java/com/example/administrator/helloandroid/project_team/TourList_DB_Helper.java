@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Created by Administrator on 2015-04-07.
+ * Created by HYUN.KI.UNG on 2015-04-07.
  */
 public class TourList_DB_Helper {
 
@@ -66,8 +66,8 @@ public class TourList_DB_Helper {
     // 부가적인 객체들
     private Context activity_Context;
 
-    private TourList_info_CODEMT infoClass_CODEMT;
-    private ArrayList<TourList_info_CODEMT> CODEMT_List;
+    private TourList_CODEMT_info CODEMT_infoClass;
+    private ArrayList<TourList_CODEMT_info> CODEMT_List;
     private ArrayList<String> Helper_TABLE_List;
 
     public TourList_DB_Helper(Context context) {
@@ -123,14 +123,13 @@ public class TourList_DB_Helper {
 
     // TT_CODEMT : Insert Data
     public long CODEMT_insertColumn(String key, String value, String wdt){
+        Result_Log("CODEMT_insertColumn()" + key + value + wdt);
         ContentValues values = new ContentValues();
         values.put("key", key);
         values.put("value", value);
         values.put("wdt", wdt);
-
-        Result_Log("CODEMT_insertColumn()" + key + value + wdt);
-        long addData = db.insert(TNAME_CODEMT, null, values);
-        return addData;
+        long addResult = db.insert(TNAME_CODEMT, null, values);
+        return addResult;
     }
 
     // TT_CODEMT : Delete Data
@@ -140,25 +139,42 @@ public class TourList_DB_Helper {
         return delCount;
     }
 
+    // TT_CODEMT : Update Data
+    public int CODEMT_updateColumn(int id, String key, String value, String wdt) {
+        Result_Log("CODEMT_deleteColumn() : key = " + id);
+        ContentValues values = new ContentValues();
+        values.put("key", key);
+        values.put("value", value);
+        values.put("wdt", wdt);
+        int upCount = db.update(TNAME_CODEMT, values, "_id="+id, null);
+        return upCount;
+    }
+
     // TT_CODEMT : Select All Data
-    public ArrayList<TourList_info_CODEMT> CODEMT_selectColumn_All() {
+    public ArrayList<TourList_CODEMT_info> CODEMT_selectColumn_All(int sel_id) {
         Result_Log("CODEMT_selectColumn_All() : " + TNAME_CODEMT);
         CODEMT_List = new ArrayList<>();
-        Cursor cur = db.rawQuery("select * from TT_CODEMT", null);
+
+        if(sel_id == 0) {
+            sqlQuery = "select _id, key, value, wdt from " + TNAME_CODEMT;
+        } else {
+            sqlQuery = "select _id, key, value, wdt from " + TNAME_CODEMT + " where _id=" + sel_id;
+        }
+        Cursor cur = db.rawQuery(sqlQuery, null);
 
         if (cur.getCount() == 0) {
             //Helper_TABLE_List.add("NONE_DATA", "NONE_DATA", "NONE_DATA", "NONE_DATA");
         } else {
             cur.moveToFirst();
             while (!cur.isAfterLast()) {
-                infoClass_CODEMT = new TourList_info_CODEMT(
+                CODEMT_infoClass = new TourList_CODEMT_info(
                         cur.getInt(cur.getColumnIndex("_id")),
                         cur.getString(cur.getColumnIndex("key")),
                         cur.getString(cur.getColumnIndex("value")),
                         cur.getString(cur.getColumnIndex("wdt"))
                 );
-                CODEMT_List.add(infoClass_CODEMT);
-                Result_Log("CODEMT_selectColumn_All() while == " + infoClass_CODEMT);
+                CODEMT_List.add(CODEMT_infoClass);
+                Result_Log("CODEMT_selectColumn_All() while == " + CODEMT_infoClass);
                 cur.moveToNext();
             }
         }
