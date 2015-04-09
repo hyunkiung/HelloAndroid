@@ -11,6 +11,7 @@ import android.util.Log;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by HYUN.KI.UNG on 2015-04-07.
@@ -39,10 +40,11 @@ public class TourList_DB_Helper {
                                     "   ,title1 text" +
                                     "   ,title2 text" +
                                     "   ,title3 text" +
-                                    "   ,content text" +
+                                    "   ,contents text" +
                                     "   ,weather text" +
                                     "   ,companion text" +
                                     "   ,location text" +
+                                    "   ,pid integer default 0" +
                                     "   ,tdt text" +
                                     "   ,wdt text" +
                                     "   ,edt text" +
@@ -65,10 +67,17 @@ public class TourList_DB_Helper {
 
     // 부가적인 객체들
     private Context activity_Context;
+    private ArrayList<String> Helper_TABLE_List;
 
     private TourList_CODEMT_info CODEMT_infoClass;
     private ArrayList<TourList_CODEMT_info> CODEMT_List;
-    private ArrayList<String> Helper_TABLE_List;
+
+    private TourList_LISTMT_info LISTMT_infoClass;
+    private ArrayList<TourList_LISTMT_info> LISTMT_List;
+
+    private TourList_PHOTODT_info PHOTODT_infoClass;
+    private ArrayList<TourList_PHOTODT_info> PHOTODT_List;
+
 
     public TourList_DB_Helper(Context context) {
         Result_Log("TourList_DB_Helper() 생성자");
@@ -82,6 +91,7 @@ public class TourList_DB_Helper {
         db = opener.getWritableDatabase();
         DATABASE_VERSION = db.getVersion();
         DATABASE_PATH = db.getPath();
+        db.setLocale(Locale.KOREA); // SQLite 다국어처리 NO_LOCALIZED_COLLATORS
         return true;
     }
 
@@ -120,10 +130,17 @@ public class TourList_DB_Helper {
         cursor.close();
         return Helper_TABLE_List;
     }
+    //==================================================
+    // Table Control Method End ========================
+    //==================================================
 
+
+    //==============================================================
+    // Table Control TT_CODEMT Method Start ========================
+    //==============================================================
     // TT_CODEMT : Insert Data
     public long CODEMT_insertColumn(String key, String value, String wdt){
-        Result_Log("CODEMT_insertColumn()" + key + value + wdt);
+        Result_Log("CODEMT_insertColumn() : " + key + value + wdt);
         ContentValues values = new ContentValues();
         values.put("key", key);
         values.put("value", value);
@@ -134,19 +151,19 @@ public class TourList_DB_Helper {
 
     // TT_CODEMT : Delete Data
     public int CODEMT_deleteColumn(int id){
-        Result_Log("CODEMT_deleteColumn() : key = " + id);
-        int delCount = db.delete(TNAME_CODEMT, "_id=" + id, null);
+        Result_Log("CODEMT_deleteColumn() : _id = " + id);
+        int delCount = db.delete(TNAME_CODEMT, "_id =" + id, null);
         return delCount;
     }
 
     // TT_CODEMT : Update Data
     public int CODEMT_updateColumn(int id, String key, String value, String wdt) {
-        Result_Log("CODEMT_deleteColumn() : key = " + id);
+        Result_Log("CODEMT_deleteColumn() : _id = " + id);
         ContentValues values = new ContentValues();
         values.put("key", key);
         values.put("value", value);
         values.put("wdt", wdt);
-        int upCount = db.update(TNAME_CODEMT, values, "_id="+id, null);
+        int upCount = db.update(TNAME_CODEMT, values, "_id ="+id, null);
         return upCount;
     }
 
@@ -181,11 +198,175 @@ public class TourList_DB_Helper {
         cur.close();
         return CODEMT_List;
     }
-    //==================================================
-    // Table Control Method End ========================
-    //==================================================
+    //==============================================================
+    // Table Control TT_CODEMT Method End ==========================
+    //==============================================================
 
 
+    //==============================================================
+    // Table Control TT_LISTMT Method Start ========================
+    //==============================================================
+    // TT_LISTMT : Insert Data
+    public long LISTMT_insertColumn(String title1, String title2, String title3, String contents, String weather, String companion, String location, String tdt, String wdt, String edt){
+        Result_Log("LISTMT_insertColumn()" + title1 + title2 + title3);
+        ContentValues values = new ContentValues();
+        values.put("title1", title1);
+        values.put("title2", title2);
+        values.put("title3", title3);
+        values.put("contents", contents);
+        values.put("weather", weather);
+        values.put("companion", companion);
+        values.put("location", location);
+        values.put("tdt", tdt);
+        values.put("wdt", wdt);
+        values.put("edt", edt);
+        long addResult = db.insert(TNAME_LISTMT, null, values);
+        return addResult;
+    }
+
+    // TT_LISTMT : Delete Data
+    public int LISTMT_deleteColumn(int id){
+        Result_Log("LISTMT_deleteColumn() : _id = " + id);
+        int delCount = db.delete(TNAME_LISTMT, "_id =" + id, null);
+        return delCount;
+    }
+
+    // TT_LISTMT : Update Data
+    public int LISTMT_updateColumn(int id, String title1, String title2, String title3, String contents, String weather, String companion, String location, String tdt,String edt) {
+        Result_Log("LISTMT_updateColumn() : _id = " + id);
+        ContentValues values = new ContentValues();
+        values.put("title1", title1);
+        values.put("title2", title2);
+        values.put("title3", title3);
+        values.put("contents", contents);
+        values.put("weather", weather);
+        values.put("companion", companion);
+        values.put("location", location);
+        values.put("tdt", tdt);
+        values.put("edt", edt);
+        int upCount = db.update(TNAME_LISTMT, values, "_id = "+id, null);
+        return upCount;
+    }
+
+    // TT_LISTMT : Update Data : 대표사진 수정 (pid)
+    public int LISTMT_updatePhoto(int id, int pid) {
+        Result_Log("LISTMT_updatePhoto() : _id = " + id + ", pid = " + pid);
+        ContentValues values = new ContentValues();
+        values.put("pid", pid);
+        int upCount = db.update(TNAME_LISTMT, values, "_id = "+id, null);
+        return upCount;
+    }
+
+    // TT_LISTMT : Select All Data
+    public ArrayList<TourList_LISTMT_info> LISTMT_selectColumn_All(int sel_id) {
+        Result_Log("LISTMT_selectColumn_All() : " + TNAME_LISTMT);
+        LISTMT_List = new ArrayList<>();
+        // pid로 PHOTODT 조인해서 사진 경로 추가할것
+        if(sel_id == 0) {
+            sqlQuery = "select _id, title1, title2, title3, contents, weather, companion, location, pid, tdt, wdt, edt from " + TNAME_LISTMT;
+        } else {
+            sqlQuery = "select _id, title1, title2, title3, contents, weather, companion, location, pid, tdt, wdt, edt from " + TNAME_LISTMT + " where _id=" + sel_id;
+        }
+        Cursor cur = db.rawQuery(sqlQuery, null);
+
+        if (cur.getCount() == 0) {
+            //Helper_TABLE_List.add("NONE_DATA", "NONE_DATA", "NONE_DATA", "NONE_DATA");
+        } else {
+            cur.moveToFirst();
+            while (!cur.isAfterLast()) {
+                LISTMT_infoClass = new TourList_LISTMT_info(
+                        cur.getInt(cur.getColumnIndex("_id")),
+                        cur.getString(cur.getColumnIndex("title1")),
+                        cur.getString(cur.getColumnIndex("title2")),
+                        cur.getString(cur.getColumnIndex("title3")),
+                        cur.getString(cur.getColumnIndex("contents")),
+                        cur.getString(cur.getColumnIndex("weather")),
+                        cur.getString(cur.getColumnIndex("companion")),
+                        cur.getString(cur.getColumnIndex("location")),
+                        cur.getInt(cur.getColumnIndex("pid")),
+                        cur.getString(cur.getColumnIndex("tdt")),
+                        cur.getString(cur.getColumnIndex("wdt")),
+                        cur.getString(cur.getColumnIndex("edt"))
+                );
+                LISTMT_List.add(LISTMT_infoClass);
+                Result_Log("LISTMT_selectColumn_All() while == " + LISTMT_infoClass);
+                cur.moveToNext();
+            }
+        }
+        cur.close();
+        return LISTMT_List;
+    }
+    //==============================================================
+    // Table Control TT_LISTMT Method End ==========================
+    //==============================================================
+
+
+    //==============================================================
+    // Table Control TT_PHOTODT Method Start =======================
+    //==============================================================
+    // TT_PHOTODT : Insert Data
+    public long PHOTODT_insertColumn(int mid, String fullurl, String wdt){
+        Result_Log("PHOTODT_insertColumn()" + mid + fullurl + wdt);
+        ContentValues values = new ContentValues();
+        values.put("mid", mid);
+        values.put("FullUrl", fullurl);
+        values.put("wdt", wdt);
+        long addResult = db.insert(TNAME_PHOTODT, null, values);
+        return addResult;
+    }
+
+    // TT_PHOTODT : Delete Data
+    public int PHOTODT_deleteColumn(int id){
+        Result_Log("PHOTODT_deleteColumn() : _id = " + id);
+        int delCount = db.delete(TNAME_PHOTODT, "_id=" + id, null);
+        return delCount;
+    }
+
+    // TT_PHOTODT : Update Data
+    public int PHOTODT_updateColumn(int id, int mid, String fullurl, String wdt) {
+        Result_Log("PHOTODT_deleteColumn() : _id = " + id + ", mid=" + mid);
+        ContentValues values = new ContentValues();
+        values.put("mid", mid);
+        values.put("FullUrl", fullurl);
+        values.put("wdt", wdt);
+        int upCount = db.update(TNAME_PHOTODT, values, "_id="+id, null);
+        return upCount;
+    }
+
+    // TT_PHOTODT : Select All Data
+    public ArrayList<TourList_PHOTODT_info> PHOTODT_selectColumn_All(int sel_id) {
+        Result_Log("PHOTODT_selectColumn_All() : " + TNAME_PHOTODT);
+        PHOTODT_List = new ArrayList<>();
+
+        if(sel_id == 0) {
+            sqlQuery = "select _id, mid, FullUrl, wdt from " + TNAME_PHOTODT;
+        } else {
+            sqlQuery = "select _id, mid, FullUrl, wdt from " + TNAME_PHOTODT + " where _id=" + sel_id;
+        }
+        Cursor cur = db.rawQuery(sqlQuery, null);
+
+        if (cur.getCount() == 0) {
+            //Helper_TABLE_List.add("NONE_DATA", "NONE_DATA", "NONE_DATA", "NONE_DATA");
+        } else {
+            cur.moveToFirst();
+            while (!cur.isAfterLast()) {
+                PHOTODT_infoClass = new TourList_PHOTODT_info(
+                        cur.getInt(cur.getColumnIndex("_id")),
+                        cur.getInt(cur.getColumnIndex("mid")),
+                        cur.getString(cur.getColumnIndex("FullUrl")),
+                        cur.getString(cur.getColumnIndex("wdt"))
+                );
+                PHOTODT_List.add(PHOTODT_infoClass);
+                Result_Log("PHOTODT_selectColumn_All() while == " + PHOTODT_infoClass);
+                cur.moveToNext();
+            }
+        }
+        cur.close();
+        return PHOTODT_List;
+    }
+    //==============================================================
+    // Table Control TT_PHOTODT Method End =========================
+    //==============================================================
 
 
     //=================================================
@@ -234,7 +415,5 @@ public class TourList_DB_Helper {
         String time = dateFormat.format(new Date(System.currentTimeMillis()));
         return time;
     }
-
-
 
 }

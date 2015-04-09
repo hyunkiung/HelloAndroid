@@ -1,0 +1,197 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.helloandroid.project_team.TourList_LISTMT_Adapter">
+
+    <!--행1 (id 타이틀1 타이틀2 타이틀3 버튼)-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:text="id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="7dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_title1"
+            android:text="key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_title2"
+            android:text="value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_title3"
+            android:text="wdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:padding="5dp"
+            android:textSize="11dp"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/btn_record_del"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:background="@drawable/button_circle"
+            android:text="삭제"
+            android:textSize="11dp"
+            android:textColor="#FFFFFF"
+            android:padding="5dp"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+
+
+
+
+    <!--행2 (컨텐츠)-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_contents"
+            android:text="wdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:paddingLeft="5dp"
+            android:textSize="11dp"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+
+
+    <!--행3 (웨더 동반자 대표사진)-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/tv_weather"
+            android:text="id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="7dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_companion"
+            android:text="key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_pid"
+            android:text="value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+
+
+    <!--행4 (방문지 주소)-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:text="wdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:paddingLeft="5dp"
+            android:textSize="11dp"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+
+
+    <!--행5 (방문일 등록일 수정일)-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/tv_tdt"
+            android:text="wdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textSize="10dp"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/tv_wdt"
+            android:text="wdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textSize="10dp"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/tv_edt"
+            android:text="wdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textSize="10dp"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.administrator.helloandroid.project_team.TourList_Table_CODEMT">
+    tools:context="com.example.administrator.helloandroid.project_team.TourList_PHOTODT_Activity">
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -13,14 +13,14 @@
         <!--레코드 등록 영역 시작 -->
         <TableRow>
             <EditText
-                android:id="@+id/et_key"
-                android:text=""
-                android:hint="key 입력"
+                android:id="@+id/et_mid"
+                android:text="0"
+                android:hint="mid 고정"
                 android:textSize="14dp"
                 android:textColor="#000000"
                 android:textColorHint="#555555"
                 android:singleLine="true"
-                android:layout_width="90dp"
+                android:layout_width="40dp"
                 android:layout_height="30dp"
                 android:background="@drawable/border_circle"
                 android:paddingLeft="5dp"
@@ -32,18 +32,18 @@
                 android:layout_height="match_parent"></View>
 
             <EditText
-                android:id="@+id/et_value"
+                android:id="@+id/et_FullUrl"
                 android:text=""
-                android:hint="value 입력"
+                android:hint="FullUrl 입력"
                 android:textSize="14dp"
                 android:textColor="#000000"
                 android:textColorHint="#555555"
                 android:singleLine="true"
-                android:layout_width="90dp"
+                android:layout_width="150dp"
                 android:layout_height="30dp"
                 android:background="@drawable/border_circle"
                 android:paddingLeft="5dp"
-                android:maxLength="15"
+                android:maxLength="100"
                 android:textCursorDrawable="@null"
                 />
             <View
@@ -92,13 +92,14 @@
         <!--레코드 수정 영역 시작 -->
         <TableRow>
             <EditText
-                android:id="@+id/et_edit_key"
+                android:id="@+id/et_edit_mid"
                 android:text=""
+                android:inputType="number"
                 android:textSize="14dp"
                 android:textColor="#000000"
                 android:textColorHint="#555555"
                 android:singleLine="true"
-                android:layout_width="90dp"
+                android:layout_width="40dp"
                 android:layout_height="30dp"
                 android:background="@drawable/border_circle"
                 android:paddingLeft="5dp"
@@ -110,17 +111,17 @@
                 android:layout_height="match_parent"></View>
 
             <EditText
-                android:id="@+id/et_edit_value"
+                android:id="@+id/et_edit_FullUrl"
                 android:text=""
                 android:textSize="14dp"
                 android:textColor="#000000"
                 android:textColorHint="#555555"
                 android:singleLine="true"
-                android:layout_width="90dp"
+                android:layout_width="150dp"
                 android:layout_height="30dp"
                 android:background="@drawable/border_circle"
                 android:paddingLeft="5dp"
-                android:maxLength="15"
+                android:maxLength="100"
                 android:textCursorDrawable="@null"
                 />
             <View

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--suppress AndroidDomInspection -->
+<!-- suppress AndroidDomInspection -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.helloandroid" >
 
@@ -223,6 +223,22 @@
         <activity
             android:name=".project_team.TourList_Adapter_CODEMT"
             android:label="@string/title_activity_tour_list_codemt_adapter" >
+        </activity>
+        <activity
+            android:name=".project_team.TourList_LISTMT_Adapter"
+            android:label="@string/title_activity_tour_list__listmt__adapter" >
+        </activity>
+        <activity
+            android:name=".project_team.TourList_LISTMT_Activity"
+            android:label="@string/title_activity_tour_list__listmt_" >
+        </activity>
+        <activity
+            android:name=".project_team.TourList_PHOTODT_Adapter"
+            android:label="@string/title_activity_tour_list__photodt__adapter" >
+        </activity>
+        <activity
+            android:name=".project_team.TourList_PHOTODT_Activity"
+            android:label="@string/title_activity_tour_list__photodt_" >
         </activity>
     </application>
 

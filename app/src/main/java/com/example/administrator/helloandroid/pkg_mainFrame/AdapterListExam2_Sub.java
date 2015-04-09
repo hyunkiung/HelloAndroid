@@ -48,6 +48,8 @@ import com.example.administrator.helloandroid.project_team.DB02_HelperActivity;
 import com.example.administrator.helloandroid.project_team.DB03_TableActivity;
 import com.example.administrator.helloandroid.project_team.TourList_CODEMT_Activity;
 import com.example.administrator.helloandroid.project_team.TourList_DB_Activity;
+import com.example.administrator.helloandroid.project_team.TourList_LISTMT_Activity;
+import com.example.administrator.helloandroid.project_team.TourList_PHOTODT_Activity;
 
 import java.util.ArrayList;
 
@@ -168,14 +170,18 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             "DataBase 목록+컨트롤 use HelperClass",
             "Table 목록+컨트롤 use HelperClass",
             "TourList DB, Table",
-            "TourList Table CODEMT"
+            "TourList Table CODEMT",
+            "TourList Table LISTMT",
+            "TourList Table PHOTODT"
     };
     private static final Class[] array_ITEMS_pkg8_CLASS = {
             DB01_Create.class,
             DB02_HelperActivity.class,
             DB03_TableActivity.class,
             TourList_DB_Activity.class,
-            TourList_CODEMT_Activity.class
+            TourList_CODEMT_Activity.class,
+            TourList_LISTMT_Activity.class,
+            TourList_PHOTODT_Activity.class
     };
 
 

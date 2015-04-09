@@ -97,5 +97,9 @@
     <string name="title_activity_tour_list__db_">TourList_DB_Activity</string>
     <string name="title_activity_tour_list_codemt_activity">TourList_CODEMT_Activity</string>
     <string name="title_activity_tour_list_codemt_adapter">TourList_CODEMT_Adapter</string>
+    <string name="title_activity_tour_list__listmt__adapter">TourList_LISTMT_Adapter</string>
+    <string name="title_activity_tour_list__listmt_">TourList_LISTMT_Activity</string>
+    <string name="title_activity_tour_list__photodt__adapter">TourList_PHOTODT_Adapter</string>
+    <string name="title_activity_tour_list__photodt_">TourList_PHOTODT_Activity</string>
 
 </resources>
