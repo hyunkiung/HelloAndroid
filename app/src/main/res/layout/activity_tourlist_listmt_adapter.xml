@@ -106,7 +106,7 @@
 
         <TextView
             android:id="@+id/tv_companion"
-            android:text="key"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -115,10 +115,20 @@
 
         <TextView
             android:id="@+id/tv_pid"
-            android:text="value"
-            android:layout_width="wrap_content"
+            android:text=""
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:padding="5dp"
+            android:background="#555555"
+            />
+
+        <TextView
+            android:id="@+id/tv_pFullUrl"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
             android:padding="5dp"
             android:layout_weight="1"
             />

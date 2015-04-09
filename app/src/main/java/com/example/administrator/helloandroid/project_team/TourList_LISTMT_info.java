@@ -17,13 +17,14 @@ public class TourList_LISTMT_info {
     public String tdt;
     public String wdt;
     public String edt;
+    public String pFullUrl;
 
     public TourList_LISTMT_info() {
     }
 
     public TourList_LISTMT_info(int _id, String title1, String title2, String title3,
                                 String contents, String weather, String companion, String location,
-                                int pid, String tdt, String wdt, String edt) {
+                                int pid, String tdt, String wdt, String edt, String pFullUrl) {
         this._id = _id;
         this.title1 = title1;
         this.title2 = title2;
@@ -36,6 +37,7 @@ public class TourList_LISTMT_info {
         this.tdt = tdt;
         this.wdt = wdt;
         this.edt = edt;
+        this.pFullUrl = pFullUrl;
     }
 }
 

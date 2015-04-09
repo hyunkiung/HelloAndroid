@@ -33,6 +33,7 @@ public class TourList_LISTMT_Adapter extends BaseAdapter {
         TextView mTV_tdt;
         TextView mTV_wdt;
         TextView mTV_edt;
+        TextView mTV_pFullUrl;
         TextView mBTN_record_del;
     }
 
@@ -88,6 +89,7 @@ public class TourList_LISTMT_Adapter extends BaseAdapter {
             holder.mTV_tdt = (TextView)v.findViewById(R.id.tv_tdt);
             holder.mTV_wdt = (TextView)v.findViewById(R.id.tv_wdt);
             holder.mTV_edt = (TextView)v.findViewById(R.id.tv_edt);
+            holder.mTV_pFullUrl = (TextView)v.findViewById(R.id.tv_pFullUrl);
             holder.mBTN_record_del = (TextView)v.findViewById(R.id.btn_record_del);
 
             v.setTag(holder);
@@ -98,17 +100,18 @@ public class TourList_LISTMT_Adapter extends BaseAdapter {
 
         holder.mTV_id.setText(String.valueOf(m_List.get(pos)._id));
         //Toast.makeText(mContext, m_List.get(pos).title1.toString(), Toast.LENGTH_SHORT).show();
-        holder.mTV_title1.setText(m_List.get(pos).title1.toString());
-        holder.mTV_title2.setText(m_List.get(pos).title2.toString());
-        holder.mTV_title3.setText(m_List.get(pos).title3.toString());
-        holder.mTV_contents.setText(m_List.get(pos).contents.toString());
-        holder.mTV_weather.setText(m_List.get(pos).weather.toString());
-        holder.mTV_companion.setText(m_List.get(pos).companion.toString());
-        holder.mTV_location.setText(m_List.get(pos).location.toString());
+        holder.mTV_title1.setText(m_List.get(pos).title1);
+        holder.mTV_title2.setText(m_List.get(pos).title2);
+        holder.mTV_title3.setText(m_List.get(pos).title3);
+        holder.mTV_contents.setText(m_List.get(pos).contents);
+        holder.mTV_weather.setText(m_List.get(pos).weather);
+        holder.mTV_companion.setText(m_List.get(pos).companion);
+        holder.mTV_location.setText(m_List.get(pos).location);
         holder.mTV_pid.setText(String.valueOf(m_List.get(pos).pid));
-        holder.mTV_tdt.setText(m_List.get(pos).tdt.toString());
-        holder.mTV_wdt.setText(m_List.get(pos).wdt.toString());
-        holder.mTV_edt.setText(m_List.get(pos).edt.toString());
+        holder.mTV_tdt.setText(m_List.get(pos).tdt);
+        holder.mTV_wdt.setText(m_List.get(pos).wdt);
+        holder.mTV_edt.setText(m_List.get(pos).edt);
+        holder.mTV_pFullUrl.setText(m_List.get(pos).pFullUrl);
 
         holder.mBTN_record_del.setOnClickListener(new View.OnClickListener() {
             @Override

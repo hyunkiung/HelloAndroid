@@ -263,10 +263,20 @@ public class TourList_DB_Helper {
         LISTMT_List = new ArrayList<>();
         // pid로 PHOTODT 조인해서 사진 경로 추가할것
         if(sel_id == 0) {
-            sqlQuery = "select _id, title1, title2, title3, contents, weather, companion, location, pid, tdt, wdt, edt from " + TNAME_LISTMT;
+            sqlQuery = " select a._id, a.title1, a.title2, a.title3, a.contents, a.weather, " +
+                       "       a.companion, a.location, a.pid, a.tdt, a.wdt, a.edt, b.FullUrl as pFullUrl " +
+                       " from " + TNAME_LISTMT + " a " +
+                       " left join " + TNAME_PHOTODT + " b " +
+                       " ON a.pid = b._id";
         } else {
-            sqlQuery = "select _id, title1, title2, title3, contents, weather, companion, location, pid, tdt, wdt, edt from " + TNAME_LISTMT + " where _id=" + sel_id;
+            sqlQuery = " select a._id, a.title1, a.title2, a.title3, a.contents, a.weather, " +
+                       "       a.companion, a.location, a.pid, a.tdt, a.wdt, a.edt, b.FullUrl as pFullUrl " +
+                       " from " + TNAME_LISTMT + " a " +
+                       " left join " + TNAME_PHOTODT + " b " +
+                       " ON a.pid = b._id " +
+                       " where a._id = " + sel_id;
         }
+        Result_Log(sqlQuery);
         Cursor cur = db.rawQuery(sqlQuery, null);
 
         if (cur.getCount() == 0) {
@@ -286,14 +296,15 @@ public class TourList_DB_Helper {
                         cur.getInt(cur.getColumnIndex("pid")),
                         cur.getString(cur.getColumnIndex("tdt")),
                         cur.getString(cur.getColumnIndex("wdt")),
-                        cur.getString(cur.getColumnIndex("edt"))
+                        cur.getString(cur.getColumnIndex("edt")),
+                        cur.getString(cur.getColumnIndex("pFullUrl"))
                 );
                 LISTMT_List.add(LISTMT_infoClass);
-                Result_Log("LISTMT_selectColumn_All() while == " + LISTMT_infoClass);
                 cur.moveToNext();
             }
         }
         cur.close();
+        Result_Log("LISTMT_selectColumn_All() while == " + LISTMT_List);
         return LISTMT_List;
     }
     //==============================================================
