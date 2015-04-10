@@ -1,6 +1,8 @@
 
 package com.example.administrator.helloandroid.pkg_mainFrame;
 
+import java.util.ArrayList;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -51,22 +53,21 @@ import com.example.administrator.helloandroid.project_team.TourList_DB_Activity;
 import com.example.administrator.helloandroid.project_team.TourList_LISTMT_Activity;
 import com.example.administrator.helloandroid.project_team.TourList_PHOTODT_Activity;
 
-import java.util.ArrayList;
+public class AdapterListExam2_Sub extends ActionBarActivity implements
+        AdapterView.OnItemClickListener {
 
-public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterView.OnItemClickListener {
-
-    //===============================================================
-    ////// 선언 : 위젯_리스트뷰, 배열_데이터리스트, 어뎁터_어뎁터리스트
-    //===============================================================
+    // ===============================================================
+    // //// 선언 : 위젯_리스트뷰, 배열_데이터리스트, 어뎁터_어뎁터리스트
+    // ===============================================================
     private ListView mPkg_ListView;
     private ArrayList<String> mPkg_ArrayList;
     private ArrayAdapter<String> mPkg_ArrayAdapter;
     private ActionBar action_Bar;
     private Intent mIntent;
 
-    //===============================================================
-    ////// 배열 값 셋팅 (패키지명)
-    //===============================================================
+    // ===============================================================
+    // //// 배열 값 셋팅 (패키지명)
+    // ===============================================================
     private static final String[] array_ITEMS_pkg1_NAME = {
             "Activity 예제",
             "EditTextActivity",
@@ -157,7 +158,6 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             Mission_392Page.class
     };
 
-
     private static final String[] array_ITEMS_pkg7_NAME = {
             "GoogleMap API 테스트"
     };
@@ -184,14 +184,12 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
             TourList_PHOTODT_Activity.class
     };
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listviewexam);
 
-        //액션바 선언 및 타이틀 설정
+        // 액션바 선언 및 타이틀 설정
         action_Bar = this.getSupportActionBar();
         action_Bar.setTitle("안드로이드 실습  리스트!");
 
@@ -202,19 +200,16 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements AdapterVi
         mPkg_ArrayAdapter = new ArrayAdapter<>(getApplicationContext(),
                 android.R.layout.simple_list_item_1, getItems().first);
 
-
         // 리스트뷰에 에러이어뎁터를 셋팅
         mPkg_ListView.setAdapter(mPkg_ArrayAdapter);
-
 
         // 리스트뷰의 원클릭 리스너 호출 (메인클래스에서 임플리먼트해서 this로 호출)
         mPkg_ListView.setOnItemClickListener(this);
     }
 
-
-    //===============================================================
-    ////// Main에서 던진 패키지명에 따라 배열값 셋팅
-    //===============================================================
+    // ===============================================================
+    // //// Main에서 던진 패키지명에 따라 배열값 셋팅
+    // ===============================================================
     private Pair<String[], Class[]> getItems() {
         Pair<String[], Class[]> result = null;
         String menu = getIntent().getStringExtra("menu");

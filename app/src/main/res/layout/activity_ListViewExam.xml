@@ -7,7 +7,7 @@
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
     android:orientation="horizontal"
-    tools:context="com.example.administrator.helloandroid.pkg_adapter.listView_01_Default">
+    tools:context="com.example.administrator.helloandroid.pkg_adapter.ListViewExam">
 
 
     <ListView

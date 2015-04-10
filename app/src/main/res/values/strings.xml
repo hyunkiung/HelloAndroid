@@ -56,8 +56,6 @@
     <string name="title_activity_main_menu">MainMenuActivity</string>
     <string name="title_activity_mission_333_page">Mission_333Page</string>
     <string name="title_activity_list_view_exam">ListViewExam</string>
-    <string name="title_activity_list_view_01__default">listView_01_Default</string>
-    <string name="title_activity_list_view_02__custom">listView_02_Custom</string>
     <string name="title_activity_custom_basc_adapter">customBascAdapter</string>
     <string name="title_activity_custom_base_adapter">customBaseAdapter</string>
     <string name="title_activity_item_use_base_adapter">item_useBaseAdapter</string>

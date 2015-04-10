@@ -82,7 +82,7 @@
         <!-- pkg_adapter 액티비티 목록 -->
         <activity
             android:name=".pkg_adapter.ListViewExam"
-            android:label="@string/title_activity_list_view_01__default"
+            android:label="@string/title_activity_list_view_exam"
             android:theme="@style/Base.Theme.AppCompat" >
         </activity>
         <activity
@@ -221,20 +221,8 @@
             android:label="@string/title_activity_tour_list_codemt_activity" >
         </activity>
         <activity
-            android:name=".project_team.TourList_Adapter_CODEMT"
-            android:label="@string/title_activity_tour_list_codemt_adapter" >
-        </activity>
-        <activity
-            android:name=".project_team.TourList_LISTMT_Adapter"
-            android:label="@string/title_activity_tour_list__listmt__adapter" >
-        </activity>
-        <activity
             android:name=".project_team.TourList_LISTMT_Activity"
             android:label="@string/title_activity_tour_list__listmt_" >
-        </activity>
-        <activity
-            android:name=".project_team.TourList_PHOTODT_Adapter"
-            android:label="@string/title_activity_tour_list__photodt__adapter" >
         </activity>
         <activity
             android:name=".project_team.TourList_PHOTODT_Activity"
