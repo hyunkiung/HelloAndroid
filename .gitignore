@@ -27,5 +27,5 @@ proguard/
 .idea/
 gradlew
 gradlew.bat
-gradle
+
 .navigation
