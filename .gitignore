@@ -13,7 +13,6 @@ bin/
 gen/
 
 # Gradle files
-.gradle/
 build/
 gradle.properties
 
@@ -33,7 +32,12 @@ gradlew.bat
 *.iml
 *.ipr
 *.iws
-.idea/
+
 
 # Android Studio files
 */build/
+
+# 필요한 폴더
+# gradle/
+# .gradle/
+# .idea/
