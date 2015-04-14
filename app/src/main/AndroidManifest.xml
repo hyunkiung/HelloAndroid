@@ -238,6 +238,10 @@
             android:name=".pkg_db.DB04_SharedPreferences"
             android:label="@string/title_activity_db04__shared_preferences" >
         </activity>
+        <activity
+            android:name=".pkg_db.DB05_FileSave"
+            android:label="@string/title_activity_db05__file_save" >
+        </activity>
     </application>
 
 </manifest>

@@ -27,6 +27,7 @@ import com.example.administrator.helloandroid.pkg_db.DB01_Create;
 import com.example.administrator.helloandroid.pkg_db.DB02_HelperActivity;
 import com.example.administrator.helloandroid.pkg_db.DB03_TableActivity;
 import com.example.administrator.helloandroid.pkg_db.DB04_SharedPreferences;
+import com.example.administrator.helloandroid.pkg_db.DB05_FileSave;
 import com.example.administrator.helloandroid.pkg_event.TouchEventActivity;
 import com.example.administrator.helloandroid.pkg_mission.Mission_193Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
@@ -172,14 +173,16 @@ public class MenuSub extends ActionBarActivity implements
             "DataBase 테스트",
             "DataBase 목록+컨트롤 use HelperClass",
             "Table 목록+컨트롤 use HelperClass",
-            "SharedPreferences로 XML 파일 저장"
+            "SharedPreferences로 XML 파일 저장",
+            "폰 내외부 저장소에 File 생성, 읽기, 삭제"
     };
 
     private static final Class[] array_ITEMS_pkg8_CLASS = {
             DB01_Create.class,
             DB02_HelperActivity.class,
             DB03_TableActivity.class,
-            DB04_SharedPreferences.class
+           DB04_SharedPreferences.class,
+            DB05_FileSave.class
     };
 
     private static final String[] array_ITEMS_pkg9_NAME = {

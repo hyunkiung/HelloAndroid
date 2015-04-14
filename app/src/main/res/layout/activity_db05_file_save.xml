@@ -1,0 +1,208 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.helloandroid.pkg_db.DB05_FileSave">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_path1"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textSize="11dp"
+            android:gravity="left"/>
+
+        <TextView
+            android:id="@+id/tv_path2"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textSize="11dp"
+            android:gravity="left"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"></View>
+
+    <!--파일명 입력 영역-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="생성할 파일명 : "
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/et_filename"
+            android:text="filesave.txt"
+            android:hint="file name"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            android:textColorHint="#555555"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/border_circle"
+            android:paddingLeft="5dp"
+            android:maxLength="30"
+            android:textCursorDrawable="@null"
+            android:layout_weight="1"
+            />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"></View>
+
+        <Button
+            android:id="@+id/btn_filedel"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:background="@drawable/button_circle"
+            android:text="파일삭제"
+            android:textSize="14dp"
+            android:textColor="#FFFFFF"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"></View>
+
+    <!--저정 버튼 영역-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_Internal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/button_circle"
+            android:text="Internal 내부저장"
+            android:textSize="14dp"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"></View>
+
+        <Button
+            android:id="@+id/btn_External"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/button_circle"
+            android:text="External 외부저장"
+            android:textSize="14dp"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"></View>
+
+    <!--저장 경로 표기 텍스트뷰-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_path_Internal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border_circle"
+            android:text="내부 저장경로"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:gravity="top"
+            />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"></View>
+
+        <TextView
+            android:id="@+id/tv_path_External"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border_circle"
+            android:text="외부 저장경로"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:gravity="top"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"></View>
+
+
+    <!--파일 내용 읽은후 출력하는 텍스트뷰-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_Internal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border_circle"
+            android:text="Internal 내부저장"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:gravity="top"
+            />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"></View>
+
+        <TextView
+            android:id="@+id/tv_External"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border_circle"
+            android:text="External 외부저장"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:gravity="top"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

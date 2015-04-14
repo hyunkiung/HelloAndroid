@@ -101,5 +101,6 @@
     <string name="title_activity_tour_list__photodt_">TourList_PHOTODT_Activity</string>
     <string name="title_activity_daum__api__map">Daum_API_Map</string>
     <string name="title_activity_db04__shared_preferences">DB04_SharedPreferences</string>
+    <string name="title_activity_db05__file_save">DB05_FileSave</string>
 
 </resources>
