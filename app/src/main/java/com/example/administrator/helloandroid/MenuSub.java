@@ -1,7 +1,5 @@
 
-package com.example.administrator.helloandroid.pkg_mainFrame;
-
-import java.util.ArrayList;
+package com.example.administrator.helloandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.administrator.helloandroid.R;
 import com.example.administrator.helloandroid.pkg_activity.ActivityExamActivity;
 import com.example.administrator.helloandroid.pkg_activity.EditTextActivity;
 import com.example.administrator.helloandroid.pkg_activity.FirstActivity;
@@ -44,16 +41,19 @@ import com.example.administrator.helloandroid.pkg_thread.thread06_StopWatch;
 import com.example.administrator.helloandroid.pkg_thread.thread07_StopWatch;
 import com.example.administrator.helloandroid.pkg_thread.thread08_DelayRunnable;
 import com.example.administrator.helloandroid.pkg_thread.thread09_Looper;
+import com.example.administrator.helloandroid.project_apiTest.Daum_API_Map;
 import com.example.administrator.helloandroid.project_apiTest.Google_API_Map;
-import com.example.administrator.helloandroid.project_team.DB01_Create;
-import com.example.administrator.helloandroid.project_team.DB02_HelperActivity;
-import com.example.administrator.helloandroid.project_team.DB03_TableActivity;
+import com.example.administrator.helloandroid.pkg_db.DB01_Create;
+import com.example.administrator.helloandroid.pkg_db.DB02_HelperActivity;
+import com.example.administrator.helloandroid.pkg_db.DB03_TableActivity;
 import com.example.administrator.helloandroid.project_team.TourList_CODEMT_Activity;
 import com.example.administrator.helloandroid.project_team.TourList_DB_Activity;
 import com.example.administrator.helloandroid.project_team.TourList_LISTMT_Activity;
 import com.example.administrator.helloandroid.project_team.TourList_PHOTODT_Activity;
 
-public class AdapterListExam2_Sub extends ActionBarActivity implements
+import java.util.ArrayList;
+
+public class MenuSub extends ActionBarActivity implements
         AdapterView.OnItemClickListener {
 
     // ===============================================================
@@ -159,25 +159,33 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements
     };
 
     private static final String[] array_ITEMS_pkg7_NAME = {
-            "GoogleMap API 테스트"
+            "Google Map API 테스트",
+            "Daum Map API 테스트"
     };
     private static final Class[] array_ITEMS_pkg7_CLASS = {
-            Google_API_Map.class
+            Google_API_Map.class,
+            Daum_API_Map.class
     };
 
     private static final String[] array_ITEMS_pkg8_NAME = {
             "DataBase 테스트",
             "DataBase 목록+컨트롤 use HelperClass",
-            "Table 목록+컨트롤 use HelperClass",
+            "Table 목록+컨트롤 use HelperClass"
+    };
+
+    private static final Class[] array_ITEMS_pkg8_CLASS = {
+            DB01_Create.class,
+            DB02_HelperActivity.class,
+            DB03_TableActivity.class
+    };
+
+    private static final String[] array_ITEMS_pkg9_NAME = {
             "TourList DB, Table",
             "TourList Table CODEMT",
             "TourList Table LISTMT",
             "TourList Table PHOTODT"
     };
-    private static final Class[] array_ITEMS_pkg8_CLASS = {
-            DB01_Create.class,
-            DB02_HelperActivity.class,
-            DB03_TableActivity.class,
+    private static final Class[] array_ITEMS_pkg9_CLASS = {
             TourList_DB_Activity.class,
             TourList_CODEMT_Activity.class,
             TourList_LISTMT_Activity.class,
@@ -235,8 +243,11 @@ public class AdapterListExam2_Sub extends ActionBarActivity implements
             case "project_apiTest":
                 result = new Pair(array_ITEMS_pkg7_NAME, array_ITEMS_pkg7_CLASS);
                 break;
-            case "project_team":
+            case "pkg_db":
                 result = new Pair(array_ITEMS_pkg8_NAME, array_ITEMS_pkg8_CLASS);
+                break;
+            case "project_team":
+                result = new Pair(array_ITEMS_pkg9_NAME, array_ITEMS_pkg9_CLASS);
                 break;
             default:
                 break;

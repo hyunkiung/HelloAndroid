@@ -1,5 +1,5 @@
 
-package com.example.administrator.helloandroid.project_team;
+package com.example.administrator.helloandroid.pkg_db;
 
 import android.app.Activity;
 import android.content.ContentValues;

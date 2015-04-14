@@ -30,17 +30,16 @@
 
         <!-- pkg_mainFrame 실습 메뉴 메인 엑티비티 -->
         <activity
-            android:name=".pkg_mainFrame.AdapterListExam2_Main"
+            android:name=".MenuMain"
             android:label="@string/title_activity_adapter_list_exam2__main"
             android:theme="@style/Base.Theme.AppCompat" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".pkg_mainFrame.AdapterListExam2_Sub"
+            android:name=".MenuSub"
             android:label="@string/title_activity_adapter_list_exam2__sub"
             android:theme="@style/Base.Theme.AppCompat" >
         </activity>
@@ -199,19 +198,21 @@
             android:label="@string/title_activity_parsing06__you_tube" >
         </activity>
 
-        <!-- project_team 액티비티 목록 -->
+        <!-- pkg_db 액티비티 목록 -->
         <activity
-            android:name=".project_team.DB01_Create"
+            android:name=".pkg_db.DB01_Create"
             android:label="@string/title_activity_db01__create" >
         </activity>
         <activity
-            android:name=".project_team.DB02_HelperActivity"
+            android:name=".pkg_db.DB02_HelperActivity"
             android:label="@string/title_activity_db02__db__search_use_helper" >
         </activity>
         <activity
-            android:name=".project_team.DB03_TableActivity"
+            android:name=".pkg_db.DB03_TableActivity"
             android:label="@string/title_activity_db03__table" >
         </activity>
+
+        <!-- project_team 액티비티 목록 -->
         <activity
             android:name=".project_team.TourList_DB_Activity"
             android:label="@string/title_activity_tour_list__db_" >
@@ -227,6 +228,10 @@
         <activity
             android:name=".project_team.TourList_PHOTODT_Activity"
             android:label="@string/title_activity_tour_list__photodt_" >
+        </activity>
+        <activity
+            android:name=".project_apiTest.Daum_API_Map"
+            android:label="@string/title_activity_daum__api__map" >
         </activity>
     </application>
 

@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.helloandroid.project_apiTest.Daum_API_Map">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/editTextQuery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="맛집"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/buttonSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="검색" />
+
+    </LinearLayout>
+
+
+    <!--<net.daum.android.map.MapView-->
+        <!--android:id="@+id/map_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Daum 지도는 쓸만한게 못된다.
+         jar파일 임포트와 so파일 위치 때문에 엄청난 삽질을했다.
+         이것저것 해보다가 결국 샘플코드 받아서 프로젝트로 만들어서 했는데..
+         우낀건 샘플 프로젝트 메뉴 한번 다 돌렸더니 트래픽 초과란다.
+         안쓰고 만다!! 췟~
+         사용법도 드럽게 어렵다."
+        />
+
+    
+
+</LinearLayout>

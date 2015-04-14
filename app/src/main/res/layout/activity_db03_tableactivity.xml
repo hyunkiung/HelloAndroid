@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="com.example.administrator.helloandroid.project_team.DB03_TableActivity">
+        tools:context="com.example.administrator.helloandroid.pkg_db.DB03_TableActivity">
 
         <!-- 데이터베이스 목록 헤더부분 시작 -->
         <LinearLayout

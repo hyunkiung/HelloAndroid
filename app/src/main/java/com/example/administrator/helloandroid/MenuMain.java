@@ -1,20 +1,19 @@
 
-package com.example.administrator.helloandroid.pkg_mainFrame;
+package com.example.administrator.helloandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Pair;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.administrator.helloandroid.R;
-
 import java.util.ArrayList;
 
-public class AdapterListExam2_Main extends ActionBarActivity implements AdapterView.OnItemClickListener {
+public class MenuMain extends ActionBarActivity implements AdapterView.OnItemClickListener {
 
     //===============================================================
     ////// 선언 : 위젯_리스트뷰, 배열_데이터리스트, 어뎁터_어뎁터리스트
@@ -28,12 +27,28 @@ public class AdapterListExam2_Main extends ActionBarActivity implements AdapterV
     //===============================================================
     ////// 배열 값 셋팅 (패키지명)
     //===============================================================
+    public static final String[] array_NAMES = {
+            "연습1 - 액티비티 (Activity)",
+            "연습2 - 이벤트 (Event)",
+            "연습3 - 아답터 (Adapter)",
+            "연습4 - 스레드 (Thread)",
+            "연습5 - 파싱 (Parsing)",
+            "연습6 - 데이터베이스 (DB)",
+            "실습1 - 미션 (Mission)",
+            "실습2 - API테스트 (API)",
+            "실습3 - 팀프로젝트 (TourList)"
+    };
+
+    //===============================================================
+    ////// 배열 값 셋팅 (클래스명)
+    //===============================================================
     public static final String[] array_ITEMS = {
             "pkg_activity",
             "pkg_event",
             "pkg_adapter",
             "pkg_thread",
             "pkg_parsing",
+            "pkg_db",
             "pkg_mission",
             "project_apiTest",
             "project_team"
@@ -54,7 +69,7 @@ public class AdapterListExam2_Main extends ActionBarActivity implements AdapterV
 
         // 어레이어뎁터 설정, 미리 선언한 array_ITEMS 를 던졌다.
         mPkg_ArrayAdapter = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, array_ITEMS);
+                android.R.layout.simple_list_item_1, getItems().first);
 
 
         // 리스트뷰에 에러이어뎁터를 셋팅
@@ -64,11 +79,19 @@ public class AdapterListExam2_Main extends ActionBarActivity implements AdapterV
         mPkg_ListView.setOnItemClickListener(this);
     }
 
+    // ===============================================================
+    // //// Main에서 던진 패키지명에 따라 배열값 셋팅
+    // ===============================================================
+    private Pair<String[], String[]> getItems() {
+        Pair<String[], String[]> result = new Pair(array_NAMES, array_ITEMS);
+        return result;
+    }
+
     // 자기 자신에게 임플리먼트된 AdapterView.OnItemClickListener의 실행 메소드
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        mIntent = new Intent(getApplicationContext(), AdapterListExam2_Sub.class);
-        mIntent.putExtra("menu", array_ITEMS[position]);
+        mIntent = new Intent(getApplicationContext(), MenuSub.class);
+        mIntent.putExtra("menu", getItems().second[position]);
         startActivity(mIntent);
     }
 }
