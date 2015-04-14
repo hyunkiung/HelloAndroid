@@ -35,6 +35,7 @@
             android:theme="@style/Base.Theme.AppCompat" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -232,6 +233,10 @@
         <activity
             android:name=".project_apiTest.Daum_API_Map"
             android:label="@string/title_activity_daum__api__map" >
+        </activity>
+        <activity
+            android:name=".pkg_db.DB04_SharedPreferences"
+            android:label="@string/title_activity_db04__shared_preferences" >
         </activity>
     </application>
 

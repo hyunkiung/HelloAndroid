@@ -23,6 +23,10 @@ import com.example.administrator.helloandroid.pkg_adapter.GridView_Calendar;
 import com.example.administrator.helloandroid.pkg_adapter.ListViewCustom;
 import com.example.administrator.helloandroid.pkg_adapter.ListViewExam;
 import com.example.administrator.helloandroid.pkg_adapter.SpinnerExam;
+import com.example.administrator.helloandroid.pkg_db.DB01_Create;
+import com.example.administrator.helloandroid.pkg_db.DB02_HelperActivity;
+import com.example.administrator.helloandroid.pkg_db.DB03_TableActivity;
+import com.example.administrator.helloandroid.pkg_db.DB04_SharedPreferences;
 import com.example.administrator.helloandroid.pkg_event.TouchEventActivity;
 import com.example.administrator.helloandroid.pkg_mission.Mission_193Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
@@ -43,9 +47,6 @@ import com.example.administrator.helloandroid.pkg_thread.thread08_DelayRunnable;
 import com.example.administrator.helloandroid.pkg_thread.thread09_Looper;
 import com.example.administrator.helloandroid.project_apiTest.Daum_API_Map;
 import com.example.administrator.helloandroid.project_apiTest.Google_API_Map;
-import com.example.administrator.helloandroid.pkg_db.DB01_Create;
-import com.example.administrator.helloandroid.pkg_db.DB02_HelperActivity;
-import com.example.administrator.helloandroid.pkg_db.DB03_TableActivity;
 import com.example.administrator.helloandroid.project_team.TourList_CODEMT_Activity;
 import com.example.administrator.helloandroid.project_team.TourList_DB_Activity;
 import com.example.administrator.helloandroid.project_team.TourList_LISTMT_Activity;
@@ -170,13 +171,15 @@ public class MenuSub extends ActionBarActivity implements
     private static final String[] array_ITEMS_pkg8_NAME = {
             "DataBase 테스트",
             "DataBase 목록+컨트롤 use HelperClass",
-            "Table 목록+컨트롤 use HelperClass"
+            "Table 목록+컨트롤 use HelperClass",
+            "SharedPreferences로 XML 파일 저장"
     };
 
     private static final Class[] array_ITEMS_pkg8_CLASS = {
             DB01_Create.class,
             DB02_HelperActivity.class,
-            DB03_TableActivity.class
+            DB03_TableActivity.class,
+            DB04_SharedPreferences.class
     };
 
     private static final String[] array_ITEMS_pkg9_NAME = {
