@@ -34,6 +34,9 @@ import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_332Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_333Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_392Page;
+import com.example.administrator.helloandroid.pkg_mission.Mission_593Page;
+import com.example.administrator.helloandroid.pkg_network.Local_Socket_Chat;
+import com.example.administrator.helloandroid.pkg_network.Remote_Socket_Chat;
 import com.example.administrator.helloandroid.pkg_parsing.Parsing01_Main;
 import com.example.administrator.helloandroid.pkg_parsing.xml_Parser_test;
 import com.example.administrator.helloandroid.pkg_parsing.xml_json_test;
@@ -150,14 +153,16 @@ public class MenuSub extends ActionBarActivity implements
             "미션 271p 인텐트, 다이얼로그",
             "미션 332p 데이트 피커",
             "미션 333p 브라우져, 애니메이션",
-            "미션 392p 달력,해쉬맵"
+            "미션 392p 달력, 해쉬맵",
+            "미션 593p 달력, DataBase"
     };
     private static final Class[] array_ITEMS_pkg6_CLASS = {
             Mission_193Page.class,
             Mission_271Page.class,
             Mission_332Page.class,
             Mission_333Page.class,
-            Mission_392Page.class
+            Mission_392Page.class,
+            Mission_593Page.class
     };
 
     private static final String[] array_ITEMS_pkg7_NAME = {
@@ -181,7 +186,7 @@ public class MenuSub extends ActionBarActivity implements
             DB01_Create.class,
             DB02_HelperActivity.class,
             DB03_TableActivity.class,
-           DB04_SharedPreferences.class,
+            DB04_SharedPreferences.class,
             DB05_FileSave.class
     };
 
@@ -196,6 +201,15 @@ public class MenuSub extends ActionBarActivity implements
             TourList_CODEMT_Activity.class,
             TourList_LISTMT_Activity.class,
             TourList_PHOTODT_Activity.class
+    };
+
+    private static final String[] array_ITEMS_pkg10_NAME = {
+            "소켓통신1 - 로컬 서버, 클라이언트",
+            "소켓통신2 - 원격 서버, 클라이언트"
+    };
+    private static final Class[] array_ITEMS_pkg10_CLASS = {
+            Local_Socket_Chat.class,
+            Remote_Socket_Chat.class
     };
 
     @Override
@@ -254,6 +268,9 @@ public class MenuSub extends ActionBarActivity implements
                 break;
             case "project_team":
                 result = new Pair(array_ITEMS_pkg9_NAME, array_ITEMS_pkg9_CLASS);
+                break;
+            case "pkg_network":
+                result = new Pair(array_ITEMS_pkg10_NAME, array_ITEMS_pkg10_CLASS);
                 break;
             default:
                 break;

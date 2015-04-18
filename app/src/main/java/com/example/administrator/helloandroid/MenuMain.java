@@ -34,6 +34,7 @@ public class MenuMain extends ActionBarActivity implements AdapterView.OnItemCli
             "연습4 - 스레드 (Thread)",
             "연습5 - 파싱 (Parsing)",
             "연습6 - 데이터베이스 (DB)",
+            "연습7 - 네트워크통신 (Network)",
             "실습1 - 미션 (Mission)",
             "실습2 - API테스트 (API)",
             "실습3 - 팀프로젝트 (TourList)"
@@ -49,6 +50,7 @@ public class MenuMain extends ActionBarActivity implements AdapterView.OnItemCli
             "pkg_thread",
             "pkg_parsing",
             "pkg_db",
+            "pkg_network",
             "pkg_mission",
             "project_apiTest",
             "project_team"

@@ -102,5 +102,8 @@
     <string name="title_activity_daum__api__map">Daum_API_Map</string>
     <string name="title_activity_db04__shared_preferences">DB04_SharedPreferences</string>
     <string name="title_activity_db05__file_save">DB05_FileSave</string>
+    <string name="title_activity_mission_593_page">Mission_593Page</string>
+    <string name="title_activity_socket__chat">Socket_Chat</string>
+    <string name="title_activity_remote__socket__chat">Remote_Socket_Chat</string>
 
 </resources>

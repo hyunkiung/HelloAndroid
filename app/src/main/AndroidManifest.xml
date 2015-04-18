@@ -242,6 +242,18 @@
             android:name=".pkg_db.DB05_FileSave"
             android:label="@string/title_activity_db05__file_save" >
         </activity>
+        <activity
+            android:name=".pkg_mission.Mission_593Page"
+            android:label="@string/title_activity_mission_593_page" >
+        </activity>
+        <activity
+            android:name=".pkg_network.Local_Socket_Chat"
+            android:label="@string/title_activity_socket__chat" >
+        </activity>
+        <activity
+            android:name=".pkg_network.Remote_Socket_Chat"
+            android:label="@string/title_activity_remote__socket__chat" >
+        </activity>
     </application>
 
 </manifest>
