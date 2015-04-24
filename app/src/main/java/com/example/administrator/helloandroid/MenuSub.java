@@ -11,6 +11,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.administrator.helloandroid.pkg_actionbar.ActionBarExamActivity;
+import com.example.administrator.helloandroid.pkg_actionbar.CustomActionBar;
 import com.example.administrator.helloandroid.pkg_activity.ActivityExamActivity;
 import com.example.administrator.helloandroid.pkg_activity.EditTextActivity;
 import com.example.administrator.helloandroid.pkg_activity.FirstActivity;
@@ -35,8 +37,10 @@ import com.example.administrator.helloandroid.pkg_mission.Mission_332Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_333Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_392Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_593Page;
+import com.example.administrator.helloandroid.pkg_multimedia.Camera_Intent;
 import com.example.administrator.helloandroid.pkg_network.Local_Socket_Chat;
-import com.example.administrator.helloandroid.pkg_network.Remote_Socket_Chat;
+import com.example.administrator.helloandroid.pkg_network.Remocon_Client;
+import com.example.administrator.helloandroid.pkg_network.Remote_Client;
 import com.example.administrator.helloandroid.pkg_parsing.Parsing01_Main;
 import com.example.administrator.helloandroid.pkg_parsing.xml_Parser_test;
 import com.example.administrator.helloandroid.pkg_parsing.xml_json_test;
@@ -97,6 +101,7 @@ public class MenuSub extends ActionBarActivity implements
     private static final String[] array_ITEMS_pkg2_NAME = {
             "TouchEventActivity 예제"
     };
+
     private static final Class[] array_ITEMS_pkg2_CLASS = {
             TouchEventActivity.class
     };
@@ -205,11 +210,29 @@ public class MenuSub extends ActionBarActivity implements
 
     private static final String[] array_ITEMS_pkg10_NAME = {
             "소켓통신1 - 로컬 서버, 클라이언트",
-            "소켓통신2 - 원격 서버, 클라이언트"
+            "소켓통신2 - 원격 서버, 클라이언트",
+            "소켓통신3 - 서버 리모콘 컨트롤"
     };
     private static final Class[] array_ITEMS_pkg10_CLASS = {
             Local_Socket_Chat.class,
-            Remote_Socket_Chat.class
+            Remote_Client.class,
+            Remocon_Client.class
+    };
+
+    private static final String[] array_ITEMS_pkg11_NAME = {
+            "액션바 색상 바꾸기",
+            "커스텀 액션바 만들기"
+    };
+    private static final Class[] array_ITEMS_pkg11_CLASS = {
+            ActionBarExamActivity.class,
+            CustomActionBar.class
+    };
+
+    private static final String[] array_ITEMS_pkg12_NAME = {
+            "카메라 호출하기"
+    };
+    private static final Class[] array_ITEMS_pkg12_CLASS = {
+            Camera_Intent.class
     };
 
     @Override
@@ -271,6 +294,12 @@ public class MenuSub extends ActionBarActivity implements
                 break;
             case "pkg_network":
                 result = new Pair(array_ITEMS_pkg10_NAME, array_ITEMS_pkg10_CLASS);
+                break;
+            case "pkg_actionbar":
+                result = new Pair(array_ITEMS_pkg11_NAME, array_ITEMS_pkg11_CLASS);
+                break;
+            case "pkg_multimedia":
+                result = new Pair(array_ITEMS_pkg12_NAME, array_ITEMS_pkg12_CLASS);
                 break;
             default:
                 break;

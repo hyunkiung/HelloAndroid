@@ -35,6 +35,8 @@ public class MenuMain extends ActionBarActivity implements AdapterView.OnItemCli
             "연습5 - 파싱 (Parsing)",
             "연습6 - 데이터베이스 (DB)",
             "연습7 - 네트워크통신 (Network)",
+            "연습8 - 액션바 (ActionBar)",
+            "연습9 - 멀티미디어 (MultiMedia)",
             "실습1 - 미션 (Mission)",
             "실습2 - API테스트 (API)",
             "실습3 - 팀프로젝트 (TourList)"
@@ -51,6 +53,8 @@ public class MenuMain extends ActionBarActivity implements AdapterView.OnItemCli
             "pkg_parsing",
             "pkg_db",
             "pkg_network",
+            "pkg_actionbar",
+            "pkg_multimedia",
             "pkg_mission",
             "project_apiTest",
             "project_team"
@@ -71,7 +75,7 @@ public class MenuMain extends ActionBarActivity implements AdapterView.OnItemCli
 
         // 어레이어뎁터 설정, 미리 선언한 array_ITEMS 를 던졌다.
         mPkg_ArrayAdapter = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, getItems().first);
+                R.layout.simple_list_item_hku, getItems().first);
 
 
         // 리스트뷰에 에러이어뎁터를 셋팅

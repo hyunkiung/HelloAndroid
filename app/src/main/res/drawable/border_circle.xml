@@ -3,7 +3,9 @@
     android:padding="10dp"
     android:shape="rectangle" >
 
-    <solid android:color="#ffe3e3e3" /> // 배경 색상
+    <!--배경 색상-->
+    <solid android:color="#ffe3e3e3" />
+
     <!-- 모서리 설정-->
     <corners
         android:bottomLeftRadius="5dp"

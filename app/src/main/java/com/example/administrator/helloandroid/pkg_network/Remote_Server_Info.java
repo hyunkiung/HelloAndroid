@@ -5,11 +5,11 @@ import java.io.DataOutput;
 /**
  * Created by Administrator on 2015-04-17.
  */
-public class Remote_Socket_Info {
+public class Remote_Server_Info {
     private String nickName;
     private DataOutput output;
 
-    public Remote_Socket_Info(String nickName, DataOutput output) {
+    public Remote_Server_Info(String nickName, DataOutput output) {
         this.nickName = nickName;
         this.output = output;
     }

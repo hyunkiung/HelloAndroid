@@ -31,8 +31,7 @@
         <!-- pkg_mainFrame 실습 메뉴 메인 엑티비티 -->
         <activity
             android:name=".MenuMain"
-            android:label="@string/title_activity_adapter_list_exam2__main"
-            android:theme="@style/Base.Theme.AppCompat" >
+            android:label="@string/title_activity_adapter_list_exam2__main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,8 +40,7 @@
         </activity>
         <activity
             android:name=".MenuSub"
-            android:label="@string/title_activity_adapter_list_exam2__sub"
-            android:theme="@style/Base.Theme.AppCompat" >
+            android:label="@string/title_activity_adapter_list_exam2__sub" >
         </activity>
 
         <!-- pkg_activity 액티비티 목록 -->
@@ -82,23 +80,19 @@
         <!-- pkg_adapter 액티비티 목록 -->
         <activity
             android:name=".pkg_adapter.ListViewExam"
-            android:label="@string/title_activity_list_view_exam"
-            android:theme="@style/Base.Theme.AppCompat" >
+            android:label="@string/title_activity_list_view_exam" >
         </activity>
         <activity
             android:name=".pkg_adapter.ListViewCustom"
-            android:label="@string/title_activity_item_use_base_adapter"
-            android:theme="@style/Base.Theme.AppCompat" >
+            android:label="@string/title_activity_item_use_base_adapter" >
         </activity>
         <activity
             android:name=".pkg_adapter.SpinnerExam"
-            android:label="@string/title_activity_spinner_exam"
-            android:theme="@style/Base.Theme.AppCompat" >
+            android:label="@string/title_activity_spinner_exam" >
         </activity>
         <activity
             android:name=".pkg_adapter.GridView_Calendar"
-            android:label="@string/title_activity_grid_view__calendar"
-            android:theme="@style/Base.Theme.AppCompat" >
+            android:label="@string/title_activity_grid_view__calendar" >
         </activity>
 
         <!-- pkg_event 액티비티 목록 -->
@@ -131,6 +125,10 @@
         <activity
             android:name=".pkg_mission.Mission_392Page"
             android:label="@string/title_activity_mission_392_page" >
+        </activity>
+        <activity
+            android:name=".pkg_mission.Mission_593Page"
+            android:label="@string/title_activity_mission_593_page" >
         </activity>
 
         <!-- pkg_thread 액티비티 목록 -->
@@ -176,6 +174,10 @@
             android:name=".project_apiTest.Google_API_Map"
             android:label="@string/title_activity_google__api__map" >
         </activity>
+        <activity
+            android:name=".project_apiTest.Daum_API_Map"
+            android:label="@string/title_activity_daum__api__map" >
+        </activity>
 
         <!-- pkg_parsing 액티비티 목록 -->
         <activity
@@ -212,6 +214,14 @@
             android:name=".pkg_db.DB03_TableActivity"
             android:label="@string/title_activity_db03__table" >
         </activity>
+        <activity
+            android:name=".pkg_db.DB04_SharedPreferences"
+            android:label="@string/title_activity_db04__shared_preferences" >
+        </activity>
+        <activity
+            android:name=".pkg_db.DB05_FileSave"
+            android:label="@string/title_activity_db05__file_save" >
+        </activity>
 
         <!-- project_team 액티비티 목록 -->
         <activity
@@ -230,29 +240,34 @@
             android:name=".project_team.TourList_PHOTODT_Activity"
             android:label="@string/title_activity_tour_list__photodt_" >
         </activity>
-        <activity
-            android:name=".project_apiTest.Daum_API_Map"
-            android:label="@string/title_activity_daum__api__map" >
-        </activity>
-        <activity
-            android:name=".pkg_db.DB04_SharedPreferences"
-            android:label="@string/title_activity_db04__shared_preferences" >
-        </activity>
-        <activity
-            android:name=".pkg_db.DB05_FileSave"
-            android:label="@string/title_activity_db05__file_save" >
-        </activity>
-        <activity
-            android:name=".pkg_mission.Mission_593Page"
-            android:label="@string/title_activity_mission_593_page" >
-        </activity>
+
+        <!-- pkg_network 액티비티 목록 -->
         <activity
             android:name=".pkg_network.Local_Socket_Chat"
             android:label="@string/title_activity_socket__chat" >
         </activity>
         <activity
-            android:name=".pkg_network.Remote_Socket_Chat"
-            android:label="@string/title_activity_remote__socket__chat" >
+            android:name=".pkg_network.Remote_Client"
+            android:label="@string/title_activity_remote__socket__chat"
+            android:theme="@style/NewTheme" >
+        </activity>
+        <activity
+            android:name=".pkg_network.Remocon_Client"
+            android:label="@string/title_activity_remocon__client" >
+        </activity>
+
+        <!-- pkg_actionbar 액티비티 목록 -->
+        <activity
+            android:name=".pkg_actionbar.ActionBarExamActivity"
+            android:label="@string/title_activity_action_bar_exam" >
+        </activity>
+        <activity
+            android:name=".pkg_actionbar.CustomActionBar"
+            android:label="@string/title_activity_custom_action_bar" >
+        </activity>
+        <activity
+            android:name=".pkg_multimedia.Camera_Intent"
+            android:label="@string/title_activity_camera__intent" >
         </activity>
     </application>
 

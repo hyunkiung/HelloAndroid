@@ -30,14 +30,14 @@
     <string name="m_nm10">10.Mission332</string>
     <string name="m_nm11">11.Mission333</string>
     <string name="m_nm12">12.ListView</string>
-
     <string name="m_nm13">13.BaseAdapter</string>
     <string name="m_nm14">14.ArrayAdapter</string>
     <string name="m_nm15">15.null</string>
 
     <string name="spinner_exam_prompt1">Choose a Color</string>
-
     <string name="spinner_table_prompt">타입 선택</string>
+
+    <string name="pkg_network_nm1">Socket Chating</string>
 
 
 
@@ -105,5 +105,9 @@
     <string name="title_activity_mission_593_page">Mission_593Page</string>
     <string name="title_activity_socket__chat">Socket_Chat</string>
     <string name="title_activity_remote__socket__chat">Remote_Socket_Chat</string>
+    <string name="title_activity_action_bar_exam">ActionBarExamActivity</string>
+    <string name="title_activity_custom_action_bar">CustomActionBar</string>
+    <string name="title_activity_remocon__client">Remocon_Client</string>
+    <string name="title_activity_camera__intent">Camera_Intent</string>
 
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="hku_primary">#FFBB33</color>
+    <color name="hku_primary2">#ff54b2b3</color>
+    <color name="hku_primary_dark">#98CC00</color>
+    <color name="hku_accent">#A966CC</color>
+    <color name="hku_textTitleColor">#ff35270b</color>
+    <color name="hku_textBackColor">#ffffd998</color>
+
+</resources>

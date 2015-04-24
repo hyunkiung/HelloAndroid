@@ -1,0 +1,122 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="3dp"
+    android:paddingRight="3dp"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    tools:context="com.example.administrator.helloandroid.pkg_network.Remocon_Client"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            >
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000" />
+                <Button
+                    android:id="@+id/btn_up"
+                    android:text="UP"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_circle"
+                    android:layout_margin="2dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btn_left"
+                    android:text="LEFT"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_circle"
+                    android:layout_margin="2dp"
+                    />
+
+                <Button
+                    android:id="@+id/btn_down"
+                    android:text="DOWN"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_circle"
+                    android:layout_margin="2dp"
+                    />
+
+                <Button
+                    android:id="@+id/btn_right"
+                    android:text="RIGHT"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_circle"
+                    android:layout_margin="2dp"
+                    />
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btn_enter"
+            android:text="ENTER"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_circle"
+            android:layout_margin="2dp"
+            android:padding="5dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="5dp">
+
+        <Button
+            android:id="@+id/btn_server"
+            android:text="리모콘 서버 접속"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/button_circle"
+            android:layout_margin="8dp"
+            />
+
+        <TextView
+            android:text="이클립스로 RemoconServer2 를 실행하고, 폰으로 같은 대역에서 리모콘 서버에 접속합니다."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

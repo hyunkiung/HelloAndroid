@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp"
+    android:orientation="vertical"
+    android:background="#97feff"
+    tools:context="com.example.administrator.helloandroid.pkg_network.Remote_Client">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ff1e6364"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ff80e3dd"
+        />
+
+
+
+    <ListView
+        android:id="@+id/lv_chat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:dividerHeight="4dp"
+        android:divider="#00000000"
+        android:paddingTop="5dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#3abfc0"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:paddingTop="5dp"
+        android:background="#6de6e7"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <EditText
+                android:id="@+id/et_message"
+                android:hint="메시지 입력"
+                android:text=""
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:textColorHint="#555555"
+                android:textCursorDrawable="@null"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_circle"
+                android:paddingLeft="5dp"
+                />
+            <!--android:inputType="text|textMultiLine"-->
+            <!--android:minLines="1"-->
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/btn_send"
+                android:text="보내기"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
+                android:background="@drawable/button_circle"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
