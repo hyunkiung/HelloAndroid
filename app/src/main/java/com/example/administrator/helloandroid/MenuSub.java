@@ -38,6 +38,7 @@ import com.example.administrator.helloandroid.pkg_mission.Mission_333Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_392Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_593Page;
 import com.example.administrator.helloandroid.pkg_multimedia.Camera_Intent;
+import com.example.administrator.helloandroid.pkg_multimedia.Camera_Surface;
 import com.example.administrator.helloandroid.pkg_network.Local_Socket_Chat;
 import com.example.administrator.helloandroid.pkg_network.Remocon_Client;
 import com.example.administrator.helloandroid.pkg_network.Remote_Client;
@@ -229,10 +230,12 @@ public class MenuSub extends ActionBarActivity implements
     };
 
     private static final String[] array_ITEMS_pkg12_NAME = {
-            "카메라 호출하기"
+            "카메라 호출하기 (Intent)",
+            "카메라 생성하기 (SurFaceView)"
     };
     private static final Class[] array_ITEMS_pkg12_CLASS = {
-            Camera_Intent.class
+            Camera_Intent.class,
+            Camera_Surface.class
     };
 
     @Override

@@ -1,0 +1,148 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#00000000">
+
+    <!--actionBarSize = 40dp-->
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/thm_media_select_menu_contact_icon"
+        android:layout_gravity="center_vertical"
+        />
+
+    <TextView
+        android:text=""
+        android:textSize="15sp"
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:textColor="#ff092628"
+        android:layout_weight="1"
+        />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="#ff1e6364"/>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="#ff80e3dd"/>
+
+    <!--로컬서버가동-->
+    <LinearLayout
+        android:id="@+id/ll_menu1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <!--ic_account_balance_wallet_grey600_24dp-->
+        <ImageView
+            android:id="@+id/iv_menu1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_account_balance_wallet_black_24dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="4dp"
+            />
+
+        <TextView
+            android:text="로컬서버가동"
+            android:textSize="10sp"
+            android:id="@+id/tv_menu1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:textColor="#ff092628"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="#ff1e6364"/>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="#ff80e3dd"/>
+
+    <!--로컬서버접속-->
+    <LinearLayout
+        android:id="@+id/ll_menu2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <!--ic_gradient_grey600_24dp-->
+        <ImageView
+            android:id="@+id/iv_menu2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_gradient_black_24dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="4dp"
+            />
+
+        <TextView
+            android:text="로컬서버접속"
+            android:textSize="10sp"
+            android:id="@+id/tv_menu2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:textColor="#ff092628"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="#ff1e6364"/>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="#ff80e3dd"/>
+
+
+    <!--학원서버접속-->
+    <LinearLayout
+        android:id="@+id/ll_menu3"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp">
+
+        <!--ic_dvr_grey600_24dp-->
+        <ImageView
+            android:id="@+id/iv_menu3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_dvr_black_24dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="4dp"
+            />
+
+        <TextView
+            android:text="학원서버접속"
+            android:textSize="10sp"
+            android:id="@+id/tv_menu3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:textColor="#ff092628"
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

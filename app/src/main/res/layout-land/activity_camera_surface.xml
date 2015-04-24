@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.helloandroid.pkg_multimedia.Camera_Surface"
+    android:orientation="horizontal">
+
+    <SurfaceView
+        android:id="@+id/sfv_camera"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:background="#aa6f5a60"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_shutter"
+            android:text="촬영"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:background="@drawable/button_circle"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -109,5 +109,6 @@
     <string name="title_activity_custom_action_bar">CustomActionBar</string>
     <string name="title_activity_remocon__client">Remocon_Client</string>
     <string name="title_activity_camera__intent">Camera_Intent</string>
+    <string name="title_activity_camera__surface">Camera_Surface</string>
 
 </resources>
