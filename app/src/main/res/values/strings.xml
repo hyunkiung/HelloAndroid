@@ -110,5 +110,8 @@
     <string name="title_activity_remocon__client">Remocon_Client</string>
     <string name="title_activity_camera__intent">Camera_Intent</string>
     <string name="title_activity_camera__surface">Camera_Surface</string>
+    <string name="title_activity_media_player">MediaPlayer Audio</string>
+    <string name="title_activity_media_player__audio__sdcard">MediaPlayer_Audio_SDCARD</string>
+    <string name="title_activity_seek_bar_custom_design">SeekBarCustomDesign</string>
 
 </resources>

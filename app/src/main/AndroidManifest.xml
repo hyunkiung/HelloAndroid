@@ -4,22 +4,23 @@
     package="com.example.administrator.helloandroid" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- 구글 맵을 위해 추가 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <!-- Open GL 버전2 지원여부 (Google Map) -->
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
-
-    <!-- 카메라 권한 -->
-    <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
-    <uses-permission android:name="android.permission.FLASHLIGHT"/>
 
     <application
         android:allowBackup="true"
@@ -275,12 +276,24 @@
             android:label="@string/title_activity_camera__intent" >
         </activity>
         <activity
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:name=".pkg_multimedia.Camera_Surface"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_camera__surface" >
 
-            <!--android:screenOrientation="landscape"-->
+            <!-- android:screenOrientation="landscape" -->
 
+        </activity>
+        <activity
+            android:name=".pkg_multimedia.MediaPlayer_Audio"
+            android:label="@string/title_activity_media_player" >
+        </activity>
+        <activity
+            android:name=".pkg_multimedia.MediaPlayer_Audio_SDCARD"
+            android:label="@string/title_activity_media_player__audio__sdcard" >
+        </activity>
+        <activity
+            android:name=".pkg_activity.SeekBarCustomDesign"
+            android:label="@string/title_activity_seek_bar_custom_design" >
         </activity>
     </application>
 

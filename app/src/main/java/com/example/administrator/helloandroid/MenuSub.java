@@ -19,6 +19,7 @@ import com.example.administrator.helloandroid.pkg_activity.FirstActivity;
 import com.example.administrator.helloandroid.pkg_activity.FrameLayoutExamActivity;
 import com.example.administrator.helloandroid.pkg_activity.RelativeLayoutExamActivity;
 import com.example.administrator.helloandroid.pkg_activity.SecondActivity;
+import com.example.administrator.helloandroid.pkg_activity.SeekBarCustomDesign;
 import com.example.administrator.helloandroid.pkg_activity.TableLayoutExamActivity;
 import com.example.administrator.helloandroid.pkg_activity.TargetExamActivity;
 import com.example.administrator.helloandroid.pkg_adapter.GridView_Calendar;
@@ -39,6 +40,8 @@ import com.example.administrator.helloandroid.pkg_mission.Mission_392Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_593Page;
 import com.example.administrator.helloandroid.pkg_multimedia.Camera_Intent;
 import com.example.administrator.helloandroid.pkg_multimedia.Camera_Surface;
+import com.example.administrator.helloandroid.pkg_multimedia.MediaPlayer_Audio;
+import com.example.administrator.helloandroid.pkg_multimedia.MediaPlayer_Audio_SDCARD;
 import com.example.administrator.helloandroid.pkg_network.Local_Socket_Chat;
 import com.example.administrator.helloandroid.pkg_network.Remocon_Client;
 import com.example.administrator.helloandroid.pkg_network.Remote_Client;
@@ -86,7 +89,8 @@ public class MenuSub extends ActionBarActivity implements
             "RelativeLayoutExamActivity",
             "SecondActivity",
             "TableLayoutExamActivity",
-            "TargetExamActivity"
+            "TargetExamActivity",
+            "SeekBar Custom Design"
     };
     private static final Class[] array_ITEMS_pkg1_CLASS = {
             ActivityExamActivity.class,
@@ -96,7 +100,8 @@ public class MenuSub extends ActionBarActivity implements
             RelativeLayoutExamActivity.class,
             SecondActivity.class,
             TableLayoutExamActivity.class,
-            TargetExamActivity.class
+            TargetExamActivity.class,
+            SeekBarCustomDesign.class
     };
 
     private static final String[] array_ITEMS_pkg2_NAME = {
@@ -231,11 +236,15 @@ public class MenuSub extends ActionBarActivity implements
 
     private static final String[] array_ITEMS_pkg12_NAME = {
             "카메라 호출하기 (Intent)",
-            "카메라 생성하기 (SurFaceView)"
+            "카메라 생성하기 (SurFaceView)",
+            "플레이어 실습 (Audio Player)",
+            "플레이어 실습 (Audio SD Card)"
     };
     private static final Class[] array_ITEMS_pkg12_CLASS = {
             Camera_Intent.class,
-            Camera_Surface.class
+            Camera_Surface.class,
+            MediaPlayer_Audio.class,
+            MediaPlayer_Audio_SDCARD.class
     };
 
     @Override

@@ -1,6 +1,7 @@
 package com.example.administrator.helloandroid.pkg_multimedia;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -23,6 +24,7 @@ import java.io.IOException;
 
 public class Camera_Surface extends AppCompatActivity implements SurfaceHolder.Callback, View.OnClickListener {
 
+    private static String CAM_FILE_NAME = "Camera_Settings";
     // 흐름 확인용 로그 출력 메소드
     private static String TAG = "로그 / 카메라 Surface";
     private void show_Log(String msg) { Log.d(TAG, msg); }
@@ -33,6 +35,7 @@ public class Camera_Surface extends AppCompatActivity implements SurfaceHolder.C
     private SurfaceView mSFV_camera;
     private Button mBTN_shutter;
     private Button mBTN_flash;
+    private Button mBTN_point;
 
     private Camera mCamera;
     private Camera.Parameters mCameraParameter;
@@ -53,19 +56,16 @@ public class Camera_Surface extends AppCompatActivity implements SurfaceHolder.C
 
         mSFV_camera = (SurfaceView) findViewById(R.id.sfv_camera);
         mBTN_shutter = (Button) findViewById(R.id.btn_shutter);
+        mBTN_flash = (Button) findViewById(R.id.btn_flash);
+        mBTN_point = (Button) findViewById(R.id.btn_point);
 
         show_Log("onCreate =====");
         mSFV_camera.getHolder().addCallback(this);
         mSFV_camera.getHolder().setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
         mBTN_shutter.setOnClickListener(this);
-
-//        Camera mCamera = null;
-//        mCamera = Camera.open();
-//        Camera.Parameters mCameraParameter;
-//        mCameraParameter = mCamera.getParameters();
-//        mCameraParameter.setFlashMode("torch");
-//        mCamera.setParameters(mCameraParameter);
+        mBTN_flash.setOnClickListener(this);
+        mBTN_point.setOnClickListener(this);
     }
 
     @Override
@@ -143,6 +143,12 @@ public class Camera_Surface extends AppCompatActivity implements SurfaceHolder.C
             case R.id.btn_flash :
                 CameraFlash_OnOff();
                 break;
+
+            case R.id.btn_point :
+                CameraFind_FrontRear();
+                break;
+
+
         }
     }
 
@@ -150,9 +156,42 @@ public class Camera_Surface extends AppCompatActivity implements SurfaceHolder.C
     private void CameraFlash_OnOff() {
         mCameraParameter = mCamera.getParameters();
         String flashMode = mCameraParameter.getFlashMode();
+        if(flashMode.equals("off")) {
+            mCameraParameter.setFlashMode("torch");
+        } else {
+            mCameraParameter.setFlashMode("off");
+        }
         show_Log(flashMode);
-        //mCameraParameter.setFlashMode("torch");
-        //mCamera.setParameters(mCameraParameter);
+        mCamera.setParameters(mCameraParameter);
+    }
+
+    // 카메라 위치 찾기 (전면, 후면)
+    private int CameraFind_FrontRear() {
+        SharedPreferences pref = getSharedPreferences(CAM_FILE_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        int cameraId = -1;
+        int numberOfCameras = mCamera.getNumberOfCameras();
+
+        show_Log("카메라수 : " + numberOfCameras + " / 사용중 카메라" + numberOfCameras );
+
+
+//        for (int i = 0; i < numberOfCameras; i++) {
+//
+//
+//
+//            editor.putString(i, "반갑습니다.");
+//
+//
+//
+//            CameraInfo cmInfo = new CameraInfo();
+//            Camera.getCameraInfo(i, cmInfo);
+//
+//            if (cmInfo.facing == CameraInfo.CAMERA_FACING_FRONT) {
+//                cameraId = i;
+//                break;
+//            }
+//        }
+        return cameraId;
     }
 }
 

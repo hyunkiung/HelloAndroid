@@ -26,28 +26,39 @@
             android:orientation="horizontal"
             android:gravity="center"
             >
-                <Button
-                    android:id="@+id/btn_flash"
-                    android:text="FLASH"
-                    android:textSize="14sp"
-                    android:textColor="#FFFFFF"
-                    android:layout_width="65dp"
-                    android:layout_height="35dp"
-                    android:background="@drawable/button_circle"
-                    android:layout_margin="5dp"
-                    android:padding="2dp"
-                    />
-                <Button
-                    android:id="@+id/btn_shutter"
-                    android:text="SHUTTER"
-                    android:textSize="14sp"
-                    android:textColor="#FFFFFF"
-                    android:layout_width="65dp"
-                    android:layout_height="35dp"
-                    android:background="@drawable/button_circle"
-                    android:layout_margin="5dp"
-                    android:padding="2dp"
-                    />
+            <Button
+                android:id="@+id/btn_flash"
+                android:text="FLASH"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:layout_width="65dp"
+                android:layout_height="35dp"
+                android:background="@drawable/button_circle"
+                android:layout_margin="5dp"
+                android:padding="2dp"
+                />
+            <Button
+                android:id="@+id/btn_shutter"
+                android:text="SHUTTER"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:background="@drawable/button_circle"
+                android:layout_margin="5dp"
+                android:padding="2dp"
+                />
+            <Button
+                android:id="@+id/btn_point"
+                android:text="전후면"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:background="@drawable/button_circle"
+                android:layout_margin="5dp"
+                android:padding="2dp"
+                />
 
         </LinearLayout>
     </LinearLayout>

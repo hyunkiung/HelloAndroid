@@ -76,6 +76,7 @@ public class thread01_run extends ActionBarActivity {
             //핸들러 호출 시작
             // Bundle은 키와값 쌍으로 이루어진 해쉬맵 자료구조.
             // 액티비티와 액티비티 사이에서 데이터를 주고 받을때도 사용.
+            //public static Message obtain (Handler h, int what, int arg1, int arg2)
             Message mMessage = mHandler.obtainMessage();
             Bundle bundle = new Bundle();
             bundle.putString("index", data);

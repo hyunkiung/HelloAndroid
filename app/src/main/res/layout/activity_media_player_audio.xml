@@ -1,0 +1,201 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.helloandroid.pkg_multimedia.MediaPlayer_Audio">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_thread"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:textColorHint="#555555"
+            android:textCursorDrawable="@null"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/border_circle"
+            android:paddingLeft="5dp"
+            android:layout_margin="5dp"
+            android:gravity="left|center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/tv_duration"
+            android:textSize="14sp"
+            android:textColor="#ff6c1d0a"
+            android:textColorHint="#555555"
+            android:textCursorDrawable="@null"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:background="@drawable/border_circle"
+            android:layout_margin="5dp"
+            android:gravity="center|center_vertical"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_filename"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:textColorHint="#555555"
+        android:textCursorDrawable="@null"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/border_circle"
+        android:paddingLeft="5dp"
+        android:layout_margin="5dp"
+        android:gravity="left|center_vertical"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_elapsetime"
+            android:text="00:00"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:paddingLeft="6dp"
+            android:paddingRight="4dp"
+            />
+
+        <SeekBar
+            android:id="@+id/sb_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:progressDrawable="@drawable/seekbar_pink"
+            android:thumb="@drawable/slider_thumb_square"
+            />
+
+        <TextView
+            android:id="@+id/tv_runtime"
+            android:text="00:00"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:paddingLeft="4dp"
+            android:paddingRight="6dp"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_file"
+            android:text="OPEN"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@drawable/button_circle"
+            android:layout_margin="5dp"
+            android:padding="2dp"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/btn_play"
+            android:text="PLAY"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@drawable/button_circle"
+            android:layout_margin="5dp"
+            android:padding="2dp"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/btn_pause"
+            android:text="PAUSE"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@drawable/button_circle"
+            android:layout_margin="5dp"
+            android:padding="2dp"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:text="STOP"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@drawable/button_circle"
+            android:layout_margin="5dp"
+            android:padding="2dp"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="3dp"
+        >
+
+        <CheckBox
+            android:id="@+id/chk_loop"
+            android:text="반복재생"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"/>
+
+        <TextView
+            android:text="볼륨조절"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"/>
+
+        <SeekBar
+            android:id="@+id/sb_volume"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:progressDrawable="@drawable/seekbar_pink"
+            android:thumb="@drawable/slider_thumb_circle"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

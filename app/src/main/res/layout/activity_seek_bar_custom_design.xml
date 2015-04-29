@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:padding="30dp">
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="200"
+        android:progress="30"
+        android:progressDrawable="@drawable/seekbar_blue"
+        android:thumb="@null"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="200"
+        android:progress="60"
+        android:progressDrawable="@drawable/seekbar_red"
+        android:thumb="@drawable/slider_thumb_square"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="200"
+        android:progress="90"
+        android:progressDrawable="@drawable/seekbar_green"
+        android:thumb="@drawable/slider_thumb_square"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="200"
+        android:progress="120"
+        android:progressDrawable="@drawable/seekbar_pink"
+        android:thumb="@drawable/slider_thumb_circle"
+        />
+
+</LinearLayout>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="android:Theme.Material.Light">
-        <item name="android:colorPrimary">@color/hku_primary</item>
-        <item name="android:colorPrimaryDark">@color/hku_primary_dark</item>
-        <item name="android:colorAccent">@color/hku_accent</item>
+    <style name="AppTheme" parent="Base.Theme.AppCompat">
+        <item name="colorPrimary">@color/hku_primary</item>
+        <item name="colorPrimaryDark">@color/hku_primary_dark</item>
+        <item name="colorAccent">@color/hku_accent</item>
+        <item name="android:textColorPrimary">@color/hku_textTitleColor</item>
+        <item name="android:textColor">@color/hku_textBackColor</item>
     </style>
 
 

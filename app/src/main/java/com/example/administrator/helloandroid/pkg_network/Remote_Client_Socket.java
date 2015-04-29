@@ -7,8 +7,9 @@ import android.util.Log;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.net.UnknownHostException;
+import java.net.SocketAddress;
 
 /**
  * Created by Administrator on 2015-04-17.
@@ -34,22 +35,23 @@ public class Remote_Client_Socket {
 
     public void connect(Handler handler, String sip, int sport) {
         mHandler = handler;
+        Result_Log("error0");
+        //mSocket = new Socket(sip, sport);
+        mSocket = new Socket();
+        SocketAddress addr = new InetSocketAddress(sip, sport);
+
+        // 서버에 접속가능한지 시간을 주고 예외처리를 한다.
         try {
-            Result_Log("error0");
-            mSocket = new Socket(sip, sport);
+            mSocket.connect(addr, 2000);
             Result_Log("error0-1");
             mReceiveThread = new ClientReciver(mSocket, NICK, handler);
             mReceiveThread.start();
             Result_Log("error1");
             makeMessage(99, "서버에 접속되었습니다. : " + sip);
-        } catch (UnknownHostException e) {
+
+        } catch (IOException e) {
             Result_Log("error2");
             makeMessage(100, "서버 접속 에러입니다. 서버를 가동해주세요.1");
-        } catch (IOException e) {
-            Result_Log("error3");
-            makeMessage(100, "서버 접속 에러입니다. 서버를 가동해주세요.2");
-        } catch (RuntimeException e) {
-            Result_Log("error : exception");
         }
     }
 
