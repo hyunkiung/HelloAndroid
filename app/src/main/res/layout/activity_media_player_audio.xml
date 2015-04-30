@@ -84,7 +84,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:progressDrawable="@drawable/seekbar_pink"
+            android:progressDrawable="@drawable/seekbar_cyan"
             android:thumb="@drawable/slider_thumb_square"
             />
 
@@ -186,14 +186,23 @@
             android:layout_height="wrap_content"
             android:paddingRight="10dp"/>
 
-        <SeekBar
-            android:id="@+id/sb_volume"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:progressDrawable="@drawable/seekbar_pink"
-            android:thumb="@drawable/slider_thumb_circle"
-            />
+            android:gravity="center_vertical">
+
+            <SeekBar
+                android:id="@+id/sb_volume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progressDrawable="@drawable/seekbar_red"
+                android:thumb="@drawable/slider_thumb_circle"
+                />
+
+        </LinearLayout>
+
+
 
 
     </LinearLayout>

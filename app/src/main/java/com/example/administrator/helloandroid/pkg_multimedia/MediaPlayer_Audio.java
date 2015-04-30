@@ -2,6 +2,7 @@ package com.example.administrator.helloandroid.pkg_multimedia;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -50,6 +51,7 @@ public class MediaPlayer_Audio extends AppCompatActivity implements View.OnClick
     private TextView mTV_runtime;
     private TextView mTV_duration;
     private SeekBar mSB_progress;
+    private SeekBar mSB_volume;
     private CheckBox mCHK_loop;
 
     private MediaPlayer mPlayer;
@@ -63,20 +65,32 @@ public class MediaPlayer_Audio extends AppCompatActivity implements View.OnClick
     private int min = 0;
     private int sec = 0;
     private int delayMillisecond = 1000;
+    private int volume_Max = 0;
+    private int volume_Current = 0;
 
     final mProgressHandler mProgressHandler = new mProgressHandler(this);
+    private AudioManager audioManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_player_audio);
 
         setdisplay_TimeOff();
         init();
+
+        volume_Max = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+        volume_Current = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+
+        mSB_volume.setMax(volume_Max);
+        mSB_volume.setProgress(volume_Current);
+        mSB_volume.setOnSeekBarChangeListener(this);
     }
 
     // 위젯 선언부
     private void init() {
+
         mBTN_file = (Button) findViewById(R.id.btn_file);
         mBTN_play = (Button) findViewById(R.id.btn_play);
         mBTN_pause = (Button) findViewById(R.id.btn_pause);
@@ -87,6 +101,7 @@ public class MediaPlayer_Audio extends AppCompatActivity implements View.OnClick
         mTV_runtime = (TextView) findViewById(R.id.tv_runtime);
         mTV_duration = (TextView) findViewById(R.id.tv_duration);
         mSB_progress = (SeekBar) findViewById(R.id.sb_progress);
+        mSB_volume = (SeekBar) findViewById(R.id.sb_volume);
         mCHK_loop = (CheckBox) findViewById(R.id.chk_loop);
 
         mBTN_file.setOnClickListener(this);
@@ -139,17 +154,24 @@ public class MediaPlayer_Audio extends AppCompatActivity implements View.OnClick
     //=============================================================
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        if (fromUser) {
-            mPlayer.seekTo(progress);
-            show_Log("onProgressChanged / mPlayer.seekTo() = " + String.valueOf(progress));
+        switch (seekBar.getId()) {
+            case R.id.sb_volume :
+                audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, 0);
+                break;
+            case R.id.sb_progress :
+                if (fromUser) {
+                    mPlayer.seekTo(progress);
+                    show_Log("onProgressChanged / mPlayer.seekTo() = " + String.valueOf(progress));
+                }
+                //show_Log(String.valueOf(progress));
+                mSB_progress.setProgress(progress);
+                int min = progress / 60000;
+                int sec = (progress % 60000) / 1000;
+                date.setMinutes(min);
+                date.setSeconds(sec);
+                mTV_elapsetime.setText(timeFormat.format(date.getTime()));
+                break;
         }
-        //show_Log(String.valueOf(progress));
-        mSB_progress.setProgress(progress);
-        int min = progress / 60000;
-        int sec = (progress % 60000) / 1000;
-        date.setMinutes(min);
-        date.setSeconds(sec);
-        mTV_elapsetime.setText(timeFormat.format(date.getTime()));
     }
 
     @Override

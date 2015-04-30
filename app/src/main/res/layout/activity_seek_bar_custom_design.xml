@@ -25,7 +25,7 @@
         android:max="200"
         android:progress="60"
         android:progressDrawable="@drawable/seekbar_red"
-        android:thumb="@drawable/slider_thumb_square"
+        android:thumb="@drawable/slider_thumb"
         />
 
     <View

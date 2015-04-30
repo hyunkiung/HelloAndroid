@@ -56,7 +56,8 @@ public class MediaPlayer_Audio_SDCARD extends ActionBarActivity {
 
         // SD 카드 루트의 MP3 파일 목록을 구한다.
         //sdPath = Environment.getExternalStorageDirectory().getAbsolutePath();
-        sdPath = "/storage/external_SD/01_FAV_Reply";
+        sdPath = "/storage/external_SD/00_들어봐야는것1";
+
         File sdRoot = new File(sdPath);
 
         show_Log("sdPath = " + String.valueOf(sdPath));
