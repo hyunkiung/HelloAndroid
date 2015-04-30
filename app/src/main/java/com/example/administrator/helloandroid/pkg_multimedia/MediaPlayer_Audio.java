@@ -207,7 +207,7 @@ public class MediaPlayer_Audio extends AppCompatActivity implements View.OnClick
         }
     }
 
-    // 플레이 반복 메소드
+    // 플레이 반복 메소드.
     private void media_Loop() {
         if(mCHK_loop.isChecked()) {
             play_loop = true;
