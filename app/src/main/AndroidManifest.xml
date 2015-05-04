@@ -295,6 +295,10 @@
             android:name=".pkg_activity.SeekBarCustomDesign"
             android:label="@string/title_activity_seek_bar_custom_design" >
         </activity>
+        <activity
+            android:name=".pkg_multimedia.MediaPlayer_Video"
+            android:label="@string/title_activity_media_player__video" >
+        </activity>
     </application>
 
 </manifest>

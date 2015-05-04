@@ -113,5 +113,6 @@
     <string name="title_activity_media_player">MediaPlayer Audio</string>
     <string name="title_activity_media_player__audio__sdcard">MediaPlayer_Audio_SDCARD</string>
     <string name="title_activity_seek_bar_custom_design">SeekBarCustomDesign</string>
+    <string name="title_activity_media_player__video">MediaPlayer_Video</string>
 
 </resources>

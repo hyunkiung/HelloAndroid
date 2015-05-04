@@ -42,6 +42,7 @@ import com.example.administrator.helloandroid.pkg_multimedia.Camera_Intent;
 import com.example.administrator.helloandroid.pkg_multimedia.Camera_Surface;
 import com.example.administrator.helloandroid.pkg_multimedia.MediaPlayer_Audio;
 import com.example.administrator.helloandroid.pkg_multimedia.MediaPlayer_Audio_SDCARD;
+import com.example.administrator.helloandroid.pkg_multimedia.MediaPlayer_Video;
 import com.example.administrator.helloandroid.pkg_network.Local_Socket_Chat;
 import com.example.administrator.helloandroid.pkg_network.Remocon_Client;
 import com.example.administrator.helloandroid.pkg_network.Remote_Client;
@@ -238,13 +239,15 @@ public class MenuSub extends ActionBarActivity implements
             "카메라 호출하기 (Intent)",
             "카메라 생성하기 (SurFaceView)",
             "플레이어 실습 (Audio Player)",
-            "플레이어 실습 (Audio SD Card)"
+            "플레이어 실습 (Audio SD Card)",
+            "플레이어 실습 (Video Player)"
     };
     private static final Class[] array_ITEMS_pkg12_CLASS = {
             Camera_Intent.class,
             Camera_Surface.class,
             MediaPlayer_Audio.class,
-            MediaPlayer_Audio_SDCARD.class
+            MediaPlayer_Audio_SDCARD.class,
+            MediaPlayer_Video.class
     };
 
     @Override

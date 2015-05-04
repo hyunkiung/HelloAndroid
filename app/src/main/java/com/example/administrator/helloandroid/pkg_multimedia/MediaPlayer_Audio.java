@@ -311,7 +311,7 @@ public class MediaPlayer_Audio extends AppCompatActivity implements View.OnClick
         c.moveToFirst();
         int c_index = c.getColumnIndex(MediaStore.MediaColumns.DATA);
         if (c_index < 0) {
-            file_name = "error";
+            file_name = "error / 파일관리자에서 파일을 선택하세요.";
         } else {
             String fPath = c.getString(c_index);
             Uri uri = Uri.fromFile(new File(fPath));
