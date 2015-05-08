@@ -114,5 +114,7 @@
     <string name="title_activity_media_player__audio__sdcard">MediaPlayer_Audio_SDCARD</string>
     <string name="title_activity_seek_bar_custom_design">SeekBarCustomDesign</string>
     <string name="title_activity_media_player__video">MediaPlayer_Video</string>
+    <string name="title_activity_mission_612_page">Mission_612p 동영상 목록</string>
+    <string name="title_activity_mission_612_page_video">HKU 동영상 플레이어</string>
 
 </resources>

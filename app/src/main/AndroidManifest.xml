@@ -136,6 +136,20 @@
             android:name=".pkg_mission.Mission_593Page"
             android:label="@string/title_activity_mission_593_page" >
         </activity>
+        <activity
+            android:name=".pkg_mission.Mission_612Page"
+            android:label="@string/title_activity_mission_612_page" >
+        </activity>
+        <activity
+            android:name=".pkg_mission.Mission_612Page_video"
+            android:label="@string/title_activity_mission_612_page_video" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!--<data android:scheme="file" />-->
+                <data android:mimeType="video/*" />
+            </intent-filter>
+        </activity>
 
         <!-- pkg_thread 액티비티 목록 -->
         <activity
@@ -299,6 +313,7 @@
             android:name=".pkg_multimedia.MediaPlayer_Video"
             android:label="@string/title_activity_media_player__video" >
         </activity>
+
     </application>
 
 </manifest>

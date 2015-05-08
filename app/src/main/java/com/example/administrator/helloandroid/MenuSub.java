@@ -38,6 +38,7 @@ import com.example.administrator.helloandroid.pkg_mission.Mission_332Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_333Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_392Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_593Page;
+import com.example.administrator.helloandroid.pkg_mission.Mission_612Page;
 import com.example.administrator.helloandroid.pkg_multimedia.Camera_Intent;
 import com.example.administrator.helloandroid.pkg_multimedia.Camera_Surface;
 import com.example.administrator.helloandroid.pkg_multimedia.MediaPlayer_Audio;
@@ -166,7 +167,8 @@ public class MenuSub extends ActionBarActivity implements
             "미션 332p 데이트 피커",
             "미션 333p 브라우져, 애니메이션",
             "미션 392p 달력, 해쉬맵",
-            "미션 593p 달력, DataBase"
+            "미션 593p 달력, DataBase",
+            "미션 612p 동영상리스트, 재생"
     };
     private static final Class[] array_ITEMS_pkg6_CLASS = {
             Mission_193Page.class,
@@ -174,7 +176,8 @@ public class MenuSub extends ActionBarActivity implements
             Mission_332Page.class,
             Mission_333Page.class,
             Mission_392Page.class,
-            Mission_593Page.class
+            Mission_593Page.class,
+            Mission_612Page.class
     };
 
     private static final String[] array_ITEMS_pkg7_NAME = {

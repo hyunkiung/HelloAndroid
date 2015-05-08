@@ -39,7 +39,7 @@ public class MediaPlayer_Audio extends AppCompatActivity implements View.OnClick
     private static String TAG = "로그 / 오디오플레이어 ";
     private void show_Log(String msg) { Log.d(TAG, msg); }
     // 메세지 토스트 메소드 (공용)
-    void show_Toast(CharSequence toast_msg) { Toast.makeText(this, toast_msg, Toast.LENGTH_SHORT).show(); }
+    private void show_Toast(CharSequence toast_msg) { Toast.makeText(this, toast_msg, Toast.LENGTH_SHORT).show(); }
 
     private Button mBTN_file;
     private Button mBTN_play;
