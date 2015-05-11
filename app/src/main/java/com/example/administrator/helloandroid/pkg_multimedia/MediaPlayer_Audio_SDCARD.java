@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.helloandroid.R;
@@ -24,11 +25,14 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
-public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
+public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements
+        AdapterView.OnItemClickListener, View.OnClickListener {
 
-    private ArrayList<String> mArray_List;
+    //private ArrayList<String> mArray_List;
+    private ArrayList<HashMap<String, String>> mArray_List;
+
     private CustomAdapter mArray_Adapter;
 
     private MediaPlayer mMP_Player;
@@ -68,12 +72,12 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements Adapt
         ObjectReady_Setting();
 
         // 어레이어뎁터 설정, 미리 선언한 array_ITEMS 를 던졌다.
-        mArray_Adapter = new CustomAdapter(getApplicationContext(), R.layout.simple_list_item_hku, mArray_List);
+        mArray_Adapter = new CustomAdapter(getApplicationContext(),
+                R.layout.simple_list_item_hku, mArray_List);
+
+//        mArray_Adapter = new CustomAdapter(getApplicationContext(),
+//                R.layout.simple_list_item_hku, mArray_List);
         mLV_mp3list.setAdapter(mArray_Adapter);
-
-        // 05. 리스트뷰 클릭 리스너
-
-
     }
 
     //====================================================
@@ -99,7 +103,7 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements Adapt
         File SearchRoot = new File(mSD_Path);
         show_Log("SearchRoot : " + SearchRoot);
         // 지정 루트 폴더 하위폴더를 반복하여 검색
-        File[] file_Root_List = SearchRoot.listFiles(); // sd카드 목록 다 가져오기
+        File[] file_Root_List = SearchRoot.listFiles(); // mSD_Path 아래 목록 다 가져오기
         for (int i = 0; i < file_Root_List.length; i++) {
             // 02-1. 제외 폴더 체크
             if(Folder_Exception(file_Root_List[i].getName()))
@@ -133,8 +137,13 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements Adapt
     // 02-2. 폴더와 파일 구분 재귀메소드 호출
     //====================================================
     private void FolderFile_Recursive_Extract_MP3(String flist) {
+
+        HashMap<String, String> hashMap = new HashMap<>();
+
         String fullList;
         File FF = new File(flist);
+
+
         if(FF.isDirectory()) {
             String[] LL = FF.list();
             for(int i = 0; i < LL.length; i++) {
@@ -142,8 +151,11 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements Adapt
                 FolderFile_Recursive_Extract_MP3(fullList);
             }
         } else {
-            if (flist.endsWith(".mp3")) {
-                mArray_List.add(flist);
+            if (flist.endsWith(".mp3") || flist.endsWith(".MP3")) {
+                hashMap.put("name", FF.getName());
+                hashMap.put("path", flist);
+                //mArray_List.add(flist);
+                mArray_List.add(hashMap);
             }
         }
     }
@@ -160,10 +172,6 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements Adapt
         mBTN_Next = (Button) findViewById(R.id.btn_next);
 
         mLV_mp3list.setOnItemClickListener(this); // 04-1
-
-        //mLV_mp3list.requestFocusFromTouch();
-
-
         mBTN_Play.setOnClickListener(this); // 04-2
         mBTN_Stop.setOnClickListener(this); // 04-2
         mBTN_Prev.setOnClickListener(this); // 04-2
@@ -183,44 +191,29 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements Adapt
         try {
             //mMP_Player.setDataSource(mArray_List.get(idx));
             mMP_Player.setDataSource(mp3Path);
-            show_Log("Player_setDataSource try--");
+            show_Log("Player_setDataSource try");
         } catch (IllegalArgumentException e) {
-            show_Log("Player_setDataSource IllegalArgumentException--11");
+            show_Log("Player_setDataSource IllegalArgumentException");
             return false;
         } catch (IllegalStateException e) {
-            show_Log("Player_setDataSource IllegalStateException--11");
+            show_Log("Player_setDataSource IllegalStateException");
             return false;
         } catch (IOException e) {
-            show_Log("Player_setDataSource IOException--11");
+            show_Log("Player_setDataSource IOException");
             return false;
         }
 
-//        if (!Player_Prepare()) {
-//            return false;
-//        }
-
-        try {
-            mMP_Player.prepare();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-
+        Player_Prepare();
         mSB_Progress.setMax(mMP_Player.getDuration());
         return true;
     }
 
-    //====================================================
-    // *** 경로의 곡 읽기 및 준비 (항상 준비 상태여야 한다)
-    //====================================================
-    private boolean Player_Prepare() {
+    private void Player_Prepare() {
         try {
             mMP_Player.prepare();
         } catch (IOException e) {
             e.printStackTrace();
-            return false;
         }
-        return true;
     }
 
 
@@ -242,23 +235,28 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements Adapt
                 // 다시 검토
                 if(mMP_Player == null) {
                     mMP_Player = new MediaPlayer();
+                    show_Log("btn_play 클릭 : mMP_Player = null / 새로 생성");
                 }
                 if (mMP_Player.isPlaying()) {
                     mMP_Player.pause();
                     mBTN_Play.setText("Play");
+                    show_Log("btn_play 클릭 : mMP_Player.isPlaying() = " + mMP_Player.isPlaying());
                 } else {
+                    mMP_Player.seekTo(0);
                     mMP_Player.start();
                     mBTN_Play.setText("Pause");
+                    show_Log("btn_play 클릭 : mMP_Player.isPlaying() = " + mMP_Player.isPlaying());
                 }
                 break;
 
             case R.id.btn_stop :
-                mSB_Progress.setProgress(0);
-                mBTN_Play.setText("Play");
-                mMP_Player.stop();
-                MediaPlayerClose();
-                //mMP_Player.release();
-                //Player_Prepare();
+                if (mMP_Player.isPlaying()) {
+                    mSB_Progress.setProgress(0);
+                    mBTN_Play.setText("Play");
+                    mMP_Player.stop();
+                    Player_Prepare();
+                    show_Log("btn_stop 클릭 : mMP_Player.isPlaying() = " + mMP_Player.isPlaying());
+                }
                 break;
 
             case R.id.btn_prev :
@@ -348,15 +346,18 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements Adapt
         mLV_mp3list.smoothScrollToPosition(positionNum);
         //mLV_mp3list.smoothScrollToPositionFromTop(positionNum, 50, 1000);
 
+        //String filePath = mArray_Adapter.getItem(positionNum);
 
-        String filePath = mArray_Adapter.getItem(positionNum);
-        show_Log(filePath);
+        HashMap<String, String> HM = mArray_Adapter.getItem(positionNum);
+        String filePath = HM.get("path");
+
+
+        show_Log("filePath==" + filePath);
 
         mMP_Player.reset(); //플레이어 리셋
 
         if (!Player_setDataSource(filePath)) {
             Toast.makeText(this, "파일을 읽을 수 없습니다.", Toast.LENGTH_LONG).show();
-            //finish();
         } else {
             if (mMP_Player.isPlaying()) {
                 mMP_Player.pause();
@@ -372,17 +373,28 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements Adapt
     //====================================================
     // *** 커스텀어뎁터 클래스 (어레이어뎁터 확장)
     //====================================================
-    private class CustomAdapter extends ArrayAdapter<String> {
+    private class CustomAdapter extends ArrayAdapter<HashMap<String, String>> {
 
         private int mSelectedPosition = -1;
+        private TextView mText1;
+        private Context mContext;
+        private ArrayList<HashMap<String, String>> mList;
 
-        public CustomAdapter(Context context, int resource, List<String> objects) {
-            super(context, resource, objects);
+        public CustomAdapter(Context context, int resource, ArrayList<HashMap<String, String>> items) {
+            super(context, resource, items);
+            mContext = context;
+            mList = items;
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             convertView = super.getView(position, convertView, parent);
+
+            HashMap<String, String> HM = mList.get(position);
+            String name = HM.get("name");
+
+            mText1 = (TextView)convertView.findViewById(android.R.id.text1);
+            mText1.setText(name);
 
             if(position == mSelectedPosition) {
                 convertView.setBackgroundColor(Color.DKGRAY);

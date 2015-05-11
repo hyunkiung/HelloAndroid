@@ -4,22 +4,19 @@ package com.example.administrator.helloandroid;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Pair;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-
-public class MenuMain extends ActionBarActivity implements AdapterView.OnItemClickListener {
+public class MenuMain extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     //===============================================================
     ////// 선언 : 위젯_리스트뷰, 배열_데이터리스트, 어뎁터_어뎁터리스트
     //===============================================================
     private ListView mPkg_ListView;
-    private ArrayList<String> mPkg_ArrayList;
     private ArrayAdapter<String> mPkg_ArrayAdapter;
     private ActionBar action_Bar;
     private Intent mIntent;
