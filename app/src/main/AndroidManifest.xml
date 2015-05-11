@@ -4,16 +4,17 @@
     package="com.example.administrator.helloandroid" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <!-- Open GL 버전2 지원여부 (Google Map) -->
@@ -145,8 +146,9 @@
             android:label="@string/title_activity_mission_612_page_video" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
-                <!--<data android:scheme="file" />-->
+                <!-- <data android:scheme="file" /> -->
                 <data android:mimeType="video/*" />
             </intent-filter>
         </activity>
@@ -285,6 +287,8 @@
             android:name=".pkg_actionbar.CustomActionBar"
             android:label="@string/title_activity_custom_action_bar" >
         </activity>
+
+        <!-- pkg_multimedia 액티비티 목록 -->
         <activity
             android:name=".pkg_multimedia.Camera_Intent"
             android:label="@string/title_activity_camera__intent" >
@@ -314,6 +318,15 @@
             android:label="@string/title_activity_media_player__video" >
         </activity>
 
+        <!-- pkg_location 액티비티 목록 -->
+        <activity
+            android:name=".pkg_location.GPS_exam1_LocationManager"
+            android:label="@string/title_activity_gps_exam1__location_manager" >
+        </activity>
+        <activity
+            android:name=".pkg_location.GPS_exam2_GoogleApiClient"
+            android:label="@string/title_activity_gps_exam2__google_api_client" >
+        </activity>
     </application>
 
 </manifest>

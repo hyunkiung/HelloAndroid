@@ -116,5 +116,9 @@
     <string name="title_activity_media_player__video">MediaPlayer_Video</string>
     <string name="title_activity_mission_612_page">Mission_612p 동영상 목록</string>
     <string name="title_activity_mission_612_page_video">HKU 동영상 플레이어</string>
+    <string name="title_activity_gps__location_exam">GPS_LocationExam</string>
+    <string name="title_activity_location__location_manager">Location_LocationManager</string>
+    <string name="title_activity_gps_exam1__location_manager">GPS_exam1_LocationManager</string>
+    <string name="title_activity_gps_exam2__google_api_client">GPS_exam2_GoogleApiClient</string>
 
 </resources>

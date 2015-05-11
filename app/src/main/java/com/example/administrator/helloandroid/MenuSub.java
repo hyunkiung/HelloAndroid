@@ -32,6 +32,8 @@ import com.example.administrator.helloandroid.pkg_db.DB03_TableActivity;
 import com.example.administrator.helloandroid.pkg_db.DB04_SharedPreferences;
 import com.example.administrator.helloandroid.pkg_db.DB05_FileSave;
 import com.example.administrator.helloandroid.pkg_event.TouchEventActivity;
+import com.example.administrator.helloandroid.pkg_location.GPS_exam1_LocationManager;
+import com.example.administrator.helloandroid.pkg_location.GPS_exam2_GoogleApiClient;
 import com.example.administrator.helloandroid.pkg_mission.Mission_193Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_332Page;
@@ -253,6 +255,15 @@ public class MenuSub extends ActionBarActivity implements
             MediaPlayer_Video.class
     };
 
+    private static final String[] array_ITEMS_pkg13_NAME = {
+            "exam1 - LocationManager",
+            "exam2 - GoogleApiClient"
+    };
+    private static final Class[] array_ITEMS_pkg13_CLASS = {
+            GPS_exam1_LocationManager.class,
+            GPS_exam2_GoogleApiClient.class
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -318,6 +329,9 @@ public class MenuSub extends ActionBarActivity implements
                 break;
             case "pkg_multimedia":
                 result = new Pair(array_ITEMS_pkg12_NAME, array_ITEMS_pkg12_CLASS);
+                break;
+            case "pkg_location":
+                result = new Pair(array_ITEMS_pkg13_NAME, array_ITEMS_pkg13_CLASS);
                 break;
             default:
                 break;
