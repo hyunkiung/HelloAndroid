@@ -5,6 +5,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -28,8 +30,11 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 public class GPS_exam3_MapMyArea extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
@@ -61,6 +66,8 @@ public class GPS_exam3_MapMyArea extends AppCompatActivity implements
     private RelativeLayout mRlayout;
     private int iOrientation = -1;
 
+    private Geocoder mGeocoder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +95,8 @@ public class GPS_exam3_MapMyArea extends AppCompatActivity implements
         GoogleApiClient_Build();
         mGoogleApiClient.connect();
         LocationRequest_Create();
+
+        mGeocoder = new Geocoder(this, Locale.getDefault());
 
     }
 
@@ -226,6 +235,28 @@ public class GPS_exam3_MapMyArea extends AppCompatActivity implements
         double myPoingLat = myPoint.latitude;
         double myPoingLng = myPoint.longitude;
 
+        Address addrData = GetGeocoder(myPoingLat, myPoingLng);
+        String addr_Full = addrData.getAddressLine(0);
+        String addr_LL = "경도 : " + addrData.getLatitude() + " / 위도 : " + addrData.getLongitude();
+
+        // addrData
+        // addressLines=[0:"대한민국 경기도 수원시 팔달구 인계동 744-16"],
+        // feature=744-16,
+        // admin=경기도,
+        // sub-admin=null,
+        // locality=수원시,
+        // thoroughfare=인계동,
+        // postalCode=null,
+        // countryCode=KR,
+        // countryName=대한민국,
+        // hasLatitude=true,
+        // latitude=37.2741941,
+        // hasLongitude=true,
+        // longitude=127.022565,
+        // phone=null,
+        // url=null,
+        // extras=null
+
         // 해당위치로 애니매이션효과 적용 이동
         mGmap.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(myPoingLat, myPoingLng)));
 
@@ -242,17 +273,16 @@ public class GPS_exam3_MapMyArea extends AppCompatActivity implements
         // 해당 위치에 옵션 마커 생성
         MarkerOptions myMarker = new MarkerOptions();
         myMarker.position(myPoint);
-        myMarker.title("코난 여기있다");
-        myMarker.snippet("졸리기 시작한다!!");
+        myMarker.title(addr_Full);
+        myMarker.snippet(addr_LL);
         myMarker.draggable(true);
         myMarker.visible(true);
         myMarker.alpha(0.9f);
         myMarker.flat(false);
         myMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.hku3));
-        mGmap.addMarker(myMarker);
 
         LocationRequest_UpadateStop();
-
+        mGmap.addMarker(myMarker).showInfoWindow();
     }
 
 
@@ -279,6 +309,20 @@ public class GPS_exam3_MapMyArea extends AppCompatActivity implements
         }
 
     };
+
+    private Address GetGeocoder(double lat, double lng) {
+        List<Address> addressList;
+        Address address = null;
+
+        try {
+            addressList = mGeocoder.getFromLocation(lat, lng, 1);
+            address = addressList.get(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return address;
+    }
 
 
     //====================================================
