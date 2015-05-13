@@ -55,7 +55,7 @@ public class GPS_exam1_LocationManager extends AppCompatActivity implements View
     protected void onDestroy() {
         super.onDestroy();
         // GPS 사용 해제 (새로 할당하고 해제해야 에러메시지가 안나옴)
-        mLmanager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        //mLmanager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         mLmanager.removeUpdates(gpsListener);
     }
 

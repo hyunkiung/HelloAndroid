@@ -34,6 +34,7 @@ import com.example.administrator.helloandroid.pkg_db.DB05_FileSave;
 import com.example.administrator.helloandroid.pkg_event.TouchEventActivity;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam1_LocationManager;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam2_GoogleApiClient;
+import com.example.administrator.helloandroid.pkg_location.GPS_exam3_MapMyArea;
 import com.example.administrator.helloandroid.pkg_mission.Mission_193Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_332Page;
@@ -257,11 +258,13 @@ public class MenuSub extends ActionBarActivity implements
 
     private static final String[] array_ITEMS_pkg13_NAME = {
             "exam1 - LocationManager",
-            "exam2 - GoogleApiClient"
+            "exam2 - GoogleApiClient",
+            "exam3 - MyArea on the Map"
     };
     private static final Class[] array_ITEMS_pkg13_CLASS = {
             GPS_exam1_LocationManager.class,
-            GPS_exam2_GoogleApiClient.class
+            GPS_exam2_GoogleApiClient.class,
+            GPS_exam3_MapMyArea.class
     };
 
     @Override

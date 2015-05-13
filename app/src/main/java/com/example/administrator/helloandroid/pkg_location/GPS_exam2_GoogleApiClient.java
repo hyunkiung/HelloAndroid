@@ -103,9 +103,6 @@ public class GPS_exam2_GoogleApiClient extends AppCompatActivity implements
     @Override
     public void onConnected(Bundle bundle) {
         isCon = true;
-//        if (mRequestingLocationUpdates) {
-//            startLocationUpdates();
-//        }
         startLocationUpdates();
         ServiceStatus_Log("onConnected");
 
@@ -129,6 +126,11 @@ public class GPS_exam2_GoogleApiClient extends AppCompatActivity implements
     //====================================================
     @Override
     public void onClick(View view) {
+        startLocationService();
+
+    }
+
+    private void startLocationService() {
         if(isCon) {
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             mLastConnectType = mLastLocation.toString();
@@ -153,7 +155,6 @@ public class GPS_exam2_GoogleApiClient extends AppCompatActivity implements
         } else {
             mAccuracyText.setText("onConnected : mLastLocation Null");
         }
-
     }
 
 

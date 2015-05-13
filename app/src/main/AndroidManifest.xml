@@ -3,6 +3,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.helloandroid" >
 
+    <permission
+        android:name="com.example.administrator.helloandroid.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.administrator.helloandroid.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -28,6 +35,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <uses-library android:name="com.google.android.maps" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -326,6 +335,10 @@
         <activity
             android:name=".pkg_location.GPS_exam2_GoogleApiClient"
             android:label="@string/title_activity_gps_exam2__google_api_client" >
+        </activity>
+        <activity
+            android:name=".pkg_location.GPS_exam3_MapMyArea"
+            android:label="@string/title_activity_gps_exam3__map_my_area" >
         </activity>
     </application>
 

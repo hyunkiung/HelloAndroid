@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,12 +30,14 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 
-public class Parsing01_Main extends ActionBarActivity implements AdapterView.OnItemClickListener {
+public class Parsing01_Main extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private static final String TAG = Parsing01_Main.class.getSimpleName();
     private Parsing02_Adapter mAdapter;
     private ArrayList<Parsing03_Info> mParsing03_Info;
     private ListView mListView;
+    final String serverKey="AIzaSyBRiCUg_e0RACNHRFF-M4NQ7Zz4KM7lCWs";
+
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -74,10 +76,11 @@ public class Parsing01_Main extends ActionBarActivity implements AdapterView.OnI
                 String str_ListCount = "&max-results=50";
                 String str_ListPage = "&start-index=1";
                 String str_Etc = "&orderby=relevance&v=2&alt=json&format=1,6&safeSearch=none";
+                String str_Key = "&key=" + serverKey;
 
                 // 조회쿼리 값을 변경한뒤에 어뎁터에 대해서 DataSetChanged를 호출하여 리스트뷰를 갱신.
 
-                urlString = str_Url + str_Search + str_ListCount + str_ListPage + str_Etc;
+                urlString = str_Url + str_Search + str_ListCount + str_ListPage + str_Etc + str_Key;
 
                 try {
                     URI url = new URI(urlString);

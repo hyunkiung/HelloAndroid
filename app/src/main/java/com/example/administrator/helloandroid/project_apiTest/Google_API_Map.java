@@ -10,6 +10,6 @@ public class Google_API_Map extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_google__api__map);
+        setContentView(R.layout.activity_google_api_map);
     }
 }
