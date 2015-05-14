@@ -1,21 +1,18 @@
 package com.example.administrator.helloandroid.pkg_location;
 
 import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.hardware.SensorManager;
-import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.view.WindowManager;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.example.administrator.helloandroid.R;
 import com.google.android.gms.common.ConnectionResult;
@@ -23,18 +20,20 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+
+/*
+아래 나열한 순서대로 작동함.
+LocationManager : 시스템의 위치기반 서비스 접근 지원 하는 객체 / 주기적으로 바뀌는 단말의 위치정보 수신
+LocationListener : 위치정보를 전달 받기 위한 리스너
+Location : 위치는 위도(latitude)와 경도(longitude)로, 시간은 UTCtimestamp 로 표시
+           그외 선택적으로 고도(altitude),속도(speed)그리고 bearing정보 표시
+
+ */
 
 public class GPS_exam3_MapMyArea extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
@@ -42,17 +41,19 @@ public class GPS_exam3_MapMyArea extends AppCompatActivity implements
 
     private static String TAG = "로그 / GPS Exam3 ";
     private void show_Log(String msg) { Log.d(TAG, msg); }
-    private void show_Toast(CharSequence toast_msg) { Toast.makeText(this, toast_msg, Toast.LENGTH_SHORT).show(); }
 
-    private GoogleMap mGmap;
+    private boolean mGPS_Enabled = false;
     private GoogleApiClient mGoogleApiClient;
+    private GoogleMap mGoogleMap;
 
+    private LocationManager mLocationManager; // LocationManager - NETWORK_PROVIDER 사용하여 내위치 확인
+    private Location mNowLocation; // 현재 위치정보
     private LocationRequest mLocationRequest;
-    private Location mLastLocation;
+
     private Location mCurrentLocation;
 
     private boolean isCon = false;
-    private boolean mRequestingLocationUpdates = false;
+    private boolean mLocationUP = false;
 
     private double mStrLatitude;
     private double mStrLongitude;
@@ -62,79 +63,35 @@ public class GPS_exam3_MapMyArea extends AppCompatActivity implements
     private GPS_exam3_CompassView mCompassView;
     private SensorManager mSensorManager;
     private boolean mCompassEnabled;
-
     private RelativeLayout mRlayout;
-    private int iOrientation = -1;
-
     private Geocoder mGeocoder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gps_exam3_map_my_area);
+        show_Log("onCreate : 시작");
 
         mRlayout = (RelativeLayout) findViewById(R.id.mainRelativeLayout);
-        mGmap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-        // 센서 관리자 객체 참조
-        mSensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+        mGoogleMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 
-        // 나침반을 표시할 뷰 생성
-        boolean sideBottom = true;
-        mCompassView = new GPS_exam3_CompassView(this);
-        mCompassView.setVisibility(View.VISIBLE);
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT);
-        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-        params.addRule(sideBottom ? RelativeLayout.ALIGN_PARENT_BOTTOM : RelativeLayout.ALIGN_PARENT_TOP);
-        params.setMargins(5, 150, 0, 0);
-        mRlayout.addView(mCompassView, params);
+        mLocationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 
-        mCompassEnabled = true;
+        // 01. GPS 활성화 체크
+        mGPS_Enabled = mLocationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        if(!mGPS_Enabled) {
+            GPS_SettingCheck();
+        }
 
         GoogleApiClient_Build();
         mGoogleApiClient.connect();
+
         LocationRequest_Create();
 
-        mGeocoder = new Geocoder(this, Locale.getDefault());
-
+        show_Log("onCreate : 끝");
     }
 
-    //====================================================
-    // 액티비티 오버라이드 메소드
-    //====================================================
-    @Override
-    public void onResume() {
-        super.onResume();
-        mRequestingLocationUpdates = false;
-        ServiceStatus_Log("onResume");
-
-        if (mGoogleApiClient.isConnected() && !mRequestingLocationUpdates) {
-            LocationService_Start();
-        }
-
-        // 내 위치 자동 표시 enable
-        // setMyLocationEnabled : 내위치에 파란점과 내위치로 이동할수 있는 스코프 버튼이 생긴다.
-        mGmap.setMyLocationEnabled(true);
-        if(mCompassEnabled) {
-            mSensorManager.registerListener(mListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION), SensorManager.SENSOR_DELAY_UI);
-        }
-    }
-
-    // 화면 회전을 하면 onPause - onStop - onDestroy
-    // 바탕화면 보기를 하면 onPause - onStop
-    @Override
-    protected void onPause() {
-        super.onPause();
-        ServiceStatus_Log("onPause");
-        LocationRequest_UpadateStop();
-
-        // 내 위치 자동 표시 disable
-        mGmap.setMyLocationEnabled(false);
-        if(mCompassEnabled) {
-            mSensorManager.unregisterListener(mListener);
-        }
-    }
 
     //===================================================================
     // GoogleApi, Location 수행 관련 메소드
@@ -145,48 +102,105 @@ public class GPS_exam3_MapMyArea extends AppCompatActivity implements
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
                 .build();
+        show_Log("synchronized GoogleApiClient_Build");
     }
 
     protected void LocationRequest_Create() {
+        show_Log("LocationRequest_Create");
         mLocationRequest = new LocationRequest();
         mLocationRequest.setInterval(5000);
         mLocationRequest.setFastestInterval(5000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
 
-    protected void LocationRequest_Upadate() {
+    //====================================================
+    // GPS 활성화 체크 메소드
+    //====================================================
+    private void GPS_SettingCheck() {
+        show_Log("GPS 가동 여부 : " + mGPS_Enabled);
+        new AlertDialog.Builder(this)
+                .setTitle("GPS설정")
+                .setMessage("GPS가 꺼져 있습니다. \nGPS를 활성화하시겠습니까?")
+                .setNegativeButton("닫기", null)
+                .setPositiveButton("GPS 켜기", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                        startActivity(intent);
+                    }
+                }).show();
+    }
+
+
+    //====================================================
+    // 현재위치 찾기 시작
+    //====================================================
+    protected void NowLocationService_Start() {
+        if(mNowLocation == null) {
+            mNowLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+            show_Log("LOCATION_SERVICE mGoogleApiClient = " + mNowLocation);
+        }
+
+        if(mNowLocation == null) {
+            mNowLocation = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            show_Log("LOCATION_SERVICE / GPS_PROVIDER = " + mNowLocation);
+        }
+
+        if(mNowLocation == null) {
+            mNowLocation = mLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            show_Log("LOCATION_SERVICE / NETWORK_PROVIDER = " + mNowLocation);
+        }
+
+        if (mNowLocation != null) {
+            mStrLatitude = mNowLocation.getLatitude(); //경도
+            mStrLongitude = mNowLocation.getLongitude(); //위도
+            mStrAccuracy = mNowLocation.getAccuracy(); //신뢰도
+            show_Log("LocationService_Start / mNowLocation 위치 정보 생성 완료");
+
+        } else {
+            show_Log("LocationService_Start / mNowLocation = NULL");
+        }
+    }
+    // 현재위치 리스너 갱신 시작
+    protected void NowLocationService_Update() {
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
     }
 
-    protected void LocationRequest_UpadateStop() {
-        mRequestingLocationUpdates = true;
+    // 현재위치 리스너 갱신 종료
+    protected void NowLocationService_UpdateStop() {
+        show_Log("NowLocationService_UpdateStop");
         LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
-        ServiceStatus_Log("stopLocationUpdates");
     }
 
-    private void LocationService_Start() {
-        if(isCon) {
-            mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-            show_Log("mGoogleApiClient : " + mLastLocation.toString());
-        } else {
-            LocationManager manager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-            mLastLocation = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            show_Log("LOCATION_SERVICE / GPS_PROVIDER 로 접속");
+    //====================================================
+    // 액티비티 오버라이드 메소드
+    //====================================================
+    @Override
+    public void onResume() {
+        super.onResume();
+        show_Log("## Override onResume");
 
-            if(mLastLocation == null) {
-                mLastLocation = manager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-                show_Log("LOCATION_SERVICE / NETWORK_PROVIDER 로 접속");
-            }
+        if(mNowLocation == null) {
+            NowLocationService_Start();
+        } else if (mNowLocation != null) {
+
+            NowLocationService_Update(); // 일단 업데이트는 막아놓자
         }
+    }
 
-        if (mLastLocation != null) {
-            mStrLatitude = mLastLocation.getLatitude(); //경도
-            mStrLongitude = mLastLocation.getLongitude(); //위도
-            mStrAccuracy = mLastLocation.getAccuracy(); //신뢰도
-
-        } else {
-            show_Log("onConnected : mLastLocation Null");
+    @Override
+    protected void onPause() {
+        super.onPause();
+        show_Log("## Override onPause");
+        if(mGoogleApiClient.isConnected()) {
+            //mGoogleApiClient.disconnect();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        show_Log("@@ Override onDestroy");
     }
 
     //==========================================================
@@ -194,26 +208,17 @@ public class GPS_exam3_MapMyArea extends AppCompatActivity implements
     //==========================================================
     @Override
     public void onConnected(Bundle bundle) {
-        isCon = true;
-        LocationRequest_Upadate();
-        ServiceStatus_Log("onConnected");
+        show_Log("Override onConnected : mNowLocation = " + mNowLocation);
     }
 
-    //==========================================================
-    // GoogleApiClient.ConnectionCallbacks 오버라이드 메소드
-    //==========================================================
     @Override
     public void onConnectionSuspended(int i) {
-        show_Log("onConnectionSuspended");
+        show_Log("Override onConnectionSuspended");
     }
 
-    //==========================================================
-    // GoogleApiClient.OnConnectionFailedListener 오버라이드 메소드
-    //==========================================================
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
-        isCon = false;
-        show_Log("onConnectionFailed");
+        show_Log("Override onConnectionFailed");
     }
 
     //==========================================================
@@ -221,108 +226,21 @@ public class GPS_exam3_MapMyArea extends AppCompatActivity implements
     //==========================================================
     @Override
     public void onLocationChanged(Location location) {
+        show_Log("Override onLocationChanged");
         mCurrentLocation = location;
         mLastUpdateTime = DateFormat.getTimeInstance().format(new Date());
-        ServiceStatus_Log("onLocationChanged : " + mLastUpdateTime);
-        Location_Show(location.getLatitude(), location.getLongitude());
-        //updateUI();
+
+        String getLat = String.valueOf(location.getLatitude());
+        String getLon = String.valueOf(location.getLongitude());
+
+        show_Log("Override onLocationChanged " + getLat + "/" + getLon + "/" + mLastUpdateTime);
     }
 
-
-    private void Location_Show(Double latitude, Double longitude) {
-        // 현재 위치를 이용해 LatLng 객체 생성
-        LatLng myPoint = new LatLng(latitude, longitude);
-        double myPoingLat = myPoint.latitude;
-        double myPoingLng = myPoint.longitude;
-
-        Address addrData = GetGeocoder(myPoingLat, myPoingLng);
-        String addr_Full = addrData.getAddressLine(0);
-        String addr_LL = "경도 : " + addrData.getLatitude() + " / 위도 : " + addrData.getLongitude();
-
-        // addrData
-        // addressLines=[0:"대한민국 경기도 수원시 팔달구 인계동 744-16"],
-        // feature=744-16,
-        // admin=경기도,
-        // sub-admin=null,
-        // locality=수원시,
-        // thoroughfare=인계동,
-        // postalCode=null,
-        // countryCode=KR,
-        // countryName=대한민국,
-        // hasLatitude=true,
-        // latitude=37.2741941,
-        // hasLongitude=true,
-        // longitude=127.022565,
-        // phone=null,
-        // url=null,
-        // extras=null
-
-        // 해당위치로 애니매이션효과 적용 이동
-        mGmap.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(myPoingLat, myPoingLng)));
-
-        // 해당위치 줌 효과
-        mGmap.animateCamera(CameraUpdateFactory.newLatLngZoom(myPoint, 15));
-
-        // 지도 유형 설정.
-        // 일반 지도인 경우에는 MAP_TYPE_NORMAL
-        // 지형 지도인 경우에는 MAP_TYPE_TERRAIN
-        // 위성 지도인 경우에는 MAP_TYPE_SATELLITE
-        // 위성 지도인 경우에는 MAP_TYPE_HYBRID (Satellite 지도에 주요도시명 표기)
-        mGmap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
-        // 해당 위치에 옵션 마커 생성
-        MarkerOptions myMarker = new MarkerOptions();
-        myMarker.position(myPoint);
-        myMarker.title(addr_Full);
-        myMarker.snippet(addr_LL);
-        myMarker.draggable(true);
-        myMarker.visible(true);
-        myMarker.alpha(0.9f);
-        myMarker.flat(false);
-        myMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.hku3));
-
-        LocationRequest_UpadateStop();
-        mGmap.addMarker(myMarker).showInfoWindow();
-    }
 
 
     //==========================================================
     // SensorEventListener 오버라이드 메소드
     //==========================================================
-
-    /**
-     * 센서의 정보를 받기 위한 리스너 객체 생성
-     */
-    private final SensorEventListener mListener = new SensorEventListener() {
-        private int iOrientation = -1;
-
-        public void onAccuracyChanged(Sensor sensor, int accuracy) {}
-
-        // 센서의 값을 받을 수 있도록 호출되는 메소드
-        public void onSensorChanged(SensorEvent event) {
-            if (iOrientation < 0) {
-                iOrientation = ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRotation();
-            }
-
-            mCompassView.setAzimuth(event.values[0] + 90 * iOrientation);
-            mCompassView.invalidate();
-        }
-
-    };
-
-    private Address GetGeocoder(double lat, double lng) {
-        List<Address> addressList;
-        Address address = null;
-
-        try {
-            addressList = mGeocoder.getFromLocation(lat, lng, 1);
-            address = addressList.get(0);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return address;
-    }
 
 
     //====================================================
@@ -330,7 +248,6 @@ public class GPS_exam3_MapMyArea extends AppCompatActivity implements
     //====================================================
     private void ServiceStatus_Log(String stopWhere) {
         String isC = String.valueOf(mGoogleApiClient.isConnected());
-        String isU = String.valueOf(mRequestingLocationUpdates);
-        show_Log(stopWhere + " : isConnected = " + isC + " / mRequestingLocationUpdates = " + isU);
+        show_Log(stopWhere + "#GoogleApiClient = " + isC);
     }
 }
