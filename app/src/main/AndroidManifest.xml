@@ -9,7 +9,6 @@
 
     <uses-permission android:name="com.example.administrator.helloandroid.permission.MAPS_RECEIVE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -23,6 +22,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <!-- Open GL 버전2 지원여부 (Google Map) -->
     <uses-feature
@@ -35,8 +35,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
         <uses-library android:name="com.google.android.maps" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -339,6 +339,14 @@
         <activity
             android:name=".pkg_location.GPS_exam3_MapMyArea"
             android:label="@string/title_activity_gps_exam3__map_my_area" >
+        </activity>
+        <activity
+            android:name=".pkg_notice.Notice_exam1_Notification"
+            android:label="@string/title_activity_notice_exam1__notification" >
+        </activity>
+        <activity
+            android:name=".pkg_notice.Notice_exam2_Notification2"
+            android:label="@string/title_activity_notice_exam2__notification2" >
         </activity>
     </application>
 

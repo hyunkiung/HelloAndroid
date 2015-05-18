@@ -121,5 +121,7 @@
     <string name="title_activity_gps_exam1__location_manager">GPS_exam1_LocationManager</string>
     <string name="title_activity_gps_exam2__google_api_client">GPS_exam2_GoogleApiClient</string>
     <string name="title_activity_gps_exam3__map_my_area">GPS_exam3_MapMyArea</string>
+    <string name="title_activity_notice_exam1__notification">Notice_exam1_Notification</string>
+    <string name="title_activity_notice_exam2__notification2">Notice_exam2_Notification2</string>
 
 </resources>

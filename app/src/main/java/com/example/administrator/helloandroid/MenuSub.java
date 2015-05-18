@@ -50,6 +50,8 @@ import com.example.administrator.helloandroid.pkg_multimedia.MediaPlayer_Video;
 import com.example.administrator.helloandroid.pkg_network.Local_Socket_Chat;
 import com.example.administrator.helloandroid.pkg_network.Remocon_Client;
 import com.example.administrator.helloandroid.pkg_network.Remote_Client;
+import com.example.administrator.helloandroid.pkg_notice.Notice_exam1_Notification;
+import com.example.administrator.helloandroid.pkg_notice.Notice_exam2_Notification2;
 import com.example.administrator.helloandroid.pkg_parsing.Parsing01_Main;
 import com.example.administrator.helloandroid.pkg_parsing.xml_Parser_test;
 import com.example.administrator.helloandroid.pkg_parsing.xml_json_test;
@@ -267,6 +269,15 @@ public class MenuSub extends ActionBarActivity implements
             GPS_exam3_MapMyArea.class
     };
 
+    private static final String[] array_ITEMS_pkg14_NAME = {
+            "exam1 - Notification 기본",
+            "exam2 - Notification 다양함"
+    };
+    private static final Class[] array_ITEMS_pkg14_CLASS = {
+            Notice_exam1_Notification.class,
+            Notice_exam2_Notification2.class
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -335,6 +346,9 @@ public class MenuSub extends ActionBarActivity implements
                 break;
             case "pkg_location":
                 result = new Pair(array_ITEMS_pkg13_NAME, array_ITEMS_pkg13_CLASS);
+                break;
+            case "pkg_notice":
+                result = new Pair(array_ITEMS_pkg14_NAME, array_ITEMS_pkg14_CLASS);
                 break;
             default:
                 break;

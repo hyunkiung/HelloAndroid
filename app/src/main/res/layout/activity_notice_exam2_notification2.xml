@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.helloandroid.pkg_notice.Notice_exam2_Notification2">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification Normal Progress"
+        android:id="@+id/btn_NormalProgress"
+        android:inputType="text|textCapWords"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification Big Text"
+        android:id="@+id/btn_BigText"
+        android:inputType="text|textCapWords"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification Big Picture"
+        android:id="@+id/btn_BigPicture"
+        android:inputType="text|textCapWords"
+        />
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification Inbox Style"
+        android:id="@+id/btn_AddLine"
+        android:inputType="text|textCapWords"
+        />
+
+
+</LinearLayout>
