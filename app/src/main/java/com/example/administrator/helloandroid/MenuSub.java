@@ -32,6 +32,8 @@ import com.example.administrator.helloandroid.pkg_db.DB03_TableActivity;
 import com.example.administrator.helloandroid.pkg_db.DB04_SharedPreferences;
 import com.example.administrator.helloandroid.pkg_db.DB05_FileSave;
 import com.example.administrator.helloandroid.pkg_event.TouchEventActivity;
+import com.example.administrator.helloandroid.pkg_fragment.exam01_Main;
+import com.example.administrator.helloandroid.pkg_fragment.exam02_Main;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam1_LocationManager;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam2_GoogleApiClient;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam3_MapMyArea;
@@ -278,6 +280,15 @@ public class MenuSub extends ActionBarActivity implements
             Notice_exam2_Notification2.class
     };
 
+    private static final String[] array_ITEMS_pkg15_NAME = {
+            "exam1 - Fragment 버튼과 이미지 호출",
+            "exam2 - 페이지 교체(트랜젝션, 커밋)"
+    };
+    private static final Class[] array_ITEMS_pkg15_CLASS = {
+            exam01_Main.class,
+            exam02_Main.class
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -349,6 +360,9 @@ public class MenuSub extends ActionBarActivity implements
                 break;
             case "pkg_notice":
                 result = new Pair(array_ITEMS_pkg14_NAME, array_ITEMS_pkg14_CLASS);
+                break;
+            case "pkg_fragment":
+                result = new Pair(array_ITEMS_pkg15_NAME, array_ITEMS_pkg15_CLASS);
                 break;
             default:
                 break;

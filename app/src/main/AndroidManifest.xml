@@ -340,6 +340,8 @@
             android:name=".pkg_location.GPS_exam3_MapMyArea"
             android:label="@string/title_activity_gps_exam3__map_my_area" >
         </activity>
+
+        <!-- pkg_notice 액티비티 목록 -->
         <activity
             android:name=".pkg_notice.Notice_exam1_Notification"
             android:label="@string/title_activity_notice_exam1__notification" >
@@ -347,6 +349,20 @@
         <activity
             android:name=".pkg_notice.Notice_exam2_Notification2"
             android:label="@string/title_activity_notice_exam2__notification2" >
+        </activity>
+
+        <!-- pkg_fragment 액티비티 목록 -->
+        <activity
+            android:name=".pkg_fragment.exam01_Main"
+            android:label="@string/title_activity_fragment_exam01_main" >
+        </activity>
+        <activity
+            android:name=".pkg_fragment.exam01_ImageMain"
+            android:label="@string/title_activity_fragment_exam01__image_main" >
+        </activity>
+        <activity
+            android:name=".pkg_fragment.exam02_Main"
+            android:label="@string/title_activity_exam02__main" >
         </activity>
     </application>
 

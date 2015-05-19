@@ -123,5 +123,14 @@
     <string name="title_activity_gps_exam3__map_my_area">GPS_exam3_MapMyArea</string>
     <string name="title_activity_notice_exam1__notification">Notice_exam1_Notification</string>
     <string name="title_activity_notice_exam2__notification2">Notice_exam2_Notification2</string>
+    <string name="title_activity_main">MainActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_exam01_main">exam01_main</string>
+    <string name="title_activity_fragment_exam01_main">fragment_exam01_main</string>
+    <string name="title_activity_fragment_exam01__frag_image">fragment_exam01_FragImage</string>
+    <string name="title_activity_fragment_exam01__image_main">fragment_exam01_ImageMain</string>
+    <string name="title_activity_exam02__main">exam02_Main</string>
 
 </resources>
