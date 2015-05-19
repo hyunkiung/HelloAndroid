@@ -132,5 +132,8 @@
     <string name="title_activity_fragment_exam01__frag_image">fragment_exam01_FragImage</string>
     <string name="title_activity_fragment_exam01__image_main">fragment_exam01_ImageMain</string>
     <string name="title_activity_exam02__main">exam02_Main</string>
+    <string name="title_activity_exam1__activity_for_result">exam1_ActivityForResult</string>
+    <string name="title_activity_exam1__open1">exam1_Open1</string>
+    <string name="title_activity_exam1__open2">exam1_Open2</string>
 
 </resources>

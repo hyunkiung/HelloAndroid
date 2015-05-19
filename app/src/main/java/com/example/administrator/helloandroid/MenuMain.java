@@ -37,6 +37,7 @@ public class MenuMain extends AppCompatActivity implements AdapterView.OnItemCli
             "연습10 - 위치기반서비스 (Location)",
             "연습11 - 알림 서비스 (Notification)",
             "연습12 - 프래그먼트 (Fragment)",
+            "연습13 - 결과값 (Activity Result, Intent)",
             "실습1 - 미션 (Mission)",
             "실습2 - API테스트 (API)",
             "실습3 - 팀프로젝트 (TourList)"
@@ -58,6 +59,7 @@ public class MenuMain extends AppCompatActivity implements AdapterView.OnItemCli
             "pkg_location",
             "pkg_notice",
             "pkg_fragment",
+            "pkg_result",
             "pkg_mission",
             "project_apiTest",
             "project_team"

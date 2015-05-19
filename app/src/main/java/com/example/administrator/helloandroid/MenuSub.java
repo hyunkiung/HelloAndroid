@@ -57,6 +57,7 @@ import com.example.administrator.helloandroid.pkg_notice.Notice_exam2_Notificati
 import com.example.administrator.helloandroid.pkg_parsing.Parsing01_Main;
 import com.example.administrator.helloandroid.pkg_parsing.xml_Parser_test;
 import com.example.administrator.helloandroid.pkg_parsing.xml_json_test;
+import com.example.administrator.helloandroid.pkg_result.exam1_ActivityForResult;
 import com.example.administrator.helloandroid.pkg_thread.thread01_run;
 import com.example.administrator.helloandroid.pkg_thread.thread02_progress;
 import com.example.administrator.helloandroid.pkg_thread.thread03_Runnable;
@@ -289,6 +290,13 @@ public class MenuSub extends ActionBarActivity implements
             exam02_Main.class
     };
 
+    private static final String[] array_ITEMS_pkg16_NAME = {
+            "exam1 - ActivityForResult"
+    };
+    private static final Class[] array_ITEMS_pkg16_CLASS = {
+            exam1_ActivityForResult.class
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -363,6 +371,9 @@ public class MenuSub extends ActionBarActivity implements
                 break;
             case "pkg_fragment":
                 result = new Pair(array_ITEMS_pkg15_NAME, array_ITEMS_pkg15_CLASS);
+                break;
+            case "pkg_result":
+                result = new Pair(array_ITEMS_pkg16_NAME, array_ITEMS_pkg16_CLASS);
                 break;
             default:
                 break;

@@ -353,16 +353,24 @@
 
         <!-- pkg_fragment 액티비티 목록 -->
         <activity
-            android:name=".pkg_fragment.exam01_Main"
-            android:label="@string/title_activity_fragment_exam01_main" >
-        </activity>
-        <activity
             android:name=".pkg_fragment.exam01_ImageMain"
             android:label="@string/title_activity_fragment_exam01__image_main" >
         </activity>
         <activity
             android:name=".pkg_fragment.exam02_Main"
             android:label="@string/title_activity_exam02__main" >
+        </activity>
+        <activity
+            android:name=".pkg_result.exam1_ActivityForResult"
+            android:label="@string/title_activity_exam1__activity_for_result" >
+        </activity>
+        <activity
+            android:name=".pkg_result.exam1_Open1"
+            android:label="@string/title_activity_exam1__open1" >
+        </activity>
+        <activity
+            android:name=".pkg_result.exam1_Open2"
+            android:label="@string/title_activity_exam1__open2" >
         </activity>
     </application>
 

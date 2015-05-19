@@ -61,7 +61,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="10dp"></View>
+        android:layout_height="10dp" />
 
     <TextView
         android:text="프로그래스바를 이용한 싱글 스레드 연습하기"

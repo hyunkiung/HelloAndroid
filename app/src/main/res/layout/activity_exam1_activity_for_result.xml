@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.helloandroid.pkg_result.exam1_ActivityForResult">
+
+    <Button
+        android:id="@+id/btn_open1"
+        android:text="1번 액티비티 띄우기"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_result1"
+        android:text="1번 액티비티 응답값"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#CCCCCC"
+        android:textColor="#333333"
+        />
+
+    <View android:layout_width="match_parent" android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/btn_open2"
+        android:text="2번 액티비티 띄우기"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_result2"
+        android:text="2번 액티비티 응답값"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#CCCCCC"
+        android:textColor="#333333"
+        />
+
+</LinearLayout>
