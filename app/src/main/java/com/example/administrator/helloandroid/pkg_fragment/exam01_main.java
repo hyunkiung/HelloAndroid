@@ -8,7 +8,7 @@ import android.util.Log;
 
 import com.example.administrator.helloandroid.R;
 
-public class exam01_Main extends AppCompatActivity implements exam01_FragButton.OnImageChangeListener {
+public class exam01_main extends AppCompatActivity implements exam01_FragButton.OnImageChangeListener {
 
     private exam01_FragButton mFragmentButton;
     private exam01_FragImage mFragmentImage;
