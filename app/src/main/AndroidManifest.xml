@@ -372,6 +372,10 @@
             android:name=".pkg_result.exam1_Open2"
             android:label="@string/title_activity_exam1__open2" >
         </activity>
+        <activity
+            android:name=".pkg_fragment.exam03_ViewPager"
+            android:label="@string/title_activity_exam03__view_pager" >
+        </activity>
     </application>
 
 </manifest>
