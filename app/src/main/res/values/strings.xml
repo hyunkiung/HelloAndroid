@@ -136,5 +136,6 @@
     <string name="title_activity_exam1__open1">exam1_Open1</string>
     <string name="title_activity_exam1__open2">exam1_Open2</string>
     <string name="title_activity_exam03__view_pager">exam03_ViewPager</string>
+    <string name="title_activity_exam04__main">exam04_Main</string>
 
 </resources>
