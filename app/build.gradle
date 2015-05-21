@@ -23,7 +23,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.1.0'
     compile 'com.google.android.gms:play-services:7.3.0'
     compile files('libs/libDaumMapAndroid.jar')
-
+    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     // 코드 테스트
     testCompile 'junit:junit:4.12'
 

@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.administrator.helloandroid.pkg_fragment.exam06_SlidingTab">
+    <item
+        android:id="@+id/action_contact"
+        android:icon="@drawable/ic_action_user"
+        android:title="Contact"
+        app:showAsAction="ifRoom" />
+</menu>

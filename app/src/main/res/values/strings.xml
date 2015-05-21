@@ -141,5 +141,6 @@
     <string name="title_activity_exam05_main">exam05_Main</string>
     <string name="title_activity_exam05_pager_tab">exam05_PagerTab</string>
     <string name="title_activity_exam05_pager_title">exam05_PagerTitle</string>
+    <string name="title_activity_exam06_sliding_tab">PagerSlidingTabStrip</string>
 
 </resources>

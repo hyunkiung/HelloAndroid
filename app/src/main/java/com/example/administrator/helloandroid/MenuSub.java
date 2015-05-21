@@ -37,6 +37,7 @@ import com.example.administrator.helloandroid.pkg_fragment.exam02_Main;
 import com.example.administrator.helloandroid.pkg_fragment.exam03_ViewPager;
 import com.example.administrator.helloandroid.pkg_fragment.exam04_Main;
 import com.example.administrator.helloandroid.pkg_fragment.exam05_Main;
+import com.example.administrator.helloandroid.pkg_fragment.exam06_SlidingTab;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam1_LocationManager;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam2_GoogleApiClient;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam3_MapMyArea;
@@ -289,14 +290,16 @@ public class MenuSub extends ActionBarActivity implements
             "exam2 - 페이지 교체(트랜젝션, 커밋)",
             "exam3 - 뷰페이저 (어레이어뎁터)",
             "exam4 - MyViewPager Class",
-            "exam5 - PagerTabStrip"
+            "exam5 - PagerTabStrip",
+            "exam6 - PagerSlidingTabStrip"
     };
     private static final Class[] array_ITEMS_pkg15_CLASS = {
             exam01_main.class,
             exam02_Main.class,
             exam03_ViewPager.class,
             exam04_Main.class,
-            exam05_Main.class
+            exam05_Main.class,
+            exam06_SlidingTab.class
     };
 
     private static final String[] array_ITEMS_pkg16_NAME = {

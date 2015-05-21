@@ -7,5 +7,7 @@
     <color name="hku_accent">#A966CC</color>
     <color name="hku_textTitleColor">#ff35270b</color>
     <color name="hku_textBackColor">#ffffd998</color>
-
+    <color name="background_window">#FFE5E5E5</color>
+    <color name="hku_Color_White">#FFFFFF</color>
+    <color name="hku_Color_Black">#000000</color>
 </resources>

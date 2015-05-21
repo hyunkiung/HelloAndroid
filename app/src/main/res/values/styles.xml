@@ -6,7 +6,9 @@
         <item name="colorAccent">@color/hku_accent</item>
         <item name="android:textColorPrimary">@color/hku_textTitleColor</item>
         <item name="android:textColor">@color/hku_textBackColor</item>
+        <item name="android:icon">@drawable/ic_launcher_actionbar</item>
     </style>
+
 
     <style name="NewTheme" parent="Base.Theme.AppCompat">
         <item name="colorPrimary">@color/hku_primary2</item>
@@ -14,7 +16,27 @@
         <item name="colorAccent">@color/hku_accent</item>
         <item name="android:textColorPrimary">@color/hku_textTitleColor</item>
         <item name="android:textColor">@color/hku_textBackColor</item>
-        <item name="actionBarSize">45dp</item>
+        <item name="actionBarSize">50dp</item>
     </style>
+
+
+    <style name="SlidingTabTheme" parent="Base.Theme.AppCompat">
+        <item name="android:windowBackground">@color/background_window</item>
+        <item name="colorPrimary">@color/hku_primary2</item>
+        <item name="colorPrimaryDark">@color/hku_primary_dark</item>
+        <item name="colorAccent">@color/hku_accent</item>
+        <item name="android:textColorPrimary">@color/hku_Color_White</item>
+        <item name="android:textColor">@color/hku_Color_Black</item>
+        <item name="actionBarSize">47dp</item>
+        <!--<item name="android:actionBarStyle">@style/ActionBarStyle</item>-->
+    </style>
+
+    <!-- actionBarStyle 이 적용되지 않는다. java코드로 해결 -->
+    <style name="ActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">#FF006666</item>
+        <item name="android:icon">@drawable/ic_launcher_actionbar</item>
+
+    </style>
+
 
 </resources>

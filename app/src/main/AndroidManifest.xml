@@ -365,7 +365,6 @@
             android:label="@string/title_activity_exam1_open2" >
         </activity>
 
-
         <!-- pkg_fragment 액티비티 목록 -->
         <activity
             android:name=".pkg_fragment.exam01_main"
@@ -398,6 +397,11 @@
         <activity
             android:name=".pkg_fragment.exam05_PagerTitle"
             android:label="@string/title_activity_exam05_pager_title" >
+        </activity>
+        <activity
+            android:name=".pkg_fragment.exam06_SlidingTab"
+            android:label="@string/title_activity_exam06_sliding_tab"
+            android:theme="@style/SlidingTabTheme">
         </activity>
     </application>
 
