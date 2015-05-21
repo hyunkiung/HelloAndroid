@@ -1,12 +1,12 @@
 <resources>
     <!--앱 이름-->
-    <string name="app_name">기웅첫앱</string>
+    <string name="app_name">HKU</string>
 
     <!--상단의 텍스트뷰-->
     <string name="hello_world">Good Morning~!!</string>
 
     <!--하단의 텍스트뷰-->
-    <string name="testWord1">순수클럽 점심 맛있게 먹어라~</string>
+    <string name="testWord1">맛점하세요~</string>
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_first">FirstActivity</string>
@@ -59,84 +59,87 @@
     <string name="title_activity_custom_basc_adapter">customBascAdapter</string>
     <string name="title_activity_custom_base_adapter">customBaseAdapter</string>
     <string name="title_activity_item_use_base_adapter">item_useBaseAdapter</string>
-    <string name="title_activity_adapter_list_exam1__main">adapterListExam1_Main</string>
+    <string name="title_activity_adapter_list_exam1_main">adapterListExam1_Main</string>
     <string name="title_activity_adapter_list_exam1_pkg_activity">adapterListExam1_pkg_activity
     </string>
     <string name="title_activity_adapter_list_exam1_pkg_event">adapterListExam1_pkg_event</string>
-    <string name="title_activity_adapter_list_exam1_pkg__list_view">adapterListExam1_pkg_ListView
+    <string name="title_activity_adapter_list_exam1_pkg_list_view">adapterListExam1_pkg_ListView
     </string>
     <string name="title_activity_adapter_list_exam1_pkg_mission">adapterListExam1_pkg_mission
     </string>
-    <string name="title_activity_adapter_list_exam2__main">실습메인</string>
-    <string name="title_activity_adapter_list_exam2__sub">AdapterListExam2_Sub</string>
+    <string name="title_activity_adapter_list_exam2_main">실습메인</string>
+    <string name="title_activity_adapter_list_exam2_sub">AdapterListExam2_Sub</string>
     <string name="title_activity_spinner_exam">SpinnerExam</string>
-    <string name="title_activity_grid_view__calendar">GridView_Calendar</string>
+    <string name="title_activity_grid_view_calendar">GridView_Calendar</string>
     <string name="title_activity_mission_392_page">Mission_392Page</string>
     <string name="title_activity_thread01_run">thread01_run</string>
     <string name="title_activity_thread02_progress">thread02_progress</string>
-    <string name="title_activity_thread03__async_task">thread03_AsyncTask</string>
-    <string name="title_activity_thread03__runnable">thread03_Runnable</string>
-    <string name="title_activity_xml__parser_test">xml_Parser_test</string>
+    <string name="title_activity_thread03_async_task">thread03_AsyncTask</string>
+    <string name="title_activity_thread03_runnable">thread03_Runnable</string>
+    <string name="title_activity_xml_parser_test">xml_Parser_test</string>
     <string name="title_activity_xml_json_test">xml_json_test</string>
-    <string name="title_activity_thread05__login">thread05_Login</string>
-    <string name="title_activity_thread06__stop_watch">thread06_StopWatch</string>
-    <string name="title_activity_thread07__stop_watch">thread07_StopWatch</string>
-    <string name="title_activity_parsing01__main">Parsing01_Main</string>
-    <string name="title_activity_parsing04__web_view">Parsing04_WebView</string>
-    <string name="title_activity_api__test__google_map">API_Test_GoogleMap</string>
+    <string name="title_activity_thread05_login">thread05_Login</string>
+    <string name="title_activity_thread06_stop_watch">thread06_StopWatch</string>
+    <string name="title_activity_thread07_stop_watch">thread07_StopWatch</string>
+    <string name="title_activity_parsing01_main">Parsing01_Main</string>
+    <string name="title_activity_parsing04_web_view">Parsing04_WebView</string>
+    <string name="title_activity_api_test_google_map">API_Test_GoogleMap</string>
     <string name="title_activity_google_map">GoogleMap</string>
-    <string name="title_activity_google__api__map">Google_API_Map</string>
-    <string name="title_activity_parsing06__you_tube">Parsing06_YouTube</string>
-    <string name="title_activity_thread08__delay_runnable">thread08_DelayRunnable</string>
-    <string name="title_activity_thread09__looper">thread09_Looper</string>
-    <string name="title_activity_db01__create">DB01_Create</string>
-    <string name="title_activity_db02__db__search_use_helper">DB02_DB_SearchUseHelper</string>
-    <string name="title_activity_db03__table">DB03_TableActivity</string>
-    <string name="title_activity_tour_list__db_">TourList_DB_Activity</string>
+    <string name="title_activity_google_api_map">Google_API_Map</string>
+    <string name="title_activity_parsing06_you_tube">Parsing06_YouTube</string>
+    <string name="title_activity_thread08_delay_runnable">thread08_DelayRunnable</string>
+    <string name="title_activity_thread09_looper">thread09_Looper</string>
+    <string name="title_activity_db01_create">DB01_Create</string>
+    <string name="title_activity_db02_db_search_use_helper">DB02_DB_SearchUseHelper</string>
+    <string name="title_activity_db03_table">DB03_TableActivity</string>
+    <string name="title_activity_tour_list_db_">TourList_DB_Activity</string>
     <string name="title_activity_tour_list_codemt_activity">TourList_CODEMT_Activity</string>
     <string name="title_activity_tour_list_codemt_adapter">TourList_CODEMT_Adapter</string>
-    <string name="title_activity_tour_list__listmt__adapter">TourList_LISTMT_Adapter</string>
-    <string name="title_activity_tour_list__listmt_">TourList_LISTMT_Activity</string>
-    <string name="title_activity_tour_list__photodt__adapter">TourList_PHOTODT_Adapter</string>
-    <string name="title_activity_tour_list__photodt_">TourList_PHOTODT_Activity</string>
-    <string name="title_activity_daum__api__map">Daum_API_Map</string>
-    <string name="title_activity_db04__shared_preferences">DB04_SharedPreferences</string>
-    <string name="title_activity_db05__file_save">DB05_FileSave</string>
+    <string name="title_activity_tour_list_listmt_adapter">TourList_LISTMT_Adapter</string>
+    <string name="title_activity_tour_list_listmt_">TourList_LISTMT_Activity</string>
+    <string name="title_activity_tour_list_photodt_adapter">TourList_PHOTODT_Adapter</string>
+    <string name="title_activity_tour_list_photodt_">TourList_PHOTODT_Activity</string>
+    <string name="title_activity_daum_api_map">Daum_API_Map</string>
+    <string name="title_activity_db04_shared_preferences">DB04_SharedPreferences</string>
+    <string name="title_activity_db05_file_save">DB05_FileSave</string>
     <string name="title_activity_mission_593_page">Mission_593Page</string>
-    <string name="title_activity_socket__chat">Socket_Chat</string>
-    <string name="title_activity_remote__socket__chat">Remote_Socket_Chat</string>
+    <string name="title_activity_socket_chat">Socket_Chat</string>
+    <string name="title_activity_remote_socket_chat">Remote_Socket_Chat</string>
     <string name="title_activity_action_bar_exam">ActionBarExamActivity</string>
     <string name="title_activity_custom_action_bar">CustomActionBar</string>
-    <string name="title_activity_remocon__client">Remocon_Client</string>
-    <string name="title_activity_camera__intent">Camera_Intent</string>
-    <string name="title_activity_camera__surface">Camera_Surface</string>
+    <string name="title_activity_remocon_client">Remocon_Client</string>
+    <string name="title_activity_camera_intent">Camera_Intent</string>
+    <string name="title_activity_camera_surface">Camera_Surface</string>
     <string name="title_activity_media_player">MediaPlayer Audio</string>
-    <string name="title_activity_media_player__audio__sdcard">MediaPlayer_Audio_SDCARD</string>
+    <string name="title_activity_media_player_audio_sdcard">MediaPlayer_Audio_SDCARD</string>
     <string name="title_activity_seek_bar_custom_design">SeekBarCustomDesign</string>
-    <string name="title_activity_media_player__video">MediaPlayer_Video</string>
+    <string name="title_activity_media_player_video">MediaPlayer_Video</string>
     <string name="title_activity_mission_612_page">Mission_612p 동영상 목록</string>
     <string name="title_activity_mission_612_page_video">HKU 동영상 플레이어</string>
-    <string name="title_activity_gps__location_exam">GPS_LocationExam</string>
-    <string name="title_activity_location__location_manager">Location_LocationManager</string>
-    <string name="title_activity_gps_exam1__location_manager">GPS_exam1_LocationManager</string>
-    <string name="title_activity_gps_exam2__google_api_client">GPS_exam2_GoogleApiClient</string>
-    <string name="title_activity_gps_exam3__map_my_area">GPS_exam3_MapMyArea</string>
-    <string name="title_activity_notice_exam1__notification">Notice_exam1_Notification</string>
-    <string name="title_activity_notice_exam2__notification2">Notice_exam2_Notification2</string>
+    <string name="title_activity_gps_location_exam">GPS_LocationExam</string>
+    <string name="title_activity_location_location_manager">Location_LocationManager</string>
+    <string name="title_activity_gps_exam1_location_manager">GPS_exam1_LocationManager</string>
+    <string name="title_activity_gps_exam2_google_api_client">GPS_exam2_GoogleApiClient</string>
+    <string name="title_activity_gps_exam3_map_my_area">GPS_exam3_MapMyArea</string>
+    <string name="title_activity_notice_exam1_notification">Notice_exam1_Notification</string>
+    <string name="title_activity_notice_exam2_notification2">Notice_exam2_Notification2</string>
     <string name="title_activity_main">MainActivity</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_exam01_main">exam01_main</string>
     <string name="title_activity_fragment_exam01_main">fragment_exam01_main</string>
-    <string name="title_activity_fragment_exam01__frag_image">fragment_exam01_FragImage</string>
-    <string name="title_activity_fragment_exam01__image_main">fragment_exam01_ImageMain</string>
-    <string name="title_activity_exam02__main">exam02_Main</string>
-    <string name="title_activity_exam1__activity_for_result">exam1_ActivityForResult</string>
-    <string name="title_activity_exam1__open1">exam1_Open1</string>
-    <string name="title_activity_exam1__open2">exam1_Open2</string>
-    <string name="title_activity_exam03__view_pager">exam03_ViewPager</string>
-    <string name="title_activity_exam04__main">exam04_Main</string>
-    <string name="title_activity_exam05__effective_navigation">exam05_EffectiveNavigation</string>
+    <string name="title_activity_fragment_exam01_frag_image">fragment_exam01_FragImage</string>
+    <string name="title_activity_fragment_exam01_image_main">fragment_exam01_ImageMain</string>
+    <string name="title_activity_exam02_main">exam02_Main</string>
+    <string name="title_activity_exam1_activity_for_result">exam1_ActivityForResult</string>
+    <string name="title_activity_exam1_open1">exam1_Open1</string>
+    <string name="title_activity_exam1_open2">exam1_Open2</string>
+    <string name="title_activity_exam03_view_pager">exam03_ViewPager</string>
+    <string name="title_activity_exam04_main">exam04_Main</string>
+    <string name="title_activity_exam05_effective_navigation">exam05_EffectiveNavigation</string>
+    <string name="title_activity_exam05_main">exam05_Main</string>
+    <string name="title_activity_exam05_pager_tab">exam05_PagerTab</string>
+    <string name="title_activity_exam05_pager_title">exam05_PagerTitle</string>
 
 </resources>

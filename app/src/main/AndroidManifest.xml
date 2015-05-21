@@ -47,7 +47,7 @@
         <!-- pkg_mainFrame 실습 메뉴 메인 엑티비티 -->
         <activity
             android:name=".MenuMain"
-            android:label="@string/title_activity_adapter_list_exam2__main" >
+            android:label="@string/title_activity_adapter_list_exam2_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -56,7 +56,7 @@
         </activity>
         <activity
             android:name=".MenuSub"
-            android:label="@string/title_activity_adapter_list_exam2__sub" >
+            android:label="@string/title_activity_adapter_list_exam2_sub" >
         </activity>
 
         <!-- pkg_activity 액티비티 목록 -->
@@ -108,7 +108,7 @@
         </activity>
         <activity
             android:name=".pkg_adapter.GridView_Calendar"
-            android:label="@string/title_activity_grid_view__calendar" >
+            android:label="@string/title_activity_grid_view_calendar" >
         </activity>
 
         <!-- pkg_event 액티비티 목록 -->
@@ -173,47 +173,47 @@
         </activity>
         <activity
             android:name=".pkg_thread.thread03_Runnable"
-            android:label="@string/title_activity_thread03__runnable" >
+            android:label="@string/title_activity_thread03_runnable" >
         </activity>
         <activity
             android:name=".pkg_thread.thread04_AsyncTask"
-            android:label="@string/title_activity_thread03__async_task" >
+            android:label="@string/title_activity_thread03_async_task" >
         </activity>
         <activity
             android:name=".pkg_thread.thread05_Login"
-            android:label="@string/title_activity_thread05__login" >
+            android:label="@string/title_activity_thread05_login" >
         </activity>
         <activity
             android:name=".pkg_thread.thread06_StopWatch"
-            android:label="@string/title_activity_thread06__stop_watch" >
+            android:label="@string/title_activity_thread06_stop_watch" >
         </activity>
         <activity
             android:name=".pkg_thread.thread07_StopWatch"
-            android:label="@string/title_activity_thread07__stop_watch" >
+            android:label="@string/title_activity_thread07_stop_watch" >
         </activity>
         <activity
             android:name=".pkg_thread.thread08_DelayRunnable"
-            android:label="@string/title_activity_thread08__delay_runnable" >
+            android:label="@string/title_activity_thread08_delay_runnable" >
         </activity>
         <activity
             android:name=".pkg_thread.thread09_Looper"
-            android:label="@string/title_activity_thread09__looper" >
+            android:label="@string/title_activity_thread09_looper" >
         </activity>
 
         <!-- project_apiTest 액티비티 목록 -->
         <activity
             android:name=".project_apiTest.Google_API_Map"
-            android:label="@string/title_activity_google__api__map" >
+            android:label="@string/title_activity_google_api_map" >
         </activity>
         <activity
             android:name=".project_apiTest.Daum_API_Map"
-            android:label="@string/title_activity_daum__api__map" >
+            android:label="@string/title_activity_daum_api_map" >
         </activity>
 
         <!-- pkg_parsing 액티비티 목록 -->
         <activity
             android:name=".pkg_parsing.xml_Parser_test"
-            android:label="@string/title_activity_xml__parser_test" >
+            android:label="@string/title_activity_xml_parser_test" >
         </activity>
         <activity
             android:name=".pkg_parsing.xml_json_test"
@@ -221,43 +221,43 @@
         </activity>
         <activity
             android:name=".pkg_parsing.Parsing01_Main"
-            android:label="@string/title_activity_parsing01__main" >
+            android:label="@string/title_activity_parsing01_main" >
         </activity>
         <activity
             android:name=".pkg_parsing.Parsing04_WebView"
-            android:label="@string/title_activity_parsing04__web_view" >
+            android:label="@string/title_activity_parsing04_web_view" >
         </activity>
         <activity
             android:name=".pkg_parsing.Parsing06_YouTube"
-            android:label="@string/title_activity_parsing06__you_tube" >
+            android:label="@string/title_activity_parsing06_you_tube" >
         </activity>
 
         <!-- pkg_db 액티비티 목록 -->
         <activity
             android:name=".pkg_db.DB01_Create"
-            android:label="@string/title_activity_db01__create" >
+            android:label="@string/title_activity_db01_create" >
         </activity>
         <activity
             android:name=".pkg_db.DB02_HelperActivity"
-            android:label="@string/title_activity_db02__db__search_use_helper" >
+            android:label="@string/title_activity_db02_db_search_use_helper" >
         </activity>
         <activity
             android:name=".pkg_db.DB03_TableActivity"
-            android:label="@string/title_activity_db03__table" >
+            android:label="@string/title_activity_db03_table" >
         </activity>
         <activity
             android:name=".pkg_db.DB04_SharedPreferences"
-            android:label="@string/title_activity_db04__shared_preferences" >
+            android:label="@string/title_activity_db04_shared_preferences" >
         </activity>
         <activity
             android:name=".pkg_db.DB05_FileSave"
-            android:label="@string/title_activity_db05__file_save" >
+            android:label="@string/title_activity_db05_file_save" >
         </activity>
 
         <!-- project_team 액티비티 목록 -->
         <activity
             android:name=".project_team.TourList_DB_Activity"
-            android:label="@string/title_activity_tour_list__db_" >
+            android:label="@string/title_activity_tour_list_db_" >
         </activity>
         <activity
             android:name=".project_team.TourList_CODEMT_Activity"
@@ -265,26 +265,26 @@
         </activity>
         <activity
             android:name=".project_team.TourList_LISTMT_Activity"
-            android:label="@string/title_activity_tour_list__listmt_" >
+            android:label="@string/title_activity_tour_list_listmt_" >
         </activity>
         <activity
             android:name=".project_team.TourList_PHOTODT_Activity"
-            android:label="@string/title_activity_tour_list__photodt_" >
+            android:label="@string/title_activity_tour_list_photodt_" >
         </activity>
 
         <!-- pkg_network 액티비티 목록 -->
         <activity
             android:name=".pkg_network.Local_Socket_Chat"
-            android:label="@string/title_activity_socket__chat" >
+            android:label="@string/title_activity_socket_chat" >
         </activity>
         <activity
             android:name=".pkg_network.Remote_Client"
-            android:label="@string/title_activity_remote__socket__chat"
+            android:label="@string/title_activity_remote_socket_chat"
             android:theme="@style/NewTheme" >
         </activity>
         <activity
             android:name=".pkg_network.Remocon_Client"
-            android:label="@string/title_activity_remocon__client" >
+            android:label="@string/title_activity_remocon_client" >
         </activity>
 
         <!-- pkg_actionbar 액티비티 목록 -->
@@ -300,12 +300,12 @@
         <!-- pkg_multimedia 액티비티 목록 -->
         <activity
             android:name=".pkg_multimedia.Camera_Intent"
-            android:label="@string/title_activity_camera__intent" >
+            android:label="@string/title_activity_camera_intent" >
         </activity>
         <activity
             android:name=".pkg_multimedia.Camera_Surface"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_camera__surface" >
+            android:label="@string/title_activity_camera_surface" >
 
             <!-- android:screenOrientation="landscape" -->
 
@@ -316,7 +316,7 @@
         </activity>
         <activity
             android:name=".pkg_multimedia.MediaPlayer_Audio_SDCARD"
-            android:label="@string/title_activity_media_player__audio__sdcard" >
+            android:label="@string/title_activity_media_player_audio_sdcard" >
         </activity>
         <activity
             android:name=".pkg_activity.SeekBarCustomDesign"
@@ -324,61 +324,80 @@
         </activity>
         <activity
             android:name=".pkg_multimedia.MediaPlayer_Video"
-            android:label="@string/title_activity_media_player__video" >
+            android:label="@string/title_activity_media_player_video" >
         </activity>
 
         <!-- pkg_location 액티비티 목록 -->
         <activity
             android:name=".pkg_location.GPS_exam1_LocationManager"
-            android:label="@string/title_activity_gps_exam1__location_manager" >
+            android:label="@string/title_activity_gps_exam1_location_manager" >
         </activity>
         <activity
             android:name=".pkg_location.GPS_exam2_GoogleApiClient"
-            android:label="@string/title_activity_gps_exam2__google_api_client" >
+            android:label="@string/title_activity_gps_exam2_google_api_client" >
         </activity>
         <activity
             android:name=".pkg_location.GPS_exam3_MapMyArea"
-            android:label="@string/title_activity_gps_exam3__map_my_area" >
+            android:label="@string/title_activity_gps_exam3_map_my_area" >
         </activity>
 
         <!-- pkg_notice 액티비티 목록 -->
         <activity
             android:name=".pkg_notice.Notice_exam1_Notification"
-            android:label="@string/title_activity_notice_exam1__notification" >
+            android:label="@string/title_activity_notice_exam1_notification" >
         </activity>
         <activity
             android:name=".pkg_notice.Notice_exam2_Notification2"
-            android:label="@string/title_activity_notice_exam2__notification2" >
+            android:label="@string/title_activity_notice_exam2_notification2" >
         </activity>
 
-        <!-- pkg_fragment 액티비티 목록 -->
-        <activity
-            android:name=".pkg_fragment.exam01_ImageMain"
-            android:label="@string/title_activity_fragment_exam01__image_main" >
-        </activity>
-        <activity
-            android:name=".pkg_fragment.exam02_Main"
-            android:label="@string/title_activity_exam02__main" >
-        </activity>
+        <!-- pkg_result 액티비티 목록 -->
         <activity
             android:name=".pkg_result.exam1_ActivityForResult"
-            android:label="@string/title_activity_exam1__activity_for_result" >
+            android:label="@string/title_activity_exam1_activity_for_result" >
         </activity>
         <activity
             android:name=".pkg_result.exam1_Open1"
-            android:label="@string/title_activity_exam1__open1" >
+            android:label="@string/title_activity_exam1_open1" >
         </activity>
         <activity
             android:name=".pkg_result.exam1_Open2"
-            android:label="@string/title_activity_exam1__open2" >
+            android:label="@string/title_activity_exam1_open2" >
+        </activity>
+
+
+        <!-- pkg_fragment 액티비티 목록 -->
+        <activity
+            android:name=".pkg_fragment.exam01_main"
+            android:label="@string/title_activity_exam02_main" >
+        </activity>
+        <activity
+            android:name=".pkg_fragment.exam01_ImageMain"
+            android:label="@string/title_activity_fragment_exam01_image_main" >
+        </activity>
+        <activity
+            android:name=".pkg_fragment.exam02_Main"
+            android:label="@string/title_activity_exam02_main" >
         </activity>
         <activity
             android:name=".pkg_fragment.exam03_ViewPager"
-            android:label="@string/title_activity_exam03__view_pager" >
+            android:label="@string/title_activity_exam03_view_pager" >
         </activity>
         <activity
             android:name=".pkg_fragment.exam04_Main"
-            android:label="@string/title_activity_exam04__main" >
+            android:label="@string/title_activity_exam04_main" >
+        </activity>
+        <activity
+            android:name=".pkg_fragment.exam05_Main"
+            android:label="@string/title_activity_exam05_main" >
+        </activity>
+        <activity
+            android:name=".pkg_fragment.exam05_PagerTab"
+            android:label="@string/title_activity_exam05_pager_tab" >
+        </activity>
+        <activity
+            android:name=".pkg_fragment.exam05_PagerTitle"
+            android:label="@string/title_activity_exam05_pager_title" >
         </activity>
     </application>
 
