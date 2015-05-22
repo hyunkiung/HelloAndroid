@@ -401,8 +401,13 @@
         <activity
             android:name=".pkg_fragment.exam06_SlidingTab"
             android:label="@string/title_activity_exam06_sliding_tab"
-            android:theme="@style/SlidingTabTheme">
+            android:theme="@style/SlidingTabTheme" >
         </activity>
+        <activity
+            android:name=".pkg_fragment.exam07_ActionBarTab"
+            android:label="@string/title_activity_exam07_action_bar_tab" >
+        </activity>
+
     </application>
 
 </manifest>
