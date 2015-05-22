@@ -32,6 +32,7 @@ import com.example.administrator.helloandroid.pkg_db.DB03_TableActivity;
 import com.example.administrator.helloandroid.pkg_db.DB04_SharedPreferences;
 import com.example.administrator.helloandroid.pkg_db.DB05_FileSave;
 import com.example.administrator.helloandroid.pkg_event.TouchEventActivity;
+import com.example.administrator.helloandroid.pkg_file.Exam01_Main;
 import com.example.administrator.helloandroid.pkg_fragment.exam01_main;
 import com.example.administrator.helloandroid.pkg_fragment.exam02_Main;
 import com.example.administrator.helloandroid.pkg_fragment.exam03_ViewPager;
@@ -312,6 +313,13 @@ public class MenuSub extends ActionBarActivity implements
             exam1_ActivityForResult.class
     };
 
+    private static final String[] array_ITEMS_pkg17_NAME = {
+            "exam1 - 기본적인 파일 관리"
+    };
+    private static final Class[] array_ITEMS_pkg17_CLASS = {
+            Exam01_Main.class
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -389,6 +397,9 @@ public class MenuSub extends ActionBarActivity implements
                 break;
             case "pkg_result":
                 result = new Pair(array_ITEMS_pkg16_NAME, array_ITEMS_pkg16_CLASS);
+                break;
+            case "pkg_file":
+                result = new Pair(array_ITEMS_pkg17_NAME, array_ITEMS_pkg17_CLASS);
                 break;
             default:
                 break;

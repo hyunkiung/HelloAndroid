@@ -408,6 +408,11 @@
             android:label="@string/title_activity_exam07_action_bar_tab" >
         </activity>
 
+        <!-- pkg_file 액티비티 목록 -->
+        <activity
+            android:name=".pkg_file.Exam01_Main"
+            android:label="@string/title_activity_exam01__main" >
+        </activity>
     </application>
 
 </manifest>

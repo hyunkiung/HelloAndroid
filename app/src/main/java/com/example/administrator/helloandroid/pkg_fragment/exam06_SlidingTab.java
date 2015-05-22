@@ -194,8 +194,8 @@ public class exam06_SlidingTab extends AppCompatActivity {
     //=============================================================== MyPagerAdapter
     public class MyPagerAdapter extends FragmentPagerAdapter {
 
-        private final String[] TITLES = { "카테고리", "홈", "슬라이드1", "슬라이드2", "슬라이드3", "슬라이드4",
-                "슬라이드5", "슬라이드6" };
+        private final String[] TITLES = { "내장메모리 전체", "외장메모리 전체", "폴더탐색 듣기", "즐겨찾기1", "즐겨찾기2", "즐겨찾기3",
+                "즐겨찾기4", "즐겨찾기5" };
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
