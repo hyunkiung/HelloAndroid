@@ -33,6 +33,8 @@ import com.example.administrator.helloandroid.pkg_db.DB04_SharedPreferences;
 import com.example.administrator.helloandroid.pkg_db.DB05_FileSave;
 import com.example.administrator.helloandroid.pkg_event.TouchEventActivity;
 import com.example.administrator.helloandroid.pkg_file.Exam01_Main;
+import com.example.administrator.helloandroid.pkg_file.Exam02_Main;
+import com.example.administrator.helloandroid.pkg_file.Exam03_Main;
 import com.example.administrator.helloandroid.pkg_fragment.exam01_main;
 import com.example.administrator.helloandroid.pkg_fragment.exam02_Main;
 import com.example.administrator.helloandroid.pkg_fragment.exam03_ViewPager;
@@ -314,10 +316,14 @@ public class MenuSub extends ActionBarActivity implements
     };
 
     private static final String[] array_ITEMS_pkg17_NAME = {
-            "exam1 - 기본적인 파일 관리"
+            "exam1 - 기본적인 파일 관리",
+            "exam2 - 지정 폴더 파일 관리",
+            "exam3 - 안드로이드 File Explorer"
     };
     private static final Class[] array_ITEMS_pkg17_CLASS = {
-            Exam01_Main.class
+            Exam01_Main.class,
+            Exam02_Main.class,
+            Exam03_Main.class
     };
 
     @Override

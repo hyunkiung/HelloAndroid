@@ -413,6 +413,14 @@
             android:name=".pkg_file.Exam01_Main"
             android:label="@string/title_activity_exam01__main" >
         </activity>
+        <activity
+            android:name=".pkg_file.Exam02_Main"
+            android:label="@string/title_activity_exam02__main" >
+        </activity>
+        <activity
+            android:name=".pkg_file.Exam03_Main"
+            android:label="@string/title_activity_exam03__main" >
+        </activity>
     </application>
 
 </manifest>

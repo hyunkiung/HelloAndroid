@@ -147,5 +147,7 @@
     <string name="title_activity_exam07_tab2">exam07_Tab2</string>
     <string name="title_activity_exam07_tab3">exam07_Tab3</string>
     <string name="title_activity_exam01__main">Exam01_Main</string>
+    <string name="title_activity_exam02__main">Exam02_Main</string>
+    <string name="title_activity_exam03__main">Exam03_Main</string>
 
 </resources>
