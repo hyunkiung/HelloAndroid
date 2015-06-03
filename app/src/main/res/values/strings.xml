@@ -149,5 +149,8 @@
     <string name="title_activity_exam01__main">Exam01_Main</string>
     <string name="title_activity_exam02__main">Exam02_Main</string>
     <string name="title_activity_exam03__main">Exam03_Main</string>
+    <string name="title_activity_exam04__main">Exam04_Main</string>
+    <string name="title_activity_gps_exam4__speed">GPS_exam4_Speed</string>
+    <string name="title_activity_custom_player__audio__list">CustomPlayer_Audio_List</string>
 
 </resources>

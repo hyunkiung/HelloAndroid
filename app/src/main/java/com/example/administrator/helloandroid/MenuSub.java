@@ -35,6 +35,7 @@ import com.example.administrator.helloandroid.pkg_event.TouchEventActivity;
 import com.example.administrator.helloandroid.pkg_file.Exam01_Main;
 import com.example.administrator.helloandroid.pkg_file.Exam02_Main;
 import com.example.administrator.helloandroid.pkg_file.Exam03_Main;
+import com.example.administrator.helloandroid.pkg_file.Exam04_Main;
 import com.example.administrator.helloandroid.pkg_fragment.exam01_main;
 import com.example.administrator.helloandroid.pkg_fragment.exam02_Main;
 import com.example.administrator.helloandroid.pkg_fragment.exam03_ViewPager;
@@ -45,6 +46,7 @@ import com.example.administrator.helloandroid.pkg_fragment.exam07_ActionBarTab;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam1_LocationManager;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam2_GoogleApiClient;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam3_MapMyArea;
+import com.example.administrator.helloandroid.pkg_location.GPS_exam4_Speed;
 import com.example.administrator.helloandroid.pkg_mission.Mission_193Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_332Page;
@@ -54,6 +56,7 @@ import com.example.administrator.helloandroid.pkg_mission.Mission_593Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_612Page;
 import com.example.administrator.helloandroid.pkg_multimedia.Camera_Intent;
 import com.example.administrator.helloandroid.pkg_multimedia.Camera_Surface;
+import com.example.administrator.helloandroid.pkg_multimedia.CustomPlayer_Audio_List;
 import com.example.administrator.helloandroid.pkg_multimedia.MediaPlayer_Audio;
 import com.example.administrator.helloandroid.pkg_multimedia.MediaPlayer_Audio_SDCARD;
 import com.example.administrator.helloandroid.pkg_multimedia.MediaPlayer_Video;
@@ -259,25 +262,29 @@ public class MenuSub extends ActionBarActivity implements
             "카메라 생성하기 (SurFaceView)",
             "플레이어 실습 (Audio Player)",
             "플레이어 실습 (Audio SD Card)",
-            "플레이어 실습 (Video Player)"
+            "플레이어 실습 (Video Player)",
+            "커스텀 플레이어 실습 (Audio List)"
     };
     private static final Class[] array_ITEMS_pkg12_CLASS = {
             Camera_Intent.class,
             Camera_Surface.class,
             MediaPlayer_Audio.class,
             MediaPlayer_Audio_SDCARD.class,
-            MediaPlayer_Video.class
+            MediaPlayer_Video.class,
+            CustomPlayer_Audio_List.class
     };
 
     private static final String[] array_ITEMS_pkg13_NAME = {
             "exam1 - LocationManager",
             "exam2 - GoogleApiClient",
-            "exam3 - MyArea on the Map"
+            "exam3 - MyArea on the Map",
+            "exam4 - Speed"
     };
     private static final Class[] array_ITEMS_pkg13_CLASS = {
             GPS_exam1_LocationManager.class,
             GPS_exam2_GoogleApiClient.class,
-            GPS_exam3_MapMyArea.class
+            GPS_exam3_MapMyArea.class,
+            GPS_exam4_Speed.class
     };
 
     private static final String[] array_ITEMS_pkg14_NAME = {
@@ -318,12 +325,14 @@ public class MenuSub extends ActionBarActivity implements
     private static final String[] array_ITEMS_pkg17_NAME = {
             "exam1 - 기본적인 파일 관리",
             "exam2 - 지정 폴더 파일 관리",
-            "exam3 - 안드로이드 File Explorer"
+            "exam3 - 안드로이드 File Explorer",
+            "exam4 - TEST"
     };
     private static final Class[] array_ITEMS_pkg17_CLASS = {
             Exam01_Main.class,
             Exam02_Main.class,
-            Exam03_Main.class
+            Exam03_Main.class,
+            Exam04_Main.class
     };
 
     @Override

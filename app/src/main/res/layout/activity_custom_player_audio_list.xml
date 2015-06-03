@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.helloandroid.pkg_multimedia.CustomPlayer_Audio_List">
+
+
+    <ListView
+        android:id="@+id/lv_mp3list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#00000000"
+        />
+
+    <com.example.administrator.helloandroid.pkg_multimedia.CustomPlayer_Player
+        android:id="@+id/CustomPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>

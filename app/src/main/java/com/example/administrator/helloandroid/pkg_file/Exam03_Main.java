@@ -5,6 +5,7 @@ import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -31,8 +32,8 @@ public class Exam03_Main extends AppCompatActivity {
 
     private Item[] fileList;
 
-    //private File path = new File(Environment.getExternalStorageDirectory() + "");
-    private File path = new File("/storage/external_SD");
+    private File path = new File(Environment.getExternalStorageDirectory() + "");
+    //private File path = new File("/storage/external_SD");
 
     private String chosenFile;
     private static final int DIALOG_LOAD_FILE = 1000;
@@ -43,7 +44,7 @@ public class Exam03_Main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exam03_main);
+        setContentView(R.layout.file_exam03_main);
 
         loadFileList();
 

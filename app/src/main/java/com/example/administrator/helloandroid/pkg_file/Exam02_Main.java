@@ -21,6 +21,7 @@ import com.example.administrator.helloandroid.R;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -30,14 +31,44 @@ import java.util.Stack;
 
 public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnItemClickListener {
 
-    public static final String sPathRoot = "/";
-    public static final String sPathSdcard = Environment.getExternalStorageDirectory().getAbsolutePath();
-    public static final String sPathExtSdcard = "/storage/external_SD";
-    public static final String sPathMusic = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC).getAbsolutePath();
-    public static final String sPathDCIM = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsolutePath();
-    public static final String sPathPicture = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath();
-    public static final String sPathDocument = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).getAbsolutePath();
-    public static final String sPathDownload = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();;
+    private String externalSdCard = null;
+    private File fileCur = null;
+    //private ArrayList<String> mArray;
+    private String StrExternal[] = { "ext_card", "external_sd", "ext_sd"
+          , "external", "extSdCard", "externalSdCard", "external_SD", "sdcard1" };
+
+    private void findExtSd() {
+        for( String sPathCur : Arrays.asList(StrExternal)) {
+            fileCur = new File( "/mnt/", sPathCur);
+            if( fileCur.isDirectory() && fileCur.canWrite()) {
+                externalSdCard = fileCur.getAbsolutePath();
+                break;
+            }
+        }
+
+        if (externalSdCard == null) {
+            fileCur = null;
+            for( String sPathCur : Arrays.asList(StrExternal)) {
+                fileCur = new File( "/storage/", sPathCur);
+                if( fileCur.isDirectory() && fileCur.canWrite()) {
+                    externalSdCard = fileCur.getAbsolutePath();
+                    break;
+                }
+            }
+        }
+    }
+
+
+
+
+    public static String sPathRoot = "/";
+    public static String sPathSdcard = Environment.getExternalStorageDirectory().getAbsolutePath();
+    public static String sPathExtSdcard = null;
+    public static String sPathMusic = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC).getAbsolutePath();
+    public static String sPathDCIM = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsolutePath();
+    public static String sPathPicture = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath();
+    public static String sPathDocument = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).getAbsolutePath();
+    public static String sPathDownload = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();;
 
     private ListView mListView;
 
@@ -65,11 +96,13 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
         mListView = (ListView) findViewById(R.id.lv_filetree);
         mTvCurrentPath = (TextView) findViewById(R.id.tv_currentPath);
 
+        findExtSd();
+        show_Log("findExtSd() 결과값" + externalSdCard);
+        sPathExtSdcard = externalSdCard;
+
         mFileStack = new Stack<>();
-
-
-
         setUpHome();
+
     }
 
     /**
@@ -81,12 +114,12 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
         root.put("path", sPathRoot);
 
         Map<String, String> sdcard = new HashMap<>();
-        sdcard.put("title", "SD Card");
+        sdcard.put("title", "내부 저장소");
         sdcard.put("path", sPathSdcard);
 
         Map<String, String> extsdcard = new HashMap<>();
-        sdcard.put("title", "확장 메모리");
-        sdcard.put("path", sPathExtSdcard);
+        extsdcard.put("title", "SD 카드");
+        extsdcard.put("path", sPathExtSdcard);
 
         Map<String, String> music = new HashMap<>();
         music.put("title", "음악");
@@ -118,15 +151,6 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
         mTitleList.add(document);
         mTitleList.add(download);
 
-        // Pair<String, String> root = new Pair<>("루트", sPathRoot);
-        // Pair<String, String> sdcard = new Pair<>("SD Card", sPathSdcard);
-        // Pair<String, String> extsdcard = new Pair<>("확장 메모리", sPathExtSdcard);
-        // Pair<String, String> music = new Pair<>("음악", sPathMusic);
-        // Pair<String, String> dcim = new Pair<>("사진", sPathDCIM);
-        // Pair<String, String> picture = new Pair<>("그림", sPathPicture);
-        // Pair<String, String> document = new Pair<>("문서", sPathDocument);
-        // Pair<String, String> download = new Pair<>("다운로드", sPathDownload);
-
         mAdapter = new SimpleAdapter(getApplicationContext(),
                 mTitleList,
                 android.R.layout.simple_list_item_2,
@@ -140,7 +164,7 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
         mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(this);
 
-        show_Log("루트 : " + sPathSdcard);
+        //show_Log("루트 : " + sPathSdcard);
     }
 
 
@@ -155,8 +179,8 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
 
             mFileStack.push("");
             setCurrentPath(path);
-
             showFileList(path);
+
         } else if (item instanceof File) {
             // 디렉토리를 클릭했을 때는 그 안으로 들어간다
             File fileData = (File) item;
@@ -165,8 +189,8 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
                 // 히스토리에 path 를 삽입
                 mFileStack.push(mCurrentPath);
                 setCurrentPath(fileData.getAbsolutePath());
-
                 showFileList(fileData.getAbsolutePath());
+
             } else {
                 try {
                     // 파일인 경우, 해당 파일의 MIME TYPE 을 설정하여 chooser를 호출
@@ -195,10 +219,6 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
         }
 
         List<File> fileList = new ArrayList<>();
-
-        // for (int i = 0; i < files.length; i++) {
-        // File f = files[i];
-        // }
         for (File f : files) {
             if (f != null) {
                 fileList.add(f);
@@ -209,19 +229,18 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
         Collections.sort(fileList, mFolderAscComparator);
 
         Exam02_FileAdapter fileAdapter = new Exam02_FileAdapter(getApplicationContext(), fileList);
-
         mListView.setAdapter(fileAdapter);
     }
 
-    Comparator<File> mDescComparator = new Comparator<File>() {
-        @Override
-        public int compare(File lhs, File rhs) {
-            String left = lhs.getName();
-            String right = rhs.getName();
-
-            return right.compareTo(left);
-        }
-    };
+//    Comparator<File> mDescComparator = new Comparator<File>() {
+//        @Override
+//        public int compare(File lhs, File rhs) {
+//            String left = lhs.getName();
+//            String right = rhs.getName();
+//
+//            return right.compareTo(left);
+//        }
+//    };
 
     // left, right
     // file, file = return 0 : not change

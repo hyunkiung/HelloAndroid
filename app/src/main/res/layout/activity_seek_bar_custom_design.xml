@@ -54,4 +54,30 @@
         android:thumb="@drawable/slider_thumb_circle"
         />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/seekbar_cyan"
+        android:thumb="@drawable/slider_thumb_square"
+        android:max="200"
+        android:progress="150"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/seekbar_cyan2"
+        android:thumb="@drawable/slider_thumb_square2"
+        android:max="200"
+        android:progress="150"
+        />
+
 </LinearLayout>

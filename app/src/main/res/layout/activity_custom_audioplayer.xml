@@ -1,0 +1,131 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/button_circle">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"
+            android:background="#00000000" >
+
+            <TextView
+                android:id="@+id/tv_elapsetime"
+                android:text="00:00"
+                android:textSize="12sp"
+                android:textColor="#b0e6f4"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:paddingLeft="10dp"
+                android:paddingRight="1dp"  />
+
+            <SeekBar
+                android:id="@+id/sb_seekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:progressDrawable="@drawable/seekbar_smp1"
+                android:thumb="@drawable/seekbar_smp1_slider" />
+
+            <TextView
+                android:id="@+id/tv_runtime"
+                android:text="00:00"
+                android:textSize="12sp"
+                android:textColor="#b0e6f4"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:paddingLeft="1dp"
+                android:paddingRight="10dp" />
+
+        </LinearLayout>
+
+        <!--플레이어 하단 버튼들 영역-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            android:paddingBottom="5dp" >
+
+            <ImageButton
+                android:id="@+id/btn_volume"
+                android:src="@drawable/av_volume_48dp"
+                android:paddingLeft="5dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="#00000000" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="#00000000" >
+
+                <ImageButton
+                    android:id="@+id/btn_prev"
+                    android:src="@drawable/av_skip_previous_white_48dp"
+                    android:padding="3dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="#00000000" />
+
+                <ImageButton
+                    android:id="@+id/btn_play"
+                    android:src="@drawable/av_play_circle_outline_white_48dp"
+                    android:padding="3dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="#00000000" />
+
+                <ImageButton
+                    android:visibility="gone"
+                    android:id="@+id/btn_stop"
+                    android:src="@drawable/av_stop_circle_fill_white_48dp"
+                    android:padding="0dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="#00000000" />
+
+                <ImageButton
+                    android:id="@+id/btn_next"
+                    android:src="@drawable/av_skip_next_white_48dp"
+                    android:padding="3dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="#00000000" />
+            </LinearLayout>
+
+
+            <ImageButton
+                android:id="@+id/btn_loop"
+                android:src="@drawable/av_loop_normal_48dp"
+                android:paddingRight="5dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="#00000000" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

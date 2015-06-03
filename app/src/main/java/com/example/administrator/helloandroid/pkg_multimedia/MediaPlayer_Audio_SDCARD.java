@@ -223,6 +223,7 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         Player_Play(position);
+        show_Log("onItemClick position = " + position);
     }
 
     //========================================================
@@ -240,17 +241,17 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements
                 if (mMP_Player.isPlaying()) {
                     mMP_Player.pause();
                     mBTN_Play.setText("Play");
-                    show_Log("btn_play 클릭 : mMP_Player.isPlaying() = " + mMP_Player.isPlaying());
+                    show_Log("btn_play Pause 클릭 : mMP_Player.isPlaying() = " + mMP_Player.isPlaying());
                 } else {
-                    mMP_Player.seekTo(0);
                     mMP_Player.start();
                     mBTN_Play.setText("Pause");
-                    show_Log("btn_play 클릭 : mMP_Player.isPlaying() = " + mMP_Player.isPlaying());
+                    show_Log("btn_play Play 클릭 : mMP_Player.isPlaying() = " + mMP_Player.isPlaying());
                 }
                 break;
 
             case R.id.btn_stop :
                 if (mMP_Player.isPlaying()) {
+                    mMP_Player.seekTo(0);
                     mSB_Progress.setProgress(0);
                     mBTN_Play.setText("Play");
                     mMP_Player.stop();
@@ -337,6 +338,7 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements
     // *** 플레이어 재생 처리 메소드
     //========================================================
     private void Player_Play(int positionNum) {
+        show_Log("Player_Play positionNum = " + positionNum);
         //커스텀 어뎁터에서 선택한 포지션값으로 뷰 색상 변경
         mArray_Adapter.setSelectedPosition(positionNum);
         mArray_Adapter.notifyDataSetChanged();
@@ -352,7 +354,7 @@ public class MediaPlayer_Audio_SDCARD extends AppCompatActivity implements
         String filePath = HM.get("path");
 
 
-        show_Log("filePath==" + filePath);
+        show_Log("Player_Play filePath = " + filePath);
 
         mMP_Player.reset(); //플레이어 리셋
 

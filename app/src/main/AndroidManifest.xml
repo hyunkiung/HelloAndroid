@@ -421,6 +421,19 @@
             android:name=".pkg_file.Exam03_Main"
             android:label="@string/title_activity_exam03__main" >
         </activity>
+        <activity
+            android:name=".pkg_file.Exam04_Main"
+            android:label="@string/title_activity_exam04__main" >
+        </activity>
+        <activity
+            android:name=".pkg_location.GPS_exam4_Speed"
+            android:label="@string/title_activity_gps_exam4__speed" >
+        </activity>
+        <activity
+            android:name=".pkg_multimedia.CustomPlayer_Audio_List"
+            android:label="@string/title_activity_custom_player__audio__list"
+            android:theme="@style/Base.Theme.AppCompat.Light">
+        </activity>
     </application>
 
 </manifest>
