@@ -39,7 +39,7 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
 
     private void findExtSd() {
         for( String sPathCur : Arrays.asList(StrExternal)) {
-            fileCur = new File( "/mnt/", sPathCur);
+            fileCur = new File( "/storage/", sPathCur);
             if( fileCur.isDirectory() && fileCur.canWrite()) {
                 externalSdCard = fileCur.getAbsolutePath();
                 break;
@@ -49,7 +49,7 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
         if (externalSdCard == null) {
             fileCur = null;
             for( String sPathCur : Arrays.asList(StrExternal)) {
-                fileCur = new File( "/storage/", sPathCur);
+                fileCur = new File( "/mnt/", sPathCur);
                 if( fileCur.isDirectory() && fileCur.canWrite()) {
                     externalSdCard = fileCur.getAbsolutePath();
                     break;
@@ -57,7 +57,6 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
             }
         }
     }
-
 
 
 
@@ -97,7 +96,7 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
         mTvCurrentPath = (TextView) findViewById(R.id.tv_currentPath);
 
         findExtSd();
-        show_Log("findExtSd() 결과값" + externalSdCard);
+        //show_Log("findExtSd() 결과값" + externalSdCard);
         sPathExtSdcard = externalSdCard;
 
         mFileStack = new Stack<>();
@@ -172,7 +171,7 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Object item = mListView.getAdapter().getItem(position);
-
+        show_Log("onItemClick item : " + item);
         if (item instanceof Map) {
             Map mapData = (Map) item;
             String path = (String) mapData.get("path");
@@ -185,6 +184,7 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
             // 디렉토리를 클릭했을 때는 그 안으로 들어간다
             File fileData = (File) item;
             if (fileData.isDirectory()) {
+                show_Log("fileData.isDirectory() : " + fileData.isDirectory());
 
                 // 히스토리에 path 를 삽입
                 mFileStack.push(mCurrentPath);
@@ -196,6 +196,7 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
                     // 파일인 경우, 해당 파일의 MIME TYPE 을 설정하여 chooser를 호출
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setDataAndType(Uri.fromFile(fileData), getMimeType(fileData.getAbsolutePath()));
+                    show_Log("Uri.fromFile(fileData) : " + Uri.fromFile(fileData));
                     startActivity(Intent.createChooser(intent, "파일선택..."));
                 } catch (ActivityNotFoundException e) {
                     Toast.makeText(getApplicationContext(), "실행할 앱이 없습니다.", Toast.LENGTH_SHORT).show();
@@ -207,6 +208,7 @@ public class Exam02_Main extends AppCompatActivity implements  AdapterView.OnIte
     private void showFileList(String path) {
         File dir = new File(path);
         File[] files = dir.listFiles();
+        show_Log("dir.listFiles() : " + dir.listFiles());
 
         if (files == null) {
             AlertDialog.Builder builder = new AlertDialog.Builder(Exam02_Main.this);

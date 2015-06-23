@@ -152,5 +152,21 @@
     <string name="title_activity_exam04__main">Exam04_Main</string>
     <string name="title_activity_gps_exam4__speed">GPS_exam4_Speed</string>
     <string name="title_activity_custom_player__audio__list">CustomPlayer_Audio_List</string>
+    <string name="title_activity_navigation_fragment">NavigationFragment</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+    <string name="title_activity_exam05__media_db">Exam05_MediaDB</string>
+    <string name="title_activity_floating_button">FloatingButton</string>
+    <string name="title_activity_coordinator_layout">CoordinatorLayout</string>
+    <string name="title_activity_coordinator_layout__snackbar">CoordinatorLayout_Snackbar</string>
+    <string name="title_activity_floating_action_menu_01__exams">FloatingActionMenu_01_Exams
+    </string>
 
 </resources>

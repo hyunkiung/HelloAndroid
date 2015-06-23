@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <color name="hku_primary">#FFBB33</color>
     <color name="hku_primary2">#ff54b2b3</color>
     <color name="hku_primary_dark">#98CC00</color>
@@ -9,5 +8,12 @@
     <color name="hku_textBackColor">#ffffd998</color>
     <color name="background_window">#FFE5E5E5</color>
     <color name="hku_Color_White">#FFFFFF</color>
+    <color name="hku_Color_WhitePress">#f1f1f1</color>
     <color name="hku_Color_Black">#000000</color>
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="half_black">#808080</color>
+    <color name="blue_semi_transparent">#805677fc</color>
+    <color name="blue_semi_transparent_pressed">#80738ffe</color>
+    <color name="hku_Color_Pink">#e91e63</color>
+    <color name="hku_Color_PinkPress">#ec407a</color>
 </resources>

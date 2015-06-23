@@ -17,8 +17,10 @@ public class SpinnerExam extends ActionBarActivity implements AdapterView.OnItem
 
     private TextView mSpinner_txt1;
     private Spinner mSpinner1;
+    private ArrayAdapter<String> mSpinner1_ArrayAdapter;
+    private Spinner mSpinner2;
     private ActionBar action_Bar;
-    private ArrayAdapter<String> mSpinner_ArrayAdapter;
+    private ArrayAdapter<String> mSpinner2_ArrayAdapter;
 
     //===============================================================
     ////// 배열 값 셋팅 (패키지명)
@@ -31,6 +33,13 @@ public class SpinnerExam extends ActionBarActivity implements AdapterView.OnItem
             "Black",
             "White",
             "Orange",
+            "Red--1",
+            "Blue--1",
+            "Green--1",
+            "Brown--1",
+            "Black--1",
+            "White--1",
+            "Orange--1",
             "Yellow"
     };
 
@@ -50,19 +59,32 @@ public class SpinnerExam extends ActionBarActivity implements AdapterView.OnItem
         // 텍스트뷰, 스피너 설정
         mSpinner_txt1 = (TextView) findViewById(R.id.spinner_txt1);
         mSpinner1 = (Spinner) findViewById(R.id.spinner1);
+        mSpinner2 = (Spinner) findViewById(R.id.spinner2);
 
         // 리스트뷰의 아이템 셀렉트 리스너 호출 (메인클래스에서 임플리먼트해서 this로 호출)
         mSpinner1.setOnItemSelectedListener(this);
 
         // 어레이어뎁터 설정, 미리 선언한 array_ITEMS 를 던졌다.
-        mSpinner_ArrayAdapter = new ArrayAdapter<>(getApplicationContext(),
+        mSpinner1_ArrayAdapter = new ArrayAdapter<>(getApplicationContext(),
                 android.R.layout.simple_spinner_item, array_ITEMS);
 
         // 어레이어뎁터 설정, 드롭다운 형태 설정
-        mSpinner_ArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinner1_ArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // 스피너에 어뎁터 설정
-        mSpinner1.setAdapter(mSpinner_ArrayAdapter);
+        mSpinner1.setAdapter(mSpinner1_ArrayAdapter);
+
+        //---------------------------------------------------------
+
+        // 어레이어뎁터 설정, 미리 선언한 array_ITEMS 를 던졌다.
+        mSpinner2_ArrayAdapter = new ArrayAdapter<>(getApplicationContext(),
+                R.layout.spinner_list_item_hku, array_ITEMS);
+
+        // 어레이어뎁터 설정, 드롭다운 형태 설정
+        mSpinner2_ArrayAdapter.setDropDownViewResource(R.layout.spinner_list_item_hku);
+
+        // 스피너에 어뎁터 설정
+        mSpinner2.setAdapter(mSpinner1_ArrayAdapter);
 
     }
 

@@ -36,6 +36,7 @@ import com.example.administrator.helloandroid.pkg_file.Exam01_Main;
 import com.example.administrator.helloandroid.pkg_file.Exam02_Main;
 import com.example.administrator.helloandroid.pkg_file.Exam03_Main;
 import com.example.administrator.helloandroid.pkg_file.Exam04_Main;
+import com.example.administrator.helloandroid.pkg_file.Exam05_MediaDB;
 import com.example.administrator.helloandroid.pkg_fragment.exam01_main;
 import com.example.administrator.helloandroid.pkg_fragment.exam02_Main;
 import com.example.administrator.helloandroid.pkg_fragment.exam03_ViewPager;
@@ -47,6 +48,9 @@ import com.example.administrator.helloandroid.pkg_location.GPS_exam1_LocationMan
 import com.example.administrator.helloandroid.pkg_location.GPS_exam2_GoogleApiClient;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam3_MapMyArea;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam4_Speed;
+import com.example.administrator.helloandroid.pkg_material.CoordinatorLayout_Snackbar;
+import com.example.administrator.helloandroid.pkg_material.FloatingActionMenu_01_Exams;
+import com.example.administrator.helloandroid.pkg_material.FloatingButton;
 import com.example.administrator.helloandroid.pkg_mission.Mission_193Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_332Page;
@@ -326,13 +330,26 @@ public class MenuSub extends ActionBarActivity implements
             "exam1 - 기본적인 파일 관리",
             "exam2 - 지정 폴더 파일 관리",
             "exam3 - 안드로이드 File Explorer",
-            "exam4 - TEST"
+            "exam4 - TEST",
+            "exam5 - Media DB로 File 조회"
     };
     private static final Class[] array_ITEMS_pkg17_CLASS = {
             Exam01_Main.class,
             Exam02_Main.class,
             Exam03_Main.class,
-            Exam04_Main.class
+            Exam04_Main.class,
+            Exam05_MediaDB.class
+    };
+
+    private static final String[] array_ITEMS_pkg18_NAME = {
+            "exam1 - FloatingActionButton",
+            "exam2 - CoordinatorLayout, Snackbar",
+            "exam3 - FloatingActionButton Menus"
+    };
+    private static final Class[] array_ITEMS_pkg18_CLASS = {
+            FloatingButton.class,
+            CoordinatorLayout_Snackbar.class,
+            FloatingActionMenu_01_Exams.class
     };
 
     @Override
@@ -415,6 +432,9 @@ public class MenuSub extends ActionBarActivity implements
                 break;
             case "pkg_file":
                 result = new Pair(array_ITEMS_pkg17_NAME, array_ITEMS_pkg17_CLASS);
+                break;
+            case "pkg_material":
+                result = new Pair(array_ITEMS_pkg18_NAME, array_ITEMS_pkg18_CLASS);
                 break;
             default:
                 break;

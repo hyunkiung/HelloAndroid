@@ -39,6 +39,7 @@ public class MenuMain extends AppCompatActivity implements AdapterView.OnItemCli
             "연습12 - 프래그먼트 (Fragment)",
             "연습13 - 결과값 (Activity Result, Intent)",
             "연습14 - 파일 관리 (File Manager)",
+            "연습15 - 머테리얼 디자인 관련",
             "실습1 - 미션 (Mission)",
             "실습2 - API테스트 (API)",
             "실습3 - 팀프로젝트 (TourList)"
@@ -62,6 +63,7 @@ public class MenuMain extends AppCompatActivity implements AdapterView.OnItemCli
             "pkg_fragment",
             "pkg_result",
             "pkg_file",
+            "pkg_material",
             "pkg_mission",
             "project_apiTest",
             "project_team"

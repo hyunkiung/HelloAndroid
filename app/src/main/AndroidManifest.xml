@@ -432,7 +432,23 @@
         <activity
             android:name=".pkg_multimedia.CustomPlayer_Audio_List"
             android:label="@string/title_activity_custom_player__audio__list"
-            android:theme="@style/Base.Theme.AppCompat.Light">
+            android:theme="@style/Base.Theme.AppCompat.Light" >
+        </activity>
+        <activity
+            android:name=".pkg_file.Exam05_MediaDB"
+            android:label="@string/title_activity_exam05__media_db" >
+        </activity>
+        <activity
+            android:name=".pkg_material.FloatingButton"
+            android:label="@string/title_activity_floating_button" >
+        </activity>
+        <activity
+            android:name=".pkg_material.CoordinatorLayout_Snackbar"
+            android:label="@string/title_activity_coordinator_layout__snackbar" >
+        </activity>
+        <activity
+            android:name=".pkg_material.FloatingActionMenu_01_Exams"
+            android:label="@string/title_activity_floating_action_menu_01__exams" >
         </activity>
     </application>
 

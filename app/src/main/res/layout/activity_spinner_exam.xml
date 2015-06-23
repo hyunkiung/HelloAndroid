@@ -19,6 +19,21 @@
         android:prompt="@string/spinner_exam_prompt1"
         android:layoutMode="opticalBounds"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:background="#FFFFFF"
+        android:layout_margin="10dip"/>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="35dip"
+        android:gravity="center_vertical"
+        android:background="@drawable/spinner_custom1"
+        android:drawSelectorOnTop="true"
+        />
+
 
 
 
