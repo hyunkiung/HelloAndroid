@@ -1,1 +1,1 @@
-include ':app', ':floating_library'
+include ':app', ':floating_library', ':floating_menu_library'

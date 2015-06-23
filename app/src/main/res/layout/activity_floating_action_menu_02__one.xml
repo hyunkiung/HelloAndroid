@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:background="@color/background_window"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/multiple_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        fab:fab_addButtonColorNormal="@color/hku_Color_White"
+        fab:fab_addButtonColorPressed="@color/hku_Color_WhitePress"
+        fab:fab_addButtonPlusIconColor="#ff9900"
+        fab:fab_labelStyle="@style/menu_labels_style"
+        android:visibility="visible">
+
+
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_title="Action A"
+            fab:fab_size="mini"
+            fab:fab_colorNormal="@color/hku_Color_Pink"
+            fab:fab_colorPressed="@color/hku_Color_PinkPress"
+            fab:fab_icon="@drawable/ic_edit" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/hku_Color_White"
+            fab:fab_title="Action B"
+            fab:fab_colorPressed="@color/hku_Color_WhitePress"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+</RelativeLayout>

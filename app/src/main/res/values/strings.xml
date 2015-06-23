@@ -168,5 +168,10 @@
     <string name="title_activity_coordinator_layout__snackbar">CoordinatorLayout_Snackbar</string>
     <string name="title_activity_floating_action_menu_01__exams">FloatingActionMenu_01_Exams
     </string>
+    <string name="title_activity_floating_action_menu_02__one">FloatingActionMenu_02_One</string>
+    <string name="title_activity_floating_action_menu_03__red">FloatingActionMenu_03_Red</string>
+    <string name="title_activity_floating_menu_library_01__exams">FloatingMenuLibrary_01_Exams
+    </string>
+    <string name="title_activity_floating_menu_library_02__one">FloatingMenuLibrary_02_One</string>
 
 </resources>

@@ -450,6 +450,18 @@
             android:name=".pkg_material.FloatingActionMenu_01_Exams"
             android:label="@string/title_activity_floating_action_menu_01__exams" >
         </activity>
+        <activity
+            android:name=".pkg_material.FloatingActionMenu_02_One"
+            android:label="@string/title_activity_floating_action_menu_02__one" >
+        </activity>
+        <activity
+            android:name=".pkg_material.FloatingMenuLibrary_01_Exams"
+            android:label="@string/title_activity_floating_menu_library_01__exams" >
+        </activity>
+        <activity
+            android:name=".pkg_material.FloatingMenuLibrary_02_One"
+            android:label="@string/title_activity_floating_menu_library_02__one" >
+        </activity>
     </application>
 
 </manifest>

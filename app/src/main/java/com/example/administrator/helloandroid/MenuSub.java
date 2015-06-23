@@ -50,7 +50,10 @@ import com.example.administrator.helloandroid.pkg_location.GPS_exam3_MapMyArea;
 import com.example.administrator.helloandroid.pkg_location.GPS_exam4_Speed;
 import com.example.administrator.helloandroid.pkg_material.CoordinatorLayout_Snackbar;
 import com.example.administrator.helloandroid.pkg_material.FloatingActionMenu_01_Exams;
+import com.example.administrator.helloandroid.pkg_material.FloatingActionMenu_02_One;
 import com.example.administrator.helloandroid.pkg_material.FloatingButton;
+import com.example.administrator.helloandroid.pkg_material.FloatingMenuLibrary_01_Exams;
+import com.example.administrator.helloandroid.pkg_material.FloatingMenuLibrary_02_One;
 import com.example.administrator.helloandroid.pkg_mission.Mission_193Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_271Page;
 import com.example.administrator.helloandroid.pkg_mission.Mission_332Page;
@@ -342,14 +345,20 @@ public class MenuSub extends ActionBarActivity implements
     };
 
     private static final String[] array_ITEMS_pkg18_NAME = {
-            "exam1 - FloatingActionButton",
-            "exam2 - CoordinatorLayout, Snackbar",
-            "exam3 - FloatingActionButton Menus"
+            "Button exam1 - FloatingActionButton",
+            "Button exam2 - CoordinatorLayout, Snackbar",
+            "Menu exam1 - FloatingActionButton Menus",
+            "Menu exam2 - FloatingAction Menu One",
+            "Menu exam3 - FloatingAction Menu OtherLibrary",
+            "Menu exam4 - FloatingAction Menu OtherLibrary One"
     };
     private static final Class[] array_ITEMS_pkg18_CLASS = {
             FloatingButton.class,
             CoordinatorLayout_Snackbar.class,
-            FloatingActionMenu_01_Exams.class
+            FloatingActionMenu_01_Exams.class,
+            FloatingActionMenu_02_One.class,
+            FloatingMenuLibrary_01_Exams.class,
+            FloatingMenuLibrary_02_One.class
     };
 
     @Override

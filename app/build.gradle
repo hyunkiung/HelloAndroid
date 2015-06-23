@@ -30,6 +30,7 @@ dependencies {
     // 코드 테스트
     testCompile 'junit:junit:4.12'
     compile project(':floating_library')
+    compile project(':floating_menu_library')
 
 }
 

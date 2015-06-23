@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_window">
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/fab_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/emp_floating_button_favor"
+        fab:fab_size="normal"
+        fab:fab_colorNormal="#FF9900"
+        fab:fab_colorPressed="#ffbb7000"
+        fab:fab_colorRipple="#ff935800"
+        fab:fab_shadowColor="#000"
+        fab:fab_elevationCompat="6dp"
+        android:visibility="visible"
+        tools:visibility="visible"/>
+
+    <!--이건가보다-->
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp"
+        android:paddingLeft="0dp"
+        fab:menu_icon="@drawable/emp_floating_button_edit"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true"
+        fab:menu_colorNormal="#06a6db"
+        fab:menu_colorPressed="#ff068fbc"
+        fab:menu_colorRipple="#ff047094"
+        >
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            fab:fab_size="mini"
+            fab:fab_label="Menu item 111"
+            style="@style/MenuButtonsSmall.Cyan" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            fab:fab_size="mini"
+            fab:fab_label="Menu item 222"
+            style="@style/MenuButtonsSmall.Cyan" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            fab:fab_size="mini"
+            fab:fab_label="Menu item 333"
+            style="@style/MenuButtonsSmall.Cyan" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</RelativeLayout>
